@@ -7,6 +7,7 @@ var bodyParser = require('body-parser');
 
 var index = require('./routes/index');
 var users = require('./routes/users');
+var scrapbook = require('./routes/scrapbook');
 
 var app = express();
 
@@ -24,6 +25,7 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/api/users', users);
+app.use('/api/scrapbook', scrapbook);
 
 app.use('*', function(req, res) {
   res.sendFile(path.resolve(__dirname, '../client/build', 'index.html'))

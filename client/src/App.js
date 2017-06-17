@@ -4,16 +4,16 @@ import './App.css';
 
 class App extends Component {
 
+
 componentDidMount(){
-  fetch('/api/users', {
+  fetch('/api/scrapbook', {
          method: 'GET'
        }).then(res => {
-       return res.text().then(user => {
-         user = JSON.parse(user)
-          console.log("USER id", user);
+       return res.text().then(pics => {
+         pics = JSON.parse(pics)
+          console.log("USER", pics);
         })
-
-})
+   })
 }
   render() {
     return (
@@ -22,6 +22,12 @@ componentDidMount(){
           <img src={logo} className="App-logo" alt="logo" />
           <h2>Welcome to React</h2>
         </div>
+
+
+
+
+
+
         <p className="App-intro">
           To get started, edit <code>src/App.js</code> and save to reload.
         </p>
