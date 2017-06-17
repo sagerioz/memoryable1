@@ -1,4 +1,5 @@
 import React, { Component } from 'react'
+import Navbar from './../navbar'
 //import { Link } from 'react-router-dom'
 //import $ from 'jquery'
 
@@ -15,6 +16,7 @@ class Home extends Component {
   }
 
   componentDidMount(){
+    
     fetch('/api/scrapbook', {
            method: 'GET'
          }).then(res => {
@@ -40,6 +42,7 @@ class Home extends Component {
     })
       return (
           <div>
+            <Navbar />
               <div className="container">
 
                   <div>{picsList}{picsTitle}</div>

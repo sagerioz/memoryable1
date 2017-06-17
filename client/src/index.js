@@ -20,7 +20,7 @@ ReactDOM.render(
   <BrowserRouter>
     <div className="App">
 
-      <Route exact path="/" component={Home}></Route>
+      <Route exact path="/scrapbook" component={Home}></Route>
 
     </div>
   </BrowserRouter>,

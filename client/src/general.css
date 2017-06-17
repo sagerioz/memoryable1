@@ -1,0 +1,568 @@
+/*-- General --*/
+
+body, html {
+  height: 100%;
+}
+
+#root {
+  font-family: 'Raleway', sans-serif;
+  background-color: transparent;
+}
+
+
+a, btn, .glyphicon-ok {
+  cursor: pointer;
+}
+
+a:hover, a:active, a:visited, a:focus {
+  text-decoration: none;
+}
+
+button:hover, button:active, button:visited, button:focus, .btn-default:hover, .btn-default:active, .btn-default:visited, .btn-default:focus {
+  outline: none;
+}
+
+.glyphicon-ok {
+  font-size: 20px;
+}
+
+.glyphicon-ok:hover, .glyphicon-ok:active, .glyphicon-ok:visited {
+  color: pink;
+}
+
+
+/*-- Layout --*/
+
+.navbar-header {
+  width: 100%;
+}
+
+.grid-heading {
+  height: auto;
+  border-radius: 8px 8px 0px 0px;
+  margin: 0rem 5rem 0rem 5rem;
+}
+
+.grid-top, .grid-bottom {
+  padding: 2rem;
+  height: auto;
+  border: 1px solid transparent;
+  margin: 0rem 5rem 0rem 5rem;
+}
+
+.grid-bottom {
+  border-radius: 0px 0px 8px 8px;
+  margin: 0rem 5rem 3rem 5rem;
+}
+
+.journalRow {
+  margin-left: 175px;
+}
+
+.journalDiv {
+  margin: 2em;
+  padding: 2em;
+  float: left;
+  margin: 0;
+  heigth: 22px;
+  width: 200px;
+  background-image:
+    radial-gradient(
+      #7e662f,
+      white,
+      /*transparent,*/
+      transparent
+    );
+}
+
+.journalContainer {
+  margin-top: -18rem;
+}
+
+/* Login Page */
+
+.App-content {
+  background-color: rgba(244, 230, 218, 0.2);
+  width: 100%;
+  height: 60rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.read-more-about {
+  background-color: rgba(244, 230, 218, 0.2);
+  height: 3.2rem;
+}
+
+.read-more-explore {
+  background-color: #87d9ab;
+  height: 2.5rem;
+}
+
+.login-arrow-about, .login-arrow-explore {
+  font-size: 3em;
+  padding: 5px;
+  border-radius: 50%;
+  margin-left: 3rem;
+}
+
+.login-arrow-about {
+  background-color: #FDFAF8;
+  border: .5px solid #FDFAF8;
+}
+
+.login-arrow-explore {
+  margin-top: -30px;
+  background-color: #aee5c6;
+  border: .5px solid #aee5c6;
+}
+
+.login-arrow-about:before, .login-arrow-explore:before {
+  color: black;
+}
+
+.login-about {
+  background-color: #aee5c6;
+  height: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+}
+
+.login-about h4 {
+  padding-top: 10px;
+  line-height: 30px;
+}
+.about-container {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 75%;
+  height: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.about-content {
+  width: 75%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.about-content p {
+  font-size: 16px;
+}
+
+.about-cactus-img {
+  height: 100px;
+}
+
+.login-explore {
+  background-color: #87d9ab;
+  height: auto;
+  padding-top: 10rem;
+  padding-bottom: 10rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+.login-explore-content h1 {
+  padding-bottom: 70px;
+}
+
+.login-explore-content {
+  width: 75%;
+}
+
+.login-explore-text {
+  padding-top: 20px;
+  font-size: 16px;
+  padding-bottom: 20px;
+}
+
+.instagram-text {
+  font-size: 16px;
+  padding-top: 24px;
+  padding-bottom: 20px;
+}
+
+.explore-icons {
+  font-size: 75px;
+}
+
+.instagram-icon {
+  height: 75px;
+  opacity: 0.8;
+}
+
+.login-footer {
+  padding-top: 3rem;
+    background-color: rgba(244, 230, 218, 0.56);
+}
+
+.footer-git {
+  padding-bottom: 1rem;
+  height: 5rem;
+}
+
+/*-- NavBar & Sidebar --*/
+
+.Home-title {
+  font-size: 35px;
+  font-weight: initial;
+  color: #4dc683;
+  margin: 30px auto;
+  margin-top: 60px;
+  padding: 5px auto;
+  font-family: 'Raleway', sans-serif;
+}
+
+.Cactus-logo {
+  margin: 0 35px;
+}
+
+.App-content button {
+  margin-left: 43px;
+}
+
+.Home-title p {
+  float: right;
+  margin-right: 507px;
+}
+
+div.navbar-header {
+  margin: -1rem;
+}
+
+.navbar-default {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.Home-img {
+  float: left;
+  margin-top: -25px;
+  margin-left: 100px;
+  border: 6px solid #faeed3;
+  -webkit-transform: rotate(-4deg);
+  -moz-transform: rotate(-4deg);
+  -o-transform: rotate(-4deg);
+  -ms-transform: rotate(-4deg);
+  transform: rotate(-4deg);
+}
+
+.Home-logo {
+  height: 6rem;
+  margin-right: 2rem;
+  margin-top: 2rem;
+}
+
+.navbarHR {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  width: 500px;
+  float: left;
+  margin-top: -50px;
+  margin-left: 445px;
+}
+
+.Side-nav {
+  display: inline;
+}
+
+.sideFont {
+  font-size: 16px;
+  font-family: 'Raleway', sans-serif;
+}
+
+.sideFont a {
+  color: #484948;
+}
+
+.Sidebar-demo {
+  padding: 15px;
+}
+
+.Sidebar.modal.fade .modal-dialog {
+  transition: none;
+}
+
+.Sidebar.modal.fade {
+  transition: transform 0.3s ease-out, opacity 0.15s linear;
+}
+
+.Sidebar.modal.fade:not(.in).left {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.Sidebar.modal.fade:not(.in).right {
+  transform: translate3d(100%, 0, 0);
+}
+
+.Sidebar.modal {
+  /* overflow: auto; */
+  max-width: 100%;
+  box-shadow: 5px 0 10px;
+  background-color: #f5f5f5;
+}
+
+.modal-logo {
+  height: 10rem;
+  opacity: 0.7;
+}
+
+.Modal-title {
+  font-size: 34px;
+  color: #4dc683;
+  font-weight: normal;
+}
+
+.new-entry-button {
+  margin-right: 1rem;
+}
+
+.Sidebar.modal.left {
+  right: auto;
+}
+
+.Sidebar.modal.right {
+  left: auto;
+}
+
+.Sidebar.modal .modal-dialog {
+  margin: 0;
+  width: auto;
+}
+
+.Sidebar.modal .modal-logo {
+  opacity: 0.7;
+}
+
+.Sidebar.modal .modal-dialog .modal-content {
+  background-color: transparent;
+  border: 0;
+  box-shadow: none;
+}
+
+.Sidebar.modal .modal-dialog .modal-content .modal-body {
+  padding: 0;
+}
+
+.Sidebar.modal.fade:not(.in).left .modal-dialog {
+  transform: translate3d(-100%, 0, 0);
+}
+
+.Sidebar.modal.fade:not(.in).right .modal-dialog {
+  transform: translate3d(100%, 0, 0);
+}
+
+.Sidebar .nav {
+  width: 320px;
+}
+
+.sideNavBtn {
+  margin-top: -6rem;
+  margin-right: 3rem;
+  font-size: 20px;
+  padding-top: 10px;
+}
+
+.insta-pics {
+  padding-top: 20px;
+}
+
+.hidden {
+  display: none;
+}
+
+.bottomHR {
+  border: 0;
+  height: 1px;
+  background: #333;
+  background-image: linear-gradient(to right, #ccc, #333, #ccc);
+  width: 800px;
+}
+
+
+
+/*---- Login Page Animations ----*/
+
+.App {
+  text-align: center;
+  height: 600px;
+}
+
+
+.App-title {
+  font-family: 'cursive';
+  font-size: 11rem;
+  color: rgba(77, 198, 131, 0.71);
+  padding-bottom: 2rem;
+}
+
+.Cactus-logo {
+  opacity: 0.7;
+}
+
+.insta-button {
+  border: 1px double grey;
+}
+
+.insta-button:hover {
+  animation: insta-button-buldger 1s forwards;
+  background-color: white;
+}
+
+@keyframes insta-button-buldger {
+  0% {
+    font-size: 100%;
+  }
+  100% {
+    font-size: 110%;
+    background-color: pink;
+    border-color: white;
+  }
+}
+
+.Cactus-logo:hover {
+  animation: Cactus-logo-spin infinite 3s linear;
+}
+
+@keyframes Cactus-logo-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
+
+
+/*-- Media Queries --*/
+@media only screen and (min-device-width: 320px) and (max-device-height: 736px) {
+  .App-content {
+    padding-top: 20px;
+    height: auto;
+  }
+  .App-title {
+    margin: 0px;
+  }
+  img.logo-1 {
+    display: block;
+    width: 182px;
+  }
+  img.logo-2 {
+    display: block;
+    width: 150px;
+  }
+  Cactus-logo {
+    display: block;
+  }
+  .App-content button {
+    margin-left: 0px;
+    margin-bottom: 5px;
+  }
+  .login-arrow-about, .login-arrow-explore {
+    margin-left: 0px;
+  }
+  .login-about {
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+  .login-explore {
+    height: auto;
+    padding-top: 2rem;
+    padding-bottom: 3rem;
+  }
+  .about-container {
+    width: 100%;
+    margin: 35px 0px 35px 0px;
+  }
+  .about-content {
+    width: 100%;
+  }
+  .login-explore-content h1 {
+    padding-top: 25px;
+    padding-bottom: 40px;
+  }
+  .login-explore br {
+    content: '';
+  }
+  .Home-title {
+    font-size: 3rem;
+  }
+  .grid-heading {
+    border: 1px solid transparent;
+  }
+  .grid-top, .grid-bottom {
+    border: 1px solid transparent;
+  }
+}
+
+.icon {
+  width: 100%;
+  height: auto;
+  padding: 0;
+}
+.icon-btn {
+  max-width: 33px;
+  border-radius: 30px;
+  background-color: #f8f9f8;
+  display: inline;
+}
+
+.icon-btn-square {
+  max-width: 55px;
+  padding-bottom: 4px;
+}
+
+.margin-right {
+  margin-right: 20px;
+}
+
+.icon-btn-square-sm {
+  max-width: 17px;
+}
+
+.icon-btn:hover, .icon-btn-square-sm:hover, .icon-btn-square:hover {
+  animation: Cactus-logo-spin infinite 3s linear;
+}
+
+@keyframes Cactus-logo-spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  25% {
+    transform: rotate(25deg);
+  }
+  50% {
+    transform: rotate(0deg);
+  }
+  75% {
+    transform: rotate(-25deg);
+  }
+  100% {
+    transform: rotate(0deg);
+  }
+}
