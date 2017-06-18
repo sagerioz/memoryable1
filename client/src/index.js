@@ -10,6 +10,8 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 //import Login from './components/pages/Login'
 import Home from './components/pages/Home'
+import News from './components/pages/News'
+
 //import Journal from './components/pages/Journal'
 import registerServiceWorker from './registerServiceWorker'
 //import './general.css'
@@ -21,6 +23,7 @@ ReactDOM.render(
     <div className="App">
 
       <Route exact path="/scrapbook" component={Home}></Route>
+      <Route exact path="/news" component={News}></Route>
 
     </div>
   </BrowserRouter>,
