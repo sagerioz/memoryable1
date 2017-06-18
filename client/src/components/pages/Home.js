@@ -11,7 +11,8 @@ class Home extends Component {
 
     this.state = {
       photos: [],
-      title: ''
+      title: '',
+      town: ''
     }
   }
 
@@ -33,11 +34,17 @@ class Home extends Component {
         console.log("TOWN",userData.cityName);
         console.log("WEATHER TODAY IS", userData.weatherDesc);
         console.log("TEMP TODAY IS", Math.ceil(userData.temp) , " degrees Celcius");
+        console.log("userdata IS ", userData);
+      //  console.log("state IS ", this.state);
+       //return userData
 
       },
       error: function(err) {
         console.log(err);
       }
+    }).then(() => {
+      this.setState({town: userData.cityName, weather: userData.weatherDesc, temp: Math.ceil(userData.temp)})
+      console.log("TOWN!!", this.state.town);
     }).then(() => {
     fetch('/api/scrapbook', {
            method: 'GET'
@@ -55,24 +62,33 @@ class Home extends Component {
    }
 
 
-
   render() {
+
+
     let recent = this.state.photos
+    let town = this.state.town
+    let weather = this.state.weather
+    let temp = this.state.temp
     let picsList = recent.map(function(picsDisplay) {
-      return <img src={picsDisplay.item_image} width="25%" alt="scrapbook_photo"/>
+      return <div><img src={picsDisplay.item_image} width="25%" alt="scrapbook_photo"/>
+      <p>{picsDisplay.title}</p>
+      <p>{picsDisplay.description}</p></div>
     })
-    let picsTitle = recent.map(function(picsTitleDisplay) {
-      return <p>{picsTitleDisplay.title}</p>
-    })
+    // let picsTitle = recent.map(function(picsTitleDisplay) {
+    //   return <p>{picsTitleDisplay.title}</p>
+    // })
       return (
           <div>
             <Navbar />
               <div className="container">
-
-                  <div>{picsList}{picsTitle}</div>
+              <div>
+              <h1> Hello, Loreley</h1>
+              <h3> { weather } in { town } today. The temperature is { temp } degrees C </h3>
+              </div>
+                  <div>{picsList}</div>
 
               </div>
-              <div>new entry<ScrapbookPage/></div>
+              <div><ScrapbookPage/></div>
           </div>
       )
   }
