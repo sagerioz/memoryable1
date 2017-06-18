@@ -5,7 +5,7 @@ import $ from 'jquery'
 
 
 
-class News extends Component {
+class Todos extends Component {
   constructor(props) {
     super(props)
 
@@ -92,11 +92,11 @@ class News extends Component {
           <div>
           <Navbar />
         <div>
-NEWS<p> { headline1 }</p> <p>{ headline2 }</p><p>{ headline3 }</p><p> { headline4 }</p>
+TODOS
         </div>
           </div>
       )
   }
 }
 
-export default News
+export default Todos

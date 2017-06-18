@@ -11,6 +11,8 @@ import ReactDOM from 'react-dom'
 //import Login from './components/pages/Login'
 import Home from './components/pages/Home'
 import News from './components/pages/News'
+import Todos from './components/pages/Todos'
+
 
 //import Journal from './components/pages/Journal'
 import registerServiceWorker from './registerServiceWorker'
@@ -24,6 +26,8 @@ ReactDOM.render(
 
       <Route exact path="/scrapbook" component={Home}></Route>
       <Route exact path="/news" component={News}></Route>
+      <Route exact path="/todos" component={Todos}></Route>
+
 
     </div>
   </BrowserRouter>,
