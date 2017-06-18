@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Navbar from './../navbar'
 //import { Link } from 'react-router-dom'
 import $ from 'jquery'
+import ScrapbookPage from '../scrapbook/ScrapbookPage';
+
 
 class Home extends Component {
   constructor(props) {
@@ -18,7 +20,7 @@ class Home extends Component {
     let userData = ''
     $.ajax({
       method: 'get',
-      url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&appid=${apiKey}`,
+      url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${apiKey}`,
       dataType: 'jsonp',
       success: function(result) {
         console.log(result);
@@ -30,7 +32,7 @@ class Home extends Component {
         }
         console.log("TOWN",userData.cityName);
         console.log("WEATHER TODAY IS", userData.weatherDesc);
-        console.log("TEMP TODAY IS", userData.temp);
+        console.log("TEMP TODAY IS", Math.ceil(userData.temp) , " degrees Celcius");
 
       },
       error: function(err) {
@@ -70,6 +72,7 @@ class Home extends Component {
                   <div>{picsList}{picsTitle}</div>
 
               </div>
+              <div>new entry<ScrapbookPage/></div>
           </div>
       )
   }
