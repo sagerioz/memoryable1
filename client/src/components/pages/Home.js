@@ -1,9 +1,9 @@
 import React, { Component } from 'react'
 import Navbar from './../navbar'
-//import { Link } from 'react-router-dom'
+import { Link } from 'react-router-dom'
 import $ from 'jquery'
-import ScrapbookPage from '../scrapbook/ScrapbookPage';
-
+import ScrapbookForm from '../scrapbook/ScrapbookForm';
+import TrashScrapbookItem from '../buttons/deleteBtn.js'
 
 class Home extends Component {
   constructor(props) {
@@ -12,16 +12,20 @@ class Home extends Component {
     this.state = {
       photos: [],
       title: '',
-      town: ''
+      description: '',
+      town: '',
+      weather: '',
+      temp: 0
     }
   }
 
   componentDidMount(){
-    const apiKey = '58443d73bb4adf5b12a65dda8efd13fb'
+    const api = '58443d73bb4adf5b12a65dda8efd13fb'
+    const rio = '2fb0ef496cacff708e1da0ad370562d6'
     let userData = ''
     $.ajax({
       method: 'get',
-      url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${apiKey}`,
+      url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${api}`,
       dataType: 'jsonp',
       success: function(result) {
         console.log(result);
@@ -31,20 +35,12 @@ class Home extends Component {
           temp: result.main.temp
 
         }
-        console.log("TOWN",userData.cityName);
-        console.log("WEATHER TODAY IS", userData.weatherDesc);
-        console.log("TEMP TODAY IS", Math.ceil(userData.temp) , " degrees Celcius");
-        console.log("userdata IS ", userData);
-      //  console.log("state IS ", this.state);
-       //return userData
-
       },
       error: function(err) {
         console.log(err);
       }
     }).then(() => {
       this.setState({town: userData.cityName, weather: userData.weatherDesc, temp: Math.ceil(userData.temp)})
-      console.log("TOWN!!", this.state.town);
     }).then(() => {
     fetch('/api/scrapbook', {
            method: 'GET'
@@ -52,8 +48,10 @@ class Home extends Component {
          return res.text().then(pics => {
            pics = JSON.parse(pics)
            this.setState({
-             photos: pics,
-             title: pics
+             //id: pics,
+             photos: pics
+            // title: pics,
+            // description: pics
            })
             console.log("PICS", pics);
           })
@@ -64,31 +62,35 @@ class Home extends Component {
 
   render() {
 
-
     let recent = this.state.photos
     let town = this.state.town
     let weather = this.state.weather
     let temp = this.state.temp
     let picsList = recent.map(function(picsDisplay) {
-      return <div><img src={picsDisplay.item_image} width="25%" alt="scrapbook_photo"/>
-      <p>{picsDisplay.title}</p>
-      <p>{picsDisplay.description}</p></div>
+      console.log("ID", picsDisplay.id);
+      return <div className="box effect2"><img src={picsDisplay.item_image} width="75%" alt="scrapbook"/>
+      <div className="title"><p>{picsDisplay.title} {picsDisplay.description}</p>
+      <a href="#" className="btn btn-primary">edit</a><TrashScrapbookItem id={picsDisplay.id}/>
+      </div>
+      </div>
     })
-    // let picsTitle = recent.map(function(picsTitleDisplay) {
-    //   return <p>{picsTitleDisplay.title}</p>
-    // })
       return (
           <div>
             <Navbar />
-              <div className="container">
               <div>
+              <div className="splash">
               <h1> Hello, Loreley</h1>
               <h3> { weather } in { town } today. The temperature is { temp } degrees C </h3>
               </div>
-                  <div>{picsList}</div>
+
+
+
+                  <section className="container2">
+                    {picsList}
+                  </section>
 
               </div>
-              <div><ScrapbookPage/></div>
+              <div><ScrapbookForm/></div>
           </div>
       )
   }

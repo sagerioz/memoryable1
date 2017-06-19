@@ -75,10 +75,15 @@ button:hover, button:active, button:visited, button:focus, .btn-default:hover, .
     );
 }
 
-.journalContainer {
-  margin-top: -18rem;
+.gallery-container {
+ padding-top: .9375rem;
 }
 
+.gallery-card {
+ position: relative;
+ overflow: hidden;
+ margin-bottom: 1.875rem;
+}
 /* Login Page */
 
 .App-content {

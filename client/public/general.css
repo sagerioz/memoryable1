@@ -1,0 +1,93 @@
+/*-- General --*/
+body{
+	background-color: #eeeeee;
+	padding:0;
+	margin:0;
+	font: 150% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+h1 {
+  font-family: 'Capriola', sans-serif;
+  font-size: 80px;
+}
+/*Container*/
+.container-cards{
+	width:820px;
+	margin:30px auto;
+	padding:25px;
+	min-height:600px;
+	height:auto;
+}
+.container h2 { margin-top:30px;}
+
+.box h3{
+	text-align:center;
+	position:relative;
+	top:80px;
+}
+.box {
+	width:50%;
+	height:400px;
+	background:#FFF;
+	margin:40px auto;
+  text-align: center;
+}
+
+.title {
+  margin:20px auto;
+  font-weight: normal;
+  font-family: 'Cantarell', sans-serif;
+}
+
+.splash {
+  text-align: center;
+}
+/*==================================================
+ * Effect 1
+ * ===============================================*/
+.effect1{
+	-webkit-box-shadow: 0 10px 6px -6px #777;
+	   -moz-box-shadow: 0 10px 6px -6px #777;
+	        box-shadow: 0 10px 6px -6px #777;
+}
+
+/*==================================================
+ * Effect 2
+ * ===============================================*/
+.effect2
+{
+  position: relative;
+}
+.effect2:before, .effect2:after
+{
+  z-index: -1;
+  position: absolute;
+  content: "";
+  bottom: 15px;
+  left: 10px;
+  width: 50%;
+  top: 80%;
+  max-width:200px;
+  background: #777;
+  -webkit-box-shadow: 0 15px 10px #777;
+  -moz-box-shadow: 0 15px 10px #777;
+  box-shadow: 0 15px 10px #777;
+  -webkit-transform: rotate(-3deg);
+  -moz-transform: rotate(-3deg);
+  -o-transform: rotate(-3deg);
+  -ms-transform: rotate(-3deg);
+  transform: rotate(-3deg);
+}
+.effect2:after
+{
+  -webkit-transform: rotate(3deg);
+  -moz-transform: rotate(3deg);
+  -o-transform: rotate(3deg);
+  -ms-transform: rotate(3deg);
+  transform: rotate(3deg);
+  right: 10px;
+  left: auto;
+}
+
+img {
+  margin-top: 20px;
+}
