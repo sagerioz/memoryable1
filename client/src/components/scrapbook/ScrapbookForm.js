@@ -36,6 +36,7 @@ class ScrapbookForm extends React.Component {
         'Content-Type': 'application/json'
       }
   })
+  window.location.href = '/scrapbook'
 }
 
   render() {

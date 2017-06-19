@@ -1,4 +1,6 @@
 import React, { Component } from 'react'
+import { Link } from 'react-router-dom';
+
 
 class Navbar extends Component {
   constructor(props) {
@@ -10,20 +12,38 @@ class Navbar extends Component {
   }
 
   render() {
-      return (
-        <div>
+
+        let userLinks = (
+          <ul className="nav navbar-nav navbar-right">
+            <li><a href="#">Logout</a></li>
+          </ul>
+        )
+
+        let guestLinks = (
+          <ul className="nav navbar-nav navbar-right">
+            <li><Link to="/signup">Sign up</Link></li>
+            <li><Link to="/login">Login</Link></li>
+            <li><Link to="/news">News</Link></li>
+            <li><Link to="/todos">Todo List</Link></li>
+
+          </ul>
+        )
+
+        return (
           <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
-                <h1 className="Home-title"> <p>Welcome, User</p>
-                </h1>
+                <Link to="/scrapbook" className="navbar-brand">Memoryable</Link>
               </div>
-              <hr className="navbarHR"/>
+
+              <div className="collapse navbar-collapse">
+                { guestLinks }
+              </div>
             </div>
           </nav>
-        </div>
-      )
-  }
-}
+        );
+      }
+    }
+
 
 export default Navbar
