@@ -94,7 +94,7 @@ class Home extends Component {
 
               </div>
               <div><ScrapbookForm/></div>
-              <div><SignupForm /></div>
+              
           </div>
       )
   }

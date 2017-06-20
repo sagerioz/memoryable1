@@ -7,10 +7,11 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
-      username: '',
+      firstName: '',
+      userName: '',
       email: '',
-      password: '',
-      passwordConfirmation: '',
+      profilePicture: '',
+      password_digest: '',
       errors: {},
       isLoading: true,
     //  invalid: true
@@ -44,7 +45,7 @@ class SignupForm extends React.Component {
 }
 
   render() {
-      const { username, email, password, passwordConfirmation, isLoading } = this.state;
+      const { firstName, userName, email, password, passwordConfirmation, password_digest, profilePicture, isLoading } = this.state;
 
       return (
         <form onSubmit={this.onSubmit}>
@@ -52,11 +53,20 @@ class SignupForm extends React.Component {
 
           <TextFieldGroup
           //  error={errors.username}
+            label="Name to be used for your patient"
+            onChange={this.onChange}
+          //  checkUserExists={this.checkUserExists}
+            value={this.state.firstName}
+            field="firstName"
+          />
+
+          <TextFieldGroup
+          //  error={errors.username}
             label="Username"
             onChange={this.onChange}
           //  checkUserExists={this.checkUserExists}
-            value={this.state.username}
-            field="username"
+            value={this.state.userName}
+            field="userName"
           />
 
           <TextFieldGroup
@@ -86,8 +96,24 @@ class SignupForm extends React.Component {
             type="password"
           />
 
+          <TextFieldGroup
+            //error={errors.password}
+            label="Profile photo"
+            onChange={this.onChange}
+            value={this.state.profilePicture}
+            field="profilePicture"
+          />
+
+          <TextFieldGroup
+            //error={errors.password}
+            label="password digest"
+            onChange={this.onChange}
+            value={this.state.password_digest}
+            field="password_digest"
+          />
+
           <div className="form-group">
-            <button disabled={this.state.isLoading || this.state.invalid} className="btn btn-primary btn-lg">
+            <button className="btn btn-primary btn-lg">
               Sign up
             </button>
           </div>

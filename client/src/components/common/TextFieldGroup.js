@@ -22,7 +22,7 @@ TextFieldGroup.propTypes = {
   value: React.PropTypes.string.isRequired,
   label: React.PropTypes.string.isRequired,
   error: React.PropTypes.string,
-  type: React.PropTypes.string.isRequired,
+  //type: React.PropTypes.string.isRequired,
   onChange: React.PropTypes.func.isRequired,
   checkUserExists: React.PropTypes.func
 }
