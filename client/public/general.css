@@ -91,3 +91,8 @@ h1 {
 img {
   margin-top: 20px;
 }
+.sm-profile {
+  width: 50px;
+  border-radius: 50%;
+
+}

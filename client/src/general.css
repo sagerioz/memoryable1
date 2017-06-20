@@ -22,6 +22,11 @@ button:hover, button:active, button:visited, button:focus, .btn-default:hover, .
   outline: none;
 }
 
+.sm-profile {
+  width:'50px';
+  border-radius: 50%;
+
+}
 .glyphicon-ok {
   font-size: 20px;
 }

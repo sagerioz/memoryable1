@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
 import Logout from './buttons/logoutBtn.js'
+import Profile from './buttons/profileBtn.js'
 
 class Navbar extends Component {
   constructor(props) {
@@ -13,17 +14,13 @@ class Navbar extends Component {
 
   render() {
 
-        let userLinks = (
-          <ul className="nav navbar-nav navbar-right">
-            <li><a href="#">Logout</a></li>
-          </ul>
-        )
-
         let guestLinks = (
           <ul className="nav navbar-nav navbar-right">
-            <li><Logout/></li>
+           <li><Profile/></li>
+            <li><Link to="/scrapbook">Scrapbook</Link></li>
             <li><Link to="/news">News</Link></li>
             <li><Link to="/todos">Todo List</Link></li>
+            <li><Logout/></li>
 
           </ul>
         )
