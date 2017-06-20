@@ -41,7 +41,7 @@ class SignupForm extends React.Component {
         'Content-Type': 'application/json'
       }
   })
-//  window.location.href = '/scrapbook'
+  window.location.href = '/scrapbook'
 }
 
   render() {

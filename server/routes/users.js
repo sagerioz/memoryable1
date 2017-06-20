@@ -14,6 +14,7 @@ let password_digest = req.body.password_digest
 console.log("going into db:", firstName, userName, email, profilePicture, password_digest);
 if(userName.length>0){
 knex('users')
+.returning('firstName')
   .insert({
     firstName: firstName,
     userName: userName,
@@ -21,9 +22,9 @@ knex('users')
     profilePicture: profilePicture,
     password_digest: password_digest
   })
-  .then((user) => {
-    console.log("made it");
-    //res.redirect('/scrapbook')
+  .then(insertedUser => {
+    console.log("hello, ", insertedUser[0]);
+    res.send(insertedUser[0])
   })
 }else{
   res.status(500)
