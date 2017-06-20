@@ -4,6 +4,7 @@ import { Link } from 'react-router-dom'
 import $ from 'jquery'
 import ScrapbookForm from '../scrapbook/ScrapbookForm';
 import TrashScrapbookItem from '../buttons/deleteBtn.js'
+import MyDate from '../date'
 
 class Home extends Component {
   constructor(props) {
@@ -80,6 +81,7 @@ class Home extends Component {
               <div>
               <div className="splash">
               <h1> Hello, Loreley</h1>
+              <MyDate />
               <h3> { weather } in { town } today. The temperature is { temp } degrees C </h3>
               </div>
 
