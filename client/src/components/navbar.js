@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import { Link } from 'react-router-dom';
-
+import Logout from './buttons/logoutBtn.js'
 
 class Navbar extends Component {
   constructor(props) {
@@ -21,8 +21,7 @@ class Navbar extends Component {
 
         let guestLinks = (
           <ul className="nav navbar-nav navbar-right">
-            <li><Link to="/signup">Sign up</Link></li>
-            <li><Link to="/login">Login</Link></li>
+            <li><Logout/></li>
             <li><Link to="/news">News</Link></li>
             <li><Link to="/todos">Todo List</Link></li>
 
@@ -33,7 +32,7 @@ class Navbar extends Component {
           <nav className="navbar navbar-default">
             <div className="container-fluid">
               <div className="navbar-header">
-                <Link to="/scrapbook" className="navbar-brand">Memoryable</Link>
+                <Link to="/" className="navbar-brand">Memoryable</Link>
               </div>
 
               <div className="collapse navbar-collapse">
