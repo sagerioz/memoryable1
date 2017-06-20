@@ -92,7 +92,11 @@ img {
   margin-top: 20px;
 }
 .sm-profile {
+  margin-top: 0px;
+  margin-left: 5px;
+  margin-right: 0px;
   width: 50px;
   border-radius: 50%;
+  align-self: center;
 
 }

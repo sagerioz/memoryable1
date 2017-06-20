@@ -16,11 +16,11 @@ class Navbar extends Component {
 
         let guestLinks = (
           <ul className="nav navbar-nav navbar-right">
-           <li><Profile/></li>
             <li><Link to="/scrapbook">Scrapbook</Link></li>
             <li><Link to="/news">News</Link></li>
             <li><Link to="/todos">Todo List</Link></li>
             <li><Logout/></li>
+            <li><Profile/></li>
 
           </ul>
         )

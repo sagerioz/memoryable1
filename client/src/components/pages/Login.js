@@ -4,6 +4,8 @@ import React, { Component } from 'react'
 import $ from 'jquery'
 //import ScrapbookForm from '../scrapbook/ScrapbookForm';
 import SignupForm from '../signup/SignupForm';
+import LoginForm from '../login/LoginForm';
+
 //import TrashScrapbookItem from '../buttons/deleteBtn.js'
 //import MyDate from '../date'
 
@@ -28,7 +30,7 @@ class Login extends Component {
           <div>
             <h1>Memoryable</h1>
            <div>
-           <SignupForm />
+           <SignupForm /><LoginForm />
            </div>
           </div>
       )

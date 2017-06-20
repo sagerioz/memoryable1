@@ -13,7 +13,7 @@ class SignupForm extends React.Component {
       profilePicture: '',
       password_digest: '',
       errors: {},
-      isLoading: true,
+      isLoading: false,
     //  invalid: true
     }
 
