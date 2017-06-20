@@ -3,6 +3,7 @@ import Navbar from './../navbar'
 import { Link } from 'react-router-dom'
 import $ from 'jquery'
 import ScrapbookForm from '../scrapbook/ScrapbookForm';
+import SignupForm from '../signup/SignupForm';
 import TrashScrapbookItem from '../buttons/deleteBtn.js'
 import MyDate from '../date'
 
@@ -93,6 +94,7 @@ class Home extends Component {
 
               </div>
               <div><ScrapbookForm/></div>
+              <div><SignupForm /></div>
           </div>
       )
   }
