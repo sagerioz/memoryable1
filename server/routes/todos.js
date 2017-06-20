@@ -2,14 +2,15 @@ const express = require('express')
 const router = express.Router()
 const knex = require('../knex')
 
-/* GET all scrapbook items */
+/* GET all todo items */
 router.get('/', function(req, res, next) {
-  // knex('scrapbook')
-  //   .orderBy('created_at', 'asc')
-  //   .then((pics) => {
-  //     res.send(pics)
-  //   })
+  knex('todos')
+    .orderBy('created_at', 'asc')
+    .then((todos) => {
+      res.send(todos)
+    })
 })
+
 /* POST a scrapbook item */
 // router.post('/', function(req, res, next) {
 //   console.log("MADE IT TO POST ROUTE");
