@@ -13,6 +13,7 @@ var todos = require('./routes/todos');
 
 
 
+
 var app = express();
 
 // view engine setup
@@ -32,6 +33,7 @@ app.use('/api/users', users);
 app.use('/api/scrapbook', scrapbook);
 app.use('/api/news', news);
 app.use('/api/todos', todos);
+
 
 
 app.use('*', function(req, res) {

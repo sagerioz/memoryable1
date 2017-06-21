@@ -5,6 +5,8 @@ import $ from 'jquery'
 //import ScrapbookForm from '../scrapbook/ScrapbookForm';
 import SignupForm from '../signup/SignupForm';
 import LoginForm from '../login/LoginForm';
+import About from '../about';
+
 
 //import TrashScrapbookItem from '../buttons/deleteBtn.js'
 //import MyDate from '../date'
@@ -30,7 +32,7 @@ class Login extends Component {
           <div>
             <h1>Memoryable</h1>
            <div>
-           <SignupForm /><LoginForm />
+           <SignupForm /><LoginForm /><About />
            </div>
           </div>
       )

@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Navbar from './../navbar'
 //import { Link } from 'react-router-dom'
 import $ from 'jquery'
+import MyDate from '../date'
 
 
 class Todos extends Component {
@@ -42,7 +43,7 @@ class Todos extends Component {
       return (
           <div>
           <Navbar />
-          <h1>Your todos</h1>
+          <h1>Your todos</h1><MyDate/ >
           {this.renderTodos()}
 
           </div>

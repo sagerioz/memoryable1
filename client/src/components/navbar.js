@@ -18,7 +18,7 @@ class Navbar extends Component {
           <ul className="nav navbar-nav navbar-right">
             <li><Link to="/scrapbook">Scrapbook</Link></li>
             <li><Link to="/news">News</Link></li>
-            <li><Link to="/todos">Todo List</Link></li>
+            <li><Link to="/todos">Todos</Link></li>
             <li><Logout/></li>
             <li><Profile/></li>
 

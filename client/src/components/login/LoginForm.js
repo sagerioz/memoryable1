@@ -18,15 +18,23 @@ class LoginForm extends React.Component {
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }
+
+  // login(data) {
+  //   return dispatch => {
+  //     return axios.post('/api/auth', data).then(res => {
+  //       console.log("login route worked!!");
+        // const token = res.data.token;
+        // localStorage.setItem('jwtToken', token);
+        // setAuthorizationToken(token);
+        // dispatch(setCurrentUser(jwtDecode(token)));
+  //     });
+  //   }
+  // }
+
+
   onSubmit(e) {
-    // e.preventDefault();
-    // if (this.isValid()) {
-    //   this.setState({ errors: {}, isLoading: true });
-    //   this.props.login(this.state).then(
-    //     (res) => this.context.router.push('/scrapbook'),
-    //     (err) => this.setState({ errors: err.response.data.errors, isLoading: false })
-    //   );
-    // }
+    e.preventDefault();
+      window.location.href = '/scrapbook'
   }
 
   render() {
@@ -34,7 +42,7 @@ class LoginForm extends React.Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <h1>Login</h1>
+        <h2>Login</h2>
 
         <TextFieldGroup
           field="identifier"
