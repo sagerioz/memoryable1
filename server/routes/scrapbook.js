@@ -15,7 +15,7 @@ router.get('/:id', function(req, res, next) {
   let id = req.params.id
   console.log('here', id)
   knex('scrapbook')
-    .where('journal_id', journal_id)
+    .where('id', id)
     .then((pic) => {
       res.send(pic)
     })

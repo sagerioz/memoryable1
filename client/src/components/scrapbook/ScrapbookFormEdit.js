@@ -11,6 +11,7 @@ class ScrapbookFormEdit extends React.Component {
     super(props);
     this.state = {
       title: '',
+      pic_id: '',
       errors: {},
       isLoading: false
     };
@@ -24,9 +25,10 @@ class ScrapbookFormEdit extends React.Component {
   }
 
   onSubmit(e) {
+
     let userData = this.state
     let pic_id = window.location.pathname.split('/')[3]
-    console.log("USERDATA in CLIENT onSubmit", userData);
+     console.log("USERDATA in edit form onLoad", userData);
     console.log("state", this.state);
 
     e.preventDefault();
@@ -41,10 +43,32 @@ class ScrapbookFormEdit extends React.Component {
   })
   window.location.href = '/scrapbook'
 }
+componentDidMount() {
+    let recentPics = ''
+    let pic_id = window.location.pathname.split('/')[3]
+    this.setState({ pic_id: window.location.pathname.split('/')[3]});
+    fetch(`/api/scrapbook/${pic_id}`, {
+           method: 'GET'
+         }).then(res => {
+         return res.text().then(pic => {
+           pic = JSON.parse(pic)
+           let result = pic[0]
+           this.setState({
+             id: result.id,
+             pic: result,
+            title: result.title,
+            description: result.description,
+            item_image: result.item_image
+           })
+            console.log("PIC", result);
+          })
+     })
+    console.log("HEY GRL", this.state);
+  }
 
   render() {
       const { title, user_id, description, item_image, errors, isLoading } = this.state;
-      console.log("???", this.state);
+      console.log("HORSE??", this.state);
 
     return (
       <form onSubmit={this.onSubmit}>
@@ -77,7 +101,7 @@ class ScrapbookFormEdit extends React.Component {
           error={errors.title}
         />
         <button type="submit" className="btn btn-primary">Edit</button>
-          <TrashScrapbookItem />
+          <TrashScrapbookItem id={this.state.pic_id}/>
       </form>
 
     );
