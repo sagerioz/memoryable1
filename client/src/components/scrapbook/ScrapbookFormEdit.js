@@ -1,6 +1,8 @@
 import React, { Component } from 'react'
 // import { createScrapbook } from '../../actions/scrapbookActions';
 import TextFieldGroup from '../common/TextFieldGroup';
+import TrashScrapbookItem from '../buttons/deleteBtn.js'
+
 
 
 
@@ -73,8 +75,10 @@ class ScrapbookFormEdit extends React.Component {
           onChange={this.onChange}
           error={errors.title}
         />
-        <button type="submit" className="btn btn-primary">Create</button>
+        <button type="submit" className="btn btn-primary">Edit</button>
+          <TrashScrapbookItem id="1" />
       </form>
+
     );
   }
 }

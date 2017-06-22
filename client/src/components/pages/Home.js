@@ -62,11 +62,7 @@ class Home extends Component {
    })
    }
 
-   toggleModal = () => {
-       this.setState({
-         isOpen: !this.state.isOpen
-       });
-     }
+  
 
   render() {
 
@@ -76,11 +72,10 @@ class Home extends Component {
     let temp = this.state.temp
     let picsList = recent.map(function(picsDisplay) {
       console.log("ID", picsDisplay.id);
+      let id = picsDisplay.id
       return (
-
-
         <div>
-        <a href="/scrapbook/edit" title={picsDisplay.title} className="abtn polaroids" id={picsDisplay.id}><img src={picsDisplay.item_image} alt={picsDisplay.title}/></a>
+        <a href={"/scrapbook/edit/" + id} title={picsDisplay.title} className="abtn polaroids" id={picsDisplay.id}><img src={picsDisplay.item_image} alt={picsDisplay.title}/></a>
 
          <div className="clear-both">
         <Link to="/scrapbook/edit">Edit</Link>

@@ -16,7 +16,7 @@ class Edit extends Component {
 
   componentDidMount() {
     let userData = ''
-    fetch(`/api/scrapbook/1`, {
+    fetch(`/api/scrapbook/:id`, {
            method: 'GET'
          }).then(res => {
          return res.text().then(pic => {
