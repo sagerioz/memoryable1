@@ -62,7 +62,7 @@ class Home extends Component {
    })
    }
 
-  
+
 
   render() {
 
@@ -76,12 +76,7 @@ class Home extends Component {
       return (
         <div>
         <a href={"/scrapbook/edit/" + id} title={picsDisplay.title} className="abtn polaroids" id={picsDisplay.id}><img src={picsDisplay.item_image} alt={picsDisplay.title}/></a>
-
-         <div className="clear-both">
-        <Link to="/scrapbook/edit">Edit</Link>
-         <TrashScrapbookItem id={picsDisplay.id}/>
-         </div>
-         </div>
+        </div>
 
       )
     })
@@ -104,7 +99,7 @@ class Home extends Component {
 
 
               <div class="row">
-     <div class="large-12 columns">
+     <div class="small-11 medium-2 columns gutter-content small-centered hide-for-small-only">
            <ul className="polaroids">
                     {picsList}
           </ul>

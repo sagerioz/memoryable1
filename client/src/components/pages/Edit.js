@@ -10,7 +10,8 @@ class Edit extends Component {
 
     this.state = {
       pic: [],
-      id: ''
+      id: '',
+      item_image: ''
     }
   }
 
@@ -27,7 +28,7 @@ class Edit extends Component {
             // title: pics,
             // description: pics
            })
-            console.log("pic", pic);
+            console.log("pic on EDIT yo", this.state.pic);
           })
      })
    }

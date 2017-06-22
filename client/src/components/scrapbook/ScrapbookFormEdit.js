@@ -71,6 +71,9 @@ componentDidMount() {
       console.log("HORSE??", this.state);
 
     return (
+      <div>
+      <img src={this.state.item_image} />
+
       <form onSubmit={this.onSubmit}>
         <h1>Edit Scrapbook Item</h1>
 
@@ -100,10 +103,11 @@ componentDidMount() {
           onChange={this.onChange}
           error={errors.title}
         />
-        <button type="submit" className="btn btn-primary">Edit</button>
+        <button type="submit" className="btn btn-primary">Update</button>
+        <a href="/scrapbook" class="button">Cancel</a>
           <TrashScrapbookItem id={this.state.pic_id}/>
       </form>
-
+      </div>
     );
   }
 }

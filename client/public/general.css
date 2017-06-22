@@ -65,6 +65,36 @@ h1 {
 .splash {
   text-align: center;
 }
+a.button {
+    display: inline-block;
+    box-sizing: border-box;
+    margin: 0;
+    padding: 1px 6px;
+
+    font: 13.3333px Arial;
+    text-rendering: auto;
+    text-align: center;
+    text-transform: none;
+    text-decoration: none;
+    text-indent: 0;
+    text-shadow: none;
+    letter-spacing: normal;
+    word-spacing: normal;
+    color: buttontext;
+
+    border: 2px outset buttonface;
+    border-image: initial;
+
+    background-color: buttonface;
+
+    -webkit-appearance: button;
+    -moz-appearance: button;
+    appearance: button;
+
+    cursor: default;
+}
+
+a.button:active {border-style: inset;}
 /*==================================================
  * Effect 1
  * ===============================================*/
@@ -169,13 +199,23 @@ ul.polaroids a {
 }
 
 /* Rotate all even images 2 degrees */
+/*ul.polaroids li:nth-child(even) a {
+  -webkit-transform: rotate(2deg);
+  -moz-transform: rotate(2deg);
+}*/
 ul.polaroids li:nth-child(even) a {
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
 }
 
 /* Don't rotate every third image, but offset its position */
-ul.polaroids li:nth-child(3n) a {
+/*ul.polaroids li:nth-child(3n) a {
+  -webkit-transform: none;
+  -moz-transform: none;
+  position: relative;
+  top: -5px;
+}*/
+ul.polaroids li:nth-child(odd) a {
   -webkit-transform: none;
   -moz-transform: none;
   position: relative;
@@ -184,6 +224,13 @@ ul.polaroids li:nth-child(3n) a {
 
 /* Rotate every fifth image by 5 degrees and offset it */
 ul.polaroids li:nth-child(5n) a {
+  -webkit-transform: rotate(5deg);
+  -moz-transform: rotate(5deg);
+  position: relative;
+  right: 5px;
+}
+
+ul.polaroids li:nth-child(2n) a {
   -webkit-transform: rotate(5deg);
   -moz-transform: rotate(5deg);
   position: relative;
