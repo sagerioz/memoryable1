@@ -104,7 +104,7 @@ componentDidMount() {
           error={errors.title}
         />
         <button type="submit" className="btn btn-primary">Update</button>
-        <a href="/scrapbook" class="button">Cancel</a>
+        <a href="/scrapbook" class="button1">Cancel</a>
           <TrashScrapbookItem id={this.state.pic_id}/>
       </form>
       </div>
