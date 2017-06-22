@@ -73,8 +73,8 @@ class Home extends Component {
       return (
 
 
-        <div title={picsDisplay.title}>
-        <a href="#" className="btn"><img src={picsDisplay.item_image} width="75%" alt={picsDisplay.title}/></a>
+        <div>
+        <a href="#" title={picsDisplay.title} className="abtn polaroids"><img src={picsDisplay.item_image} alt={picsDisplay.title}/></a>
         </div>
 
 

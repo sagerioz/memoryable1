@@ -9,6 +9,27 @@ h1 {
   font-family: 'Capriola', sans-serif;
   font-size: 80px;
 }
+.abtn {
+  display: inline-block;
+    padding: 6px;
+    margin-bottom: 6px;
+    font-size: 14px;
+    font-weight: 400;
+    line-height: 1.42857143;
+    text-align: justify;
+    white-space: nowrap;
+    vertical-align: top;
+    -ms-touch-action: manipulation;
+    touch-action: manipulation;
+    cursor: pointer;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    -ms-user-select: none;
+    user-select: none;
+    background-image: none;
+    border: 1px solid transparent;
+    border-radius: 0px;
+}
 /*Container*/
 .container-cards{
 	width:820px;
@@ -89,7 +110,20 @@ h1 {
 }
 
 img {
-  margin-top: 20px;
+  margin-top: 2px;
+}
+*, *:before, *:after {
+    -moz-box-sizing: border-box;
+    -webkit-box-sizing: border-box;
+    box-sizing: border-box;
+}
+ul.polaroids img {
+    display: block;
+    width: 190px;
+    margin-bottom: 12px;
+}
+a img {
+    border: none;
 }
 .sm-profile {
   margin-top: 0px;
@@ -154,7 +188,7 @@ ul.polaroids a:hover {
   -webkit-transform: scale(1.25);
   -moz-transform: scale(1.25);
   position: relative;
-  z-index: 5;
+  z-index: 15;
 }
 /* Add drop shadows and smooth out the transition (Safari only) */
 ul.polaroids a {
