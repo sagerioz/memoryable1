@@ -2,10 +2,11 @@ import React, { Component } from 'react'
 import Navbar from './../navbar'
 import { Link } from 'react-router-dom'
 import $ from 'jquery'
-import ScrapbookForm from '../scrapbook/ScrapbookForm';
-import SignupForm from '../signup/SignupForm';
+import ScrapbookForm from '../scrapbook/ScrapbookForm'
+import SignupForm from '../signup/SignupForm'
 import TrashScrapbookItem from '../buttons/deleteBtn.js'
 import MyDate from '../date'
+import Modal from '../modal'
 
 class Home extends Component {
   constructor(props) {
@@ -61,6 +62,11 @@ class Home extends Component {
    })
    }
 
+   toggleModal = () => {
+       this.setState({
+         isOpen: !this.state.isOpen
+       });
+     }
 
   render() {
 
@@ -74,9 +80,13 @@ class Home extends Component {
 
 
         <div>
-        <a href="#" title={picsDisplay.title} className="abtn polaroids"><img src={picsDisplay.item_image} alt={picsDisplay.title}/></a>
-        </div>
+        <a href="/scrapbook/edit" title={picsDisplay.title} className="abtn polaroids" id={picsDisplay.id}><img src={picsDisplay.item_image} alt={picsDisplay.title}/></a>
 
+         <div className="clear-both">
+        <Link to="/scrapbook/edit">Edit</Link>
+         <TrashScrapbookItem id={picsDisplay.id}/>
+         </div>
+         </div>
 
       )
     })
@@ -85,17 +95,11 @@ class Home extends Component {
             <Navbar />
               <div>
               <div className="splash">
-              <h1> Welcome, Loreley</h1>
+              <h1> welcome, Loreley!</h1>
               <MyDate />
-              <h3> { weather } in { town }, Colorado today. The temperature is { temp }&#176; C </h3>
+              <h3> We have { weather } in { town }, Colorado today. The temperature is { temp }&#176; C </h3><br/>
               </div>
               </div>
-
-
-
-
-
-
 
 
 
@@ -110,6 +114,7 @@ class Home extends Component {
                     {picsList}
           </ul>
           </div></div>
+          <section className="clear-both" /><br/>
           <ScrapbookForm />
           </div>
 

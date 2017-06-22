@@ -26,12 +26,12 @@ knex('users')
   .then(insertedUser => {
     console.log("hello, ", insertedUser[0]);
     res.send(insertedUser[0])
+  //  res.json({ userName: insertedUser[0] });
+
   })
 }else{
   res.status(500)
-  res.render('error', {
-    message: 'please enter valid data'
-  })
+  res.json({ err: 'There was an Error.' });
 }
 });
 

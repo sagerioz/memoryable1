@@ -10,6 +10,35 @@ router.get('/', function(req, res, next) {
       res.send(pics)
     })
 })
+
+router.get('/:id', function(req, res, next) {
+  let id = req.params.id
+  console.log('here', id)
+  knex('scrapbook')
+    .where('journal_id', journal_id)
+    .then((pic) => {
+      res.send(pic)
+    })
+})
+
+
+/* PATCH a scrapbook item */
+router.patch('/:id', function(req, res, next) {
+  let user_id = req.params.id
+  knex('scrapbook')
+  .returning(['id', 'title', 'user_id'])
+  .where('id', req.params.id)
+  .update({
+    title: req.body.title,
+    description: req.body.description,
+    item_image: req.body.item_image
+  })
+  .then((photo) => {
+    res.send(photo)
+  })
+})
+
+
 /* POST a scrapbook item */
 router.post('/', function(req, res, next) {
   console.log("MADE IT TO POST ROUTE");

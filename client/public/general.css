@@ -9,6 +9,9 @@ h1 {
   font-family: 'Capriola', sans-serif;
   font-size: 80px;
 }
+.z-index {
+  z-index: 100;
+}
 .abtn {
   display: inline-block;
     padding: 6px;
@@ -31,7 +34,7 @@ h1 {
     border-radius: 0px;
 }
 /*Container*/
-.container-cards{
+/*.container-cards{
 	width:820px;
 	margin:30px auto;
 	padding:25px;
@@ -51,7 +54,7 @@ h1 {
 	background:#FFF;
 	margin:40px auto;
   text-align: center;
-}
+}*/
 
 .title {
   margin:20px auto;
@@ -65,16 +68,16 @@ h1 {
 /*==================================================
  * Effect 1
  * ===============================================*/
-.effect1{
+/*.effect1{
 	-webkit-box-shadow: 0 10px 6px -6px #777;
 	   -moz-box-shadow: 0 10px 6px -6px #777;
 	        box-shadow: 0 10px 6px -6px #777;
-}
+}*/
 
 /*==================================================
  * Effect 2
  * ===============================================*/
-.effect2
+/*.effect2
 {
   position: relative;
 }
@@ -107,7 +110,7 @@ h1 {
   transform: rotate(3deg);
   right: 10px;
   left: auto;
-}
+}*/
 
 img {
   margin-top: 2px;
@@ -123,7 +126,24 @@ ul.polaroids img {
     margin-bottom: 12px;
 }
 a img {
-    border: none;
+    border: 0px solid grey;
+}
+.clear-both {
+  clear: both
+}
+ul.polaroids a {
+    background: #fff;
+    display: inline;
+    float: left;
+    margin: 0 0 27px 30px;
+    width: auto;
+    padding: 10px 10px 15px;
+    text-align: center;
+    font-family: "Marker Felt",sans-serif;
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+    -webkit-transition: -webkit-transform .15s linear;
 }
 .sm-profile {
   margin-top: 0px;

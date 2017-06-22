@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import TextFieldGroup from '../common/TextFieldGroup';
-
+import validateInput from '../../shared/validations/signup';
+import FlashMessage from '../flash/FlashMessage';
 
 
 class SignupForm extends React.Component {
@@ -26,6 +27,16 @@ class SignupForm extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  isValid() {
+    const { errors, isValid } = validateInput(this.state);
+
+    if (!isValid) {
+      this.setState({ errors });
+    }
+
+    return isValid;
+  }
+
   onSubmit(e) {
     let userData = this.state
     console.log("USERDATA in CLIENT onSubmit", userData);
@@ -40,19 +51,22 @@ class SignupForm extends React.Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
+  }).then((res) => {
+    console.log("signup response",res);
   })
-  window.location.href = '/scrapbook'
+  //window.location.href = '/scrapbook'
+
 }
 
   render() {
-      const { firstName, userName, email, password, passwordConfirmation, password_digest, profilePicture, isLoading } = this.state;
+      const { firstName, userName, email, password, passwordConfirmation, password_digest, profilePicture, isLoading, errors } = this.state;
 
       return (
         <form onSubmit={this.onSubmit}>
           <h2>Join our community!</h2>
 
           <TextFieldGroup
-          //  error={errors.username}
+            error={errors.firstName}
             label="Name to be used for your patient"
             onChange={this.onChange}
           //  checkUserExists={this.checkUserExists}
@@ -61,7 +75,7 @@ class SignupForm extends React.Component {
           />
 
           <TextFieldGroup
-          //  error={errors.username}
+            error={errors.username}
             label="Username"
             onChange={this.onChange}
           //  checkUserExists={this.checkUserExists}
@@ -70,7 +84,7 @@ class SignupForm extends React.Component {
           />
 
           <TextFieldGroup
-            //error={errors.email}
+            error={errors.email}
             label="Email"
             onChange={this.onChange}
             //checkUserExists={this.checkUserExists}
@@ -79,7 +93,7 @@ class SignupForm extends React.Component {
           />
 
           <TextFieldGroup
-            //error={errors.password}
+            error={errors.password}
             label="Password"
             onChange={this.onChange}
             value={this.state.password}
@@ -88,7 +102,7 @@ class SignupForm extends React.Component {
           />
 
           <TextFieldGroup
-            //error={errors.passwordConfirmation}
+            error={errors.passwordConfirmation}
             label="Password Confirmation"
             onChange={this.onChange}
             value={this.state.passwordConfirmation}
@@ -122,5 +136,10 @@ class SignupForm extends React.Component {
   }
 }
 
+SignupForm.propTypes = {
+  userSignupRequest: React.PropTypes.func.isRequired,
+  addFlashMessage: React.PropTypes.func.isRequired,
+  isUserExists: React.PropTypes.func.isRequired
+}
 
 export default SignupForm
