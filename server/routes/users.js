@@ -3,6 +3,7 @@ var router = express.Router();
 const knex = require('../knex')
 
 /* GET users listing. */
+
 router.post('/', function(req, res, next) {
 console.log("MADE IT TO POST ROUTE for users");
 let firstName = req.body.firstName

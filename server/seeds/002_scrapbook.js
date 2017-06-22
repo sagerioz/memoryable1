@@ -7,26 +7,26 @@ exports.seed = function(knex, Promise) {
       return knex('scrapbook').insert([{
       	id:1,
         user_id:1,
-        title:'Rio, age 18',
+        title:'Elizabeth',
         description:'Granddaughter',
-      	item_image:'https://s15-us2.ixquick.com/cgi-bin/serveimage?url=http%3A%2F%2Ft0.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcSIIDmQH4PbR07cr8L6scOypZnKqeZMVm6GOUrcwVsf-6gM59deTQ&sp=07f15de025a43754aa25112bc780ad6d&anticache=636',
+      	item_image:'https://thumb7.shutterstock.com/display_pic_with_logo/788569/112762954/stock-photo-the-square-image-of-a-girl-in-retro-handkerchief-112762954.jpg',
         created_at: new Date('2016-06-26 14:26:16 UTC'),
         updated_at: new Date('2016-06-26 14:26:16 UTC')
       },{
       	id:2,
         user_id:1,
-        title:'Zayante, age 11',
-        description:'Granddaughter',
-      	item_image:'https://s15-us2.ixquick.com/cgi-bin/serveimage?url=http%3A%2F%2Fi.huffpost.com%2Fgen%2F1375877%2Fimages%2Fo-MOTHER-HUGGING-TEENAGE-DAUGHTER-facebook.jpg&sp=1b8696e2f53995058d13bb81935574d4',
+        title:'Peter',
+        description:'Son',
+      	item_image:'http://zurb.com/playground/uploads/upload/upload/192/image-01.jpg',
         created_at: new Date('2016-06-26 14:26:16 UTC'),
         updated_at: new Date('2016-06-26 14:26:16 UTC')
       },
       {
       	id:3,
         user_id:1,
-        title:'Chinook',
-        description:'Family Dog',
-      	item_image:'https://s15-us2.ixquick.com/cgi-bin/serveimage?url=http%3A%2F%2Ft0.gstatic.com%2Fimages%3Fq%3Dtbn%3AANd9GcS3wak5_RXODG43vXuWd46wp65_4fHhfInxkk5R35qTXM6-Wgch&sp=80a4b3cbc55d465ec42b66a61655ab56&anticache=711504',
+        title:'Michael',
+        description:'Grandson',
+      	item_image:'http://zurb.com/playground/uploads/upload/upload/194/image-03.jpg',
         created_at: new Date('2016-06-26 14:26:16 UTC'),
         updated_at: new Date('2016-06-26 14:26:16 UTC')
       }

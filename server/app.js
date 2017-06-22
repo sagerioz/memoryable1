@@ -26,9 +26,11 @@ app.use(logger('dev'));
 app.use(bodyParser.json());
 app.use(bodyParser.urlencoded({ extended: false }));
 app.use(cookieParser());
-app.use(express.static(path.join(__dirname, 'public')));
 
-app.use('/', index);
+// Emily suggests this:
+app.use(express.static(path.join(__dirname, '../client/build')));
+
+//app.use('/', index);
 app.use('/api/users', users);
 app.use('/api/scrapbook', scrapbook);
 app.use('/api/news', news);
@@ -55,7 +57,7 @@ app.use(function(err, req, res, next) {
 
   // render the error page
   res.status(err.status || 500);
-  res.render('error');
+  res.json({ error: 'error' });
 });
 
 module.exports = app;

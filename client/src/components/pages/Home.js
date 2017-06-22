@@ -70,11 +70,15 @@ class Home extends Component {
     let temp = this.state.temp
     let picsList = recent.map(function(picsDisplay) {
       console.log("ID", picsDisplay.id);
-      return <div className="box effect2"><img src={picsDisplay.item_image} width="75%" alt="scrapbook"/>
-      <div className="title"><p>{picsDisplay.title} {picsDisplay.description}</p>
-      <a href="#" className="btn btn-primary">edit</a><TrashScrapbookItem id={picsDisplay.id}/>
-      </div>
-      </div>
+      return (
+
+
+        <div title={picsDisplay.title}>
+        <a href="#" className="btn"><img src={picsDisplay.item_image} width="75%" alt={picsDisplay.title}/></a>
+        </div>
+
+
+      )
     })
       return (
           <div>
@@ -85,17 +89,30 @@ class Home extends Component {
               <MyDate />
               <h3> { weather } in { town }, Colorado today. The temperature is { temp }&#176; C </h3>
               </div>
-
-
-
-                  <section className="container2">
-                    {picsList}
-                  </section>
-
               </div>
-              <div><ScrapbookForm/></div>
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+              <div class="row">
+     <div class="large-12 columns">
+           <ul className="polaroids">
+                    {picsList}
+          </ul>
+          </div></div>
+          <ScrapbookForm />
           </div>
+
       )
   }
 }
