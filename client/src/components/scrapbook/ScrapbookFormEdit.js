@@ -25,12 +25,13 @@ class ScrapbookFormEdit extends React.Component {
 
   onSubmit(e) {
     let userData = this.state
+    let pic_id = window.location.pathname.split('/')[3]
     console.log("USERDATA in CLIENT onSubmit", userData);
     console.log("state", this.state);
 
     e.preventDefault();
-    fetch('/api/scrapbook', {
-      method: 'POST',
+    fetch(`/api/scrapbook/${pic_id}`, {
+      method: 'PATCH',
       body: JSON.stringify(userData),
       credentials: 'same-origin',
       headers: {
@@ -76,7 +77,7 @@ class ScrapbookFormEdit extends React.Component {
           error={errors.title}
         />
         <button type="submit" className="btn btn-primary">Edit</button>
-          <TrashScrapbookItem id="1" />
+          <TrashScrapbookItem />
       </form>
 
     );

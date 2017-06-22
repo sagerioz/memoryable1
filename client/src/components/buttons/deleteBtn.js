@@ -10,7 +10,7 @@ class TrashScrapbookItem extends Component {
 
   handleClick = (props) => {
       props.preventDefault()
-      //console.log("PROPS", props);
+      console.log("PROPS from trash", props);
         fetch(`/api/scrapbook/${this.props.id}`, {
           method: 'DELETE'
         }).then(() => {

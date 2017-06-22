@@ -15,6 +15,7 @@ class Edit extends Component {
   }
 
   componentDidMount() {
+    console.log();
     let userData = ''
     fetch(`/api/scrapbook/:id`, {
            method: 'GET'
