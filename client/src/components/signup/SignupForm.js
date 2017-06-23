@@ -52,18 +52,24 @@ class SignupForm extends React.Component {
         'Accept': 'application/json',
         'Content-Type': 'application/json'
       }
-  }).then((res) => {
+  })
+  .then((res) => res.json())
+  .then((data) => {
 
-    if (res.success) {
+    console.log("DATA", data);
 
+    if (data.success) {
 
-      localStorage.profile = res.success;
+    localStorage.setItem('profile', data.success);
+  //  localStorage.setItem('profile', JSON.stringify(data.success));
 
-      window.location.href = '/scrapbook';
+  //  localStorage.profile = data.success;
+console.log("LOCAL STORAGE   ......", localStorage);
+    // window.location.href = '/scrapbook';
     }
 
-    if (res.err) {
-      this.setState({ err: res.err })
+    if (data.err) {
+      this.setState({ err: data.err })
     }
 
     //console.log("signup response",res);
