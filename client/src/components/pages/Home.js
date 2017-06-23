@@ -74,9 +74,10 @@ class Home extends Component {
       console.log("ID", picsDisplay.id);
       let id = picsDisplay.id
       return (
-        <div>
+      <li>
         <a href={"/scrapbook/edit/" + id} title={picsDisplay.title} className="abtn polaroids" id={picsDisplay.id}><img src={picsDisplay.item_image} alt={picsDisplay.title}/></a>
-        </div>
+        </li>
+
 
       )
     })
@@ -98,10 +99,12 @@ class Home extends Component {
 
 
 
-              <div class="row">
-     <div class="small-11 medium-2 columns gutter-content small-centered hide-for-small-only">
+
+
+     <div className="row">
+     <div className="container-nav">
            <ul className="polaroids">
-                    {picsList}
+              {picsList}
           </ul>
           </div></div>
           <section className="clear-both" /><br/>

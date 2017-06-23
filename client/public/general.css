@@ -1,9 +1,59 @@
+/* http://meyerweb.com/eric/tools/css/reset/
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+/*html, body, div, span, applet, object, iframe,
+h1, h2, h3, h4, h5, h6, p, blockquote, pre,
+a, abbr, acronym, address, big, cite, code,
+del, dfn, em, img, ins, kbd, q, s, samp,
+small, strike, strong, sub, sup, tt, var,
+b, u, i, center,
+dl, dt, dd, ol,
+fieldset, form, label, legend,
+table, caption, tbody, tfoot, thead, tr, th, td,
+article, aside, canvas, details, embed,
+figure, figcaption, footer, header, hgroup,
+menu, nav, output, ruby, section, summary,
+time, mark, audio, video {
+	margin: 0;
+	padding: 0;
+	border: 0;
+	font-size: 100%;
+	font: inherit;
+	vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+/*article, aside, details, figcaption, figure,
+footer, header, hgroup, menu, nav, section {
+	display: block;
+}
+ol, ul {
+	list-style: none;
+}
+blockquote, q {
+	quotes: none;
+}
+blockquote:before, blockquote:after,
+q:before, q:after {
+	content: '';
+	content: none;
+}
+table {
+	border-collapse: collapse;
+	border-spacing: 0;
+}*/
+
 /*-- General --*/
 body{
 	background-color: #eeeeee;
+  line-height: 1;
 	padding:0;
 	margin:0;
 	font: 150% 'Helvetica Neue', Helvetica, Arial, sans-serif;
+}
+ol, ul {
+	list-style: none;
 }
 h1 {
   font-family: 'Capriola', sans-serif;
@@ -33,29 +83,10 @@ h1 {
     border: 1px solid transparent;
     border-radius: 0px;
 }
-/*Container*/
-/*.container-cards{
-	width:820px;
-	margin:30px auto;
-	padding:25px;
-	min-height:600px;
-	height:auto;
-}
-.container h2 { margin-top:30px;}
 
-.box h3{
-	text-align:center;
-	position:relative;
-	top:80px;
+.container-nav {
+  align-content: center;
 }
-.box {
-	width:50%;
-	height:400px;
-	background:#FFF;
-	margin:40px auto;
-  text-align: center;
-}*/
-
 .title {
   margin:20px auto;
   font-weight: normal;
@@ -64,6 +95,35 @@ h1 {
 
 .splash {
   text-align: center;
+}
+
+.navFont {
+  display: inline-block;
+  box-sizing: border-box;
+  margin: 0;
+  padding: 1px 6px;
+
+  font: 13.3333px Arial;
+  text-rendering: auto;
+  text-align: center;
+  text-transform: none;
+  text-decoration: none;
+  text-indent: 0;
+  text-shadow: none;
+  letter-spacing: normal;
+  word-spacing: normal;
+  color: buttontext;
+
+  border: 2px outset buttonface;
+  border-image: initial;
+
+  background-color: buttonface;
+
+  -webkit-appearance: button;
+  -moz-appearance: button;
+  appearance: button;
+
+  cursor: default;
 }
 a.button1 {
     display: inline-block;
@@ -95,52 +155,7 @@ a.button1 {
 }
 
 a.button:active {border-style: inset;}
-/*==================================================
- * Effect 1
- * ===============================================*/
-/*.effect1{
-	-webkit-box-shadow: 0 10px 6px -6px #777;
-	   -moz-box-shadow: 0 10px 6px -6px #777;
-	        box-shadow: 0 10px 6px -6px #777;
-}*/
 
-/*==================================================
- * Effect 2
- * ===============================================*/
-/*.effect2
-{
-  position: relative;
-}
-.effect2:before, .effect2:after
-{
-  z-index: -1;
-  position: absolute;
-  content: "";
-  bottom: 15px;
-  left: 10px;
-  width: 50%;
-  top: 80%;
-  max-width:200px;
-  background: #777;
-  -webkit-box-shadow: 0 15px 10px #777;
-  -moz-box-shadow: 0 15px 10px #777;
-  box-shadow: 0 15px 10px #777;
-  -webkit-transform: rotate(-3deg);
-  -moz-transform: rotate(-3deg);
-  -o-transform: rotate(-3deg);
-  -ms-transform: rotate(-3deg);
-  transform: rotate(-3deg);
-}
-.effect2:after
-{
-  -webkit-transform: rotate(3deg);
-  -moz-transform: rotate(3deg);
-  -o-transform: rotate(3deg);
-  -ms-transform: rotate(3deg);
-  transform: rotate(3deg);
-  right: 10px;
-  left: auto;
-}*/
 
 img {
   margin-top: 2px;
@@ -152,7 +167,7 @@ img {
 }
 ul.polaroids img {
     display: block;
-    width: 190px;
+    width: 320px;
     margin-bottom: 12px;
 }
 a img {
@@ -165,7 +180,7 @@ ul.polaroids a {
     background: #fff;
     display: inline;
     float: left;
-    margin: 0 0 27px 30px;
+    margin: 10px 10px 50px 20px;
     width: auto;
     padding: 10px 10px 15px;
     text-align: center;
@@ -199,22 +214,22 @@ ul.polaroids a {
 }
 
 /* Rotate all even images 2 degrees */
-/*ul.polaroids li:nth-child(even) a {
-  -webkit-transform: rotate(2deg);
-  -moz-transform: rotate(2deg);
-}*/
 ul.polaroids li:nth-child(even) a {
   -webkit-transform: rotate(2deg);
   -moz-transform: rotate(2deg);
 }
+ul.polaroids li:nth-child(even) a {
+  -webkit-transform: rotate(22deg);
+  -moz-transform: rotate(2deg);
+}
 
 /* Don't rotate every third image, but offset its position */
-/*ul.polaroids li:nth-child(3n) a {
+ul.polaroids li:nth-child(3n) a {
   -webkit-transform: none;
   -moz-transform: none;
   position: relative;
   top: -5px;
-}*/
+}
 ul.polaroids li:nth-child(odd) a {
   -webkit-transform: none;
   -moz-transform: none;

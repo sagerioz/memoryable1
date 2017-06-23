@@ -16,7 +16,9 @@ class Logout extends Component{
   render() {
     return (
       <Nav>
-        <NavItem onClick={this.handleClick} className="sideFont"><span className="glyphicon glyphicon-cog" aria-hidden="true"></span> Logout</NavItem>
+        <NavItem onClick={this.handleClick}>
+      Logout
+        </NavItem>
       </Nav>
     )
   }

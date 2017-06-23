@@ -16,7 +16,7 @@ class Navbar extends Component {
 
         let guestLinks = (
 //           <nav class="navbar navbar-default navbar-fixed-top">
-//   <div class="container">
+   <div className="container-nav">
   <ul className="nav navbar-nav navbar-right">
     <li><Link to="/scrapbook">Scrapbook</Link></li>
     <li><Link to="/news">News</Link></li>
@@ -25,7 +25,7 @@ class Navbar extends Component {
     <li><Profile/></li>
 
   </ul>
-//   </div>
+  </div>
 // </nav>
 
        )
@@ -56,7 +56,7 @@ class Navbar extends Component {
                           <span className="icon-bar"></span>
                           <span className="icon-bar"></span>
                       </button>
-                      <a href="#" clasNames="navbar-brand">Brand</a>
+                      <a href="#" clasNames="navbar-brand">Memoryable</a>
                   </div>
 
                   <div id="navbarCollapse" className="collapse navbar-collapse">
