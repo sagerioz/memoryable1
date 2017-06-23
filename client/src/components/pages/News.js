@@ -10,6 +10,7 @@ class News extends Component {
     articles: [],
   };
 
+
   componentDidMount() {
     const apiKey = '1e113c3733bb4dd69cccb5156d4d4081'
     let userData = ''

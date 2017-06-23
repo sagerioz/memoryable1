@@ -1,7 +1,6 @@
 import React, { Component } from 'react'
 import TextFieldGroup from '../common/TextFieldGroup';
 import validateInput from '../../shared/validations/signup';
-import FlashMessage from '../flash/FlashMessage';
 
 
 class SignupForm extends React.Component {
@@ -61,8 +60,6 @@ class SignupForm extends React.Component {
     if (data.success) {
 
     localStorage.setItem('profile', data.success);
-  //  localStorage.setItem('profile', JSON.stringify(data.success));
-
   //  localStorage.profile = data.success;
 console.log("LOCAL STORAGE   ......", localStorage);
      window.location.href = '/scrapbook';
@@ -71,8 +68,6 @@ console.log("LOCAL STORAGE   ......", localStorage);
     if (data.err) {
       this.setState({ err: data.err })
     }
-
-    //console.log("signup response",res);
   })
 
 

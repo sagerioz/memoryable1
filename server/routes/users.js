@@ -41,7 +41,7 @@ knex('users')
 
   })
 }else{
-  res.json({ err: 'There was an Error.' });
+  res.json({ err: '500 // There was an Error.' });
 }
 });
 

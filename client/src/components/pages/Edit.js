@@ -13,6 +13,9 @@ class Edit extends Component {
       id: '',
       item_image: ''
     }
+    if (localStorage.jwtToken) {
+      window.location.href = '/'
+    }
   }
 
   componentDidMount() {

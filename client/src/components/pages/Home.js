@@ -20,6 +20,9 @@ class Home extends Component {
       weather: '',
       temp: 0
     }
+    if (localStorage.jwtToken) {
+      window.location.href = '/'
+    }
   }
 
   componentDidMount(){

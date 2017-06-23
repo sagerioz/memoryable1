@@ -10,7 +10,7 @@ class Logout extends Component{
 
   handleClick = () => {
     localStorage.removeItem('jwtToken')
-    //window.location.replace('/')
+    window.location.replace('/')
   }
 
   render() {
