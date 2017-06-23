@@ -1,8 +1,10 @@
-var express = require('express');
-var router = express.Router();
+const express = require('express')
+const router = express.Router();
 const knex = require('../knex');
 const bcrypt = require('bcrypt');
+const jwt = require('jsonwebtoken');
 
+//const config = require('../config');
 
 /* GET users listing. */
 
@@ -20,7 +22,7 @@ const password_digest = bcrypt.hashSync(password, 10);
 console.log("going into db:", firstName, userName, email, profilePicture, password_digest);
 if(userName.length>0){
 knex('users')
-.returning('firstName')
+.returning('*')
   .insert({
     firstName: firstName,
     userName: userName,
@@ -29,13 +31,15 @@ knex('users')
     password_digest: password_digest
   })
   .then(insertedUser => {
-    console.log("hello, ", insertedUser[0]);
-    res.send(insertedUser[0])
-  //  res.json({ userName: insertedUser[0] });
+
+    const token = jwt.sign({insertedUser}, 'config.jwtSecret');
+    const profile = insertedUser[0].token = token;
+
+  //  res.send(insertedUser[0])
+    res.json({ success: profile });
 
   })
 }else{
-  res.status(500)
   res.json({ err: 'There was an Error.' });
 }
 });

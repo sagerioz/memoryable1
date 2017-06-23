@@ -13,8 +13,9 @@ class SignupForm extends React.Component {
       email: '',
       profilePicture: '',
       password: '',
+      err: null,
       errors: {},
-      isLoading: false,
+      isLoading: false
     //  invalid: true
     }
 
@@ -52,9 +53,22 @@ class SignupForm extends React.Component {
         'Content-Type': 'application/json'
       }
   }).then((res) => {
-    console.log("signup response",res);
+
+    if (res.success) {
+
+
+      localStorage.profile = res.success;
+
+      window.location.href = '/scrapbook';
+    }
+
+    if (res.err) {
+      this.setState({ err: res.err })
+    }
+
+    //console.log("signup response",res);
   })
-  //window.location.href = '/scrapbook'
+
 
 }
 
@@ -64,6 +78,8 @@ class SignupForm extends React.Component {
       return (
         <form onSubmit={this.onSubmit}>
           <h2>Join our community!</h2>
+
+          {this.state.err ? <p>{this.state.err}</p> : null}
 
           <TextFieldGroup
             error={errors.firstName}
