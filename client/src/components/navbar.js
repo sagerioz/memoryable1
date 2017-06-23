@@ -56,7 +56,7 @@ class Navbar extends Component {
                           <span className="icon-bar"></span>
                           <span className="icon-bar"></span>
                       </button>
-                      <a href="#" clasNames="navbar-brand">Memoryable</a>
+                      <a href="/" clasNames="navbar-brand">Memoryable</a>
                   </div>
 
                   <div id="navbarCollapse" className="collapse navbar-collapse">

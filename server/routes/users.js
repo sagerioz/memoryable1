@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
-const knex = require('../knex')
+const knex = require('../knex');
+const bcrypt = require('bcrypt');
+
 
 /* GET users listing. */
 
@@ -9,8 +11,11 @@ console.log("MADE IT TO POST ROUTE for users");
 let firstName = req.body.firstName
 let userName = req.body.userName
 let email = req.body.email
+let password = req.body.password
 let profilePicture = req.body.profilePicture
-let password_digest = req.body.password_digest
+
+const password_digest = bcrypt.hashSync(password, 10);
+
 
 console.log("going into db:", firstName, userName, email, profilePicture, password_digest);
 if(userName.length>0){

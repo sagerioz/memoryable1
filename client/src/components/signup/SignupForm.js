@@ -12,7 +12,7 @@ class SignupForm extends React.Component {
       userName: '',
       email: '',
       profilePicture: '',
-      password_digest: '',
+      password: '',
       errors: {},
       isLoading: false,
     //  invalid: true
@@ -59,7 +59,7 @@ class SignupForm extends React.Component {
 }
 
   render() {
-      const { firstName, userName, email, password, passwordConfirmation, password_digest, profilePicture, isLoading, errors } = this.state;
+      const { firstName, userName, email, password, passwordConfirmation, profilePicture, isLoading, errors } = this.state;
 
       return (
         <form onSubmit={this.onSubmit}>
@@ -116,14 +116,6 @@ class SignupForm extends React.Component {
             onChange={this.onChange}
             value={this.state.profilePicture}
             field="profilePicture"
-          />
-
-          <TextFieldGroup
-            //error={errors.password}
-            label="password digest"
-            onChange={this.onChange}
-            value={this.state.password_digest}
-            field="password_digest"
           />
 
           <div className="form-group">
