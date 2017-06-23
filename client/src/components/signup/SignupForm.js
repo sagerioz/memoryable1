@@ -65,7 +65,7 @@ class SignupForm extends React.Component {
 
   //  localStorage.profile = data.success;
 console.log("LOCAL STORAGE   ......", localStorage);
-    // window.location.href = '/scrapbook';
+     window.location.href = '/scrapbook';
     }
 
     if (data.err) {
