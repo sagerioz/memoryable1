@@ -32,11 +32,14 @@ class News extends Component {
      console.log("NEWS", this.state.articles);
      return this.state.articles.map(function(article) {
        return (
-         <article>
-           <h2>{article.title}</h2>
-           <img src={article.urlToImage} width="50%" />
+         <div className="list-group-item">
+           <img src={article.urlToImage} width="50%" id="news"/>
+         <article className="article">
+           <h3><a href={article.url}>{article.title}</a></h3>
+           <h4>POSTED ON {article.publishedAt}</h4>
            <p>{article.description}</p>
          </article>
+         </div>
        );
     });
   };
@@ -44,11 +47,14 @@ class News extends Component {
   render() {
       return (
           <div>
+
           <Navbar />
           <h1>News Articles</h1>
-          {this.renderArticles()}
+<div className="flex-container">
+{this.renderArticles()}
+</div>
 
-          </div>
+</div>
       )
   }
 }
