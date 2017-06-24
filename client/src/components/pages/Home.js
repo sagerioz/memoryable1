@@ -20,7 +20,7 @@ class Home extends Component {
       weather: '',
       temp: 0
     }
-    if (localStorage.jwtToken) {
+    if (localStorage.profile) {
       window.location.href = '/'
     }
   }

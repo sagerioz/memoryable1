@@ -34,7 +34,6 @@ knex('users')
     const token = jwt.sign({insertedUser}, 'config.jwtSecret');
     const profile = insertedUser[0].token = token;
     console.log("PROFILE", profile);
-    console.log("TOKEN", token);
 
   //  res.send(insertedUser[0])
     res.json({ success: profile });

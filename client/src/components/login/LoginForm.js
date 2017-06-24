@@ -1,5 +1,9 @@
 import React, { Component } from 'react'
 import TextFieldGroup from '../common/TextFieldGroup';
+import axios from 'axios';
+import validateInput from '../../shared/validations/login';
+import { connect } from 'react-redux';
+//import { login } from '../../actions/authActions';
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -23,10 +27,10 @@ class LoginForm extends React.Component {
   //   return dispatch => {
   //     return axios.post('/api/auth', data).then(res => {
   //       console.log("login route worked!!");
-        // const token = res.data.token;
-        // localStorage.setItem('jwtToken', token);
-        // setAuthorizationToken(token);
-        // dispatch(setCurrentUser(jwtDecode(token)));
+  //       const token = res.data.token;
+  //       localStorage.setItem('jwtToken', token);
+  //       setAuthorizationToken(token);
+  //       dispatch(setCurrentUser(jwtDecode(token)));
   //     });
   //   }
   // }
@@ -34,7 +38,11 @@ class LoginForm extends React.Component {
 
   onSubmit(e) {
     e.preventDefault();
-      window.location.href = '/scrapbook'
+    let userData = this.state
+    console.log("USERDATA in CLIENT onSubmit for LOGIN", userData);
+    console.log("state", this.state);
+
+     window.location.href = '/scrapbook'
   }
 
   render() {

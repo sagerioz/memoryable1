@@ -75,7 +75,7 @@ componentDidMount() {
       <img src={this.state.item_image} />
 
       <form onSubmit={this.onSubmit}>
-        <h1>Edit Scrapbook Item</h1>
+        
 
         <TextFieldGroup
           field="title"
@@ -103,9 +103,12 @@ componentDidMount() {
           onChange={this.onChange}
           error={errors.title}
         />
-        <button type="submit" className="btn btn-primary">Update</button>
-        <a href="/scrapbook" class="button1">Cancel</a>
+        <div className="modal-footer">
+        <button type="submit" className="btn btn-primary">Save Changes!</button>
+  <button type="button" className="btn btn-default" data-dismiss="modal">Cancel</button>
           <TrashScrapbookItem id={this.state.pic_id}/>
+
+        </div>
       </form>
       </div>
     );

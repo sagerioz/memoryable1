@@ -9,7 +9,7 @@ class Logout extends Component{
   }
 
   handleClick = () => {
-    localStorage.removeItem('jwtToken')
+    localStorage.removeItem('profile')
     window.location.replace('/')
   }
 

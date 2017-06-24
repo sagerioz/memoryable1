@@ -55,13 +55,20 @@ body{
 ol, ul {
 	list-style: none;
 }
+
 h1 {
   font-family: 'Capriola', sans-serif;
   font-size: 80px;
 }
+
 .z-index {
   z-index: 100;
 }
+
+.edit-image img {
+  float: right;
+}
+
 .abtn {
   display: inline-block;
     padding: 6px;
