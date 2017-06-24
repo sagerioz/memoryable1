@@ -38,6 +38,7 @@ class News extends Component {
            <h3><a href={article.url}>{article.title}</a></h3>
            <h4>POSTED ON {article.publishedAt}</h4>
            <p>{article.description}</p>
+           <a href={article.url}>MORE...</a>
          </article>
          </div>
        );
