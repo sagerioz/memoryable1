@@ -55,12 +55,14 @@ class Edit extends Component {
           <p>{this.state.description}</p>
           </div>
 
-===============
 
 
-<button type="button" class="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+
+<button type="button" className="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
 edit
 </button>
+
+<a href="/scrapbook" className="link_button">Scrapbook </a>
 
 
 <div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -77,23 +79,6 @@ edit
     </div>
   </div>
 </div>
-
-
-======================
-
-
-
-
-
-
-
-
-
-
-
-
-
-
           </div>
       )
   }

@@ -31,6 +31,7 @@ class News extends Component {
    renderArticles = () => {
      console.log("NEWS", this.state.articles);
      return this.state.articles.map(function(article) {
+       if(article.urlToImage){
        return (
          <div className="list-group-item">
            <img src={article.urlToImage} width="50%" id="news"/>
@@ -42,6 +43,7 @@ class News extends Component {
          </article>
          </div>
        );
+     }
     });
   };
 
