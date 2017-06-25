@@ -91,7 +91,7 @@ class Home extends Component {
             <Navbar />
               <div>
               <div className="splash">
-              <h1> welcome, Loreley!</h1>
+              <h1 className="splash"> welcome, Loreley!</h1>
               <MyDate />
               <h3> We have { weather } in { town }, Colorado today. The temperature is { temp }&#176; C </h3><br/>
               </div>

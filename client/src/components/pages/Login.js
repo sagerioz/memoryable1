@@ -21,9 +21,18 @@ class Login extends Component {
   }
 
   componentDidMount(){
-
+     this.animate()
    }
 
+  animate() {
+    $(document).on('click', 'a', function(event){
+        event.preventDefault();
+
+        $('html, body').animate({
+            scrollTop: $( $.attr(this, 'href') ).offset().top
+        }, 600);
+    });
+  }
 
   render() {
 
@@ -48,7 +57,7 @@ class Login extends Component {
    <div className="caption">
      <div><button className="button-logo">Login with Email</button>
           <button className="button-logo">Create an Account</button>
-          <a href="#about" className="button-logo">About this Site</a>
+          <a href="#about" className="button-logo" onClick={this.animate}>About this Site</a>
     </div>
    </div>
    </div>
@@ -86,6 +95,7 @@ class Login extends Component {
   <div className="caption">
     <span className="border">CONNECTIONS</span>
   </div>
+  <LoginForm />
 </div>
 </div>
       )
