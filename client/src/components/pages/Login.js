@@ -30,9 +30,11 @@ class Login extends Component {
 
       return (
           <div>
-            <h1>Memoryable</h1>
+          <div className="parallax"></div>
+          <div></div>
            <div>
-           <SignupForm /><LoginForm /><About />
+           <SignupForm /><LoginForm />
+           <div className="bg-img2"></div><About />
            </div>
           </div>
       )

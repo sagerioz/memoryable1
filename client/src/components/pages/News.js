@@ -1,6 +1,6 @@
 import React, { Component } from 'react'
 import Navbar from './../navbar'
-//import { Link } from 'react-router-dom'
+import MyDate from '../date'
 import $ from 'jquery'
 
 
@@ -52,6 +52,7 @@ class News extends Component {
           <div>
 
           <Navbar />
+          <MyDate />
           <h1>News Articles</h1>
 <div className="flex-container">
 {this.renderArticles()}

@@ -30,8 +30,9 @@ export class MyDate extends React.Component {
 
     render() {
         return (
-            <div>
+            <div><h3>
               {this.state.dateNow}
+              </h3>
             </div>
         );
     }

@@ -80,7 +80,7 @@ class Home extends Component {
       let id = picsDisplay.id
       return (
       <li>
-        <a href={"/scrapbook/edit/" + id} title={picsDisplay.title} className="abtn polaroids" id={picsDisplay.id}><img src={picsDisplay.item_image} alt={picsDisplay.title}/></a>
+        <a href={"/scrapbook/edit/" + id} title={picsDisplay.title} id={picsDisplay.id}><img src={picsDisplay.item_image} alt={picsDisplay.title}/></a>
         </li>
 
 

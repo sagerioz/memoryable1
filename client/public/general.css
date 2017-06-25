@@ -61,15 +61,15 @@ h1 {
   font-size: 80px;
 }
 
-.z-index {
-  z-index: 100;
+body, html {
+    height: 100%;
 }
 
 .edit-image img {
   float: right;
 }
 
-.abtn {
+/*.abtn {
   display: inline-block;
     padding: 6px;
     margin-bottom: 6px;
@@ -89,7 +89,7 @@ h1 {
     background-image: none;
     border: 1px solid transparent;
     border-radius: 0px;
-}
+}*/
 
 .container-nav {
   align-content: center;
@@ -279,6 +279,12 @@ ul.polaroids a:hover {
   position: relative;
   z-index: 15;
 }
+ul.polaroids a:hover {
+  -webkit-transform: scale(1.25);
+  -moz-transform: scale(1.25);
+  position: relative;
+  z-index: 15;
+}
 /* Add drop shadows and smooth out the transition (Safari only) */
 ul.polaroids a {
   -webkit-transition: -webkit-transform .15s linear;
@@ -347,3 +353,26 @@ header {background: black;color:white;}
     .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
     footer {-webkit-order:3;order:3;}
 }*/
+.parallax {
+    /* The image used */
+    background-image: url("images/logo.jpg");
+
+    /* Set a specific height */
+    height: 800px;
+
+    /* Create the parallax scrolling effect */
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.bg-img1 {
+  background-image: url("images/logo.jpg");
+  min-height: 400px;
+
+}
+.bg-img2 {
+  background-image: url("images/logo2.jpg");
+  min-height: 400px;
+
+}
