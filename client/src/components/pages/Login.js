@@ -1,7 +1,7 @@
 import React, { Component } from 'react'
 //import Navbar from './../navbar'
 //import { Link } from 'react-router-dom'
-import $ from 'jquery'
+import $ from 'jquery';
 //import ScrapbookForm from '../scrapbook/ScrapbookForm';
 import SignupForm from '../signup/SignupForm';
 import LoginForm from '../login/LoginForm';
@@ -27,7 +27,7 @@ class Login extends Component {
 
   render() {
 
-
+//old home page layout
       // return (
       //     <div className="row">
       //     <div className="parallax"></div>
@@ -42,31 +42,37 @@ class Login extends Component {
 
       return (
 <div>
-   <div className="parallax">
+   <div className="parallax"><h1 className="logo">Memoryable</h1>
+
+
    <div className="caption">
+     <div><button className="button-logo">Login with Email</button>
+          <button className="button-logo">Create an Account</button>
+          <a href="#about" className="button-logo">About this Site</a>
+    </div>
    </div>
    </div>
 
 <div className="login">
-  <h3 className="login-h3">Parallax Demo</h3>
-  <p>Parallax scrolling is a web site trend where the background content is moved at a different speed than the foreground content while scrolling. Nascetur per nec posuere turpis, lectus nec libero turpis nunc at, sed posuere mollis ullamcorper libero ante lectus, blandit pellentesque a, magna turpis est sapien duis blandit dignissim. Viverra interdum mi magna mi, morbi sociis. Condimentum dui ipsum consequat morbi, curabitur aliquam pede, nullam vitae eu placerat eget et vehicula. Varius quisque non molestie dolor, nunc nisl dapibus vestibulum at, sodales tincidunt mauris ullamcorper, dapibus pulvinar, in in neque risus odio. Accumsan fringilla vulputate at quibusdam sociis eleifend, aenean maecenas vulputate, non id vehicula lorem mattis, ratione interdum sociis ornare. Suscipit proin magna cras vel, non sit platea sit, maecenas ante augue etiam maecenas, porta porttitor placerat leo.</p>
+  <h3 className="login-h3" id="about">About</h3>
+
 </div>
 
 <div className="bgimg-2">
   <div className="caption">
-    <span className="border span1">LESS HEIGHT</span>
+    <span className="border span1">ABOUT</span>
   </div>
 </div>
 
 <div className="relative">
-  <div className="span2">
-    <p>Scroll up and down to really get the feeling of how Parallax Scrolling works.</p>
+  <div className="span2"><h3 className="login-h3">THE PURPOSE</h3>
+    <About />
   </div>
 </div>
 
 <div className="bgimg-3">
   <div className="caption">
-    <span className="border span3">SCROLL UP</span>
+    <span className="border span3">ACTIVITIES</span>
   </div>
 </div>
 
@@ -78,7 +84,7 @@ class Login extends Component {
 
 <div className="bgimg-1">
   <div className="caption">
-    <span className="border">COOL!</span>
+    <span className="border">CONNECTIONS</span>
   </div>
 </div>
 </div>
