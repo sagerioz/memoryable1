@@ -348,11 +348,11 @@ header {background: black;color:white;}
     padding: 8px 12px;
     text-decoration: none;
 }
-/*@media all and (min-width: 768px) {
+@media all and (min-width: 768px) {
     .nav {text-align:left;-webkit-flex: 1 auto;flex:1 auto;-webkit-order:1;order:1;}
     .article {-webkit-flex:5 0px;flex:5 0px;-webkit-order:2;order:2;}
     footer {-webkit-order:3;order:3;}
-}*/
+}
 .parallax {
     /* The image used */
     background-image: url("images/logo.jpg");
@@ -368,11 +368,21 @@ header {background: black;color:white;}
 }
 .bg-img1 {
   background-image: url("images/logo.jpg");
-  min-height: 400px;
+
 
 }
 .bg-img2 {
   background-image: url("images/logo2.jpg");
-  min-height: 400px;
+  min-height: 800px;
+
+}
+.bg-img3 {
+  background-image: url("images/logo4.jpg");
+  min-height: 800px;
+
+}
+.bg-img5 {
+  background-image: url("images/logo5.jpg");
+  min-height: 600px;
 
 }

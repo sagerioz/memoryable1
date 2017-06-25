@@ -29,12 +29,13 @@ class Login extends Component {
 
 
       return (
-          <div>
+          <div className="row">
           <div className="parallax"></div>
           <div></div>
            <div>
            <SignupForm /><LoginForm />
            <div className="bg-img2"></div><About />
+           <div className="bg-img5"></div>
            </div>
           </div>
       )
