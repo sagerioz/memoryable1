@@ -58,27 +58,27 @@ class Edit extends Component {
 
 
 
-<button type="button" className="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
-edit
-</button>
+          <button type="button" className="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          edit
+          </button>
 
-<a href="/scrapbook" className="link_button">Scrapbook </a>
+          <a href="/scrapbook" className="link_button">Scrapbook </a>
 
 
-<div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-  <div className="modal-dialog" role="document">
-    <div className="modal-content">
-      <div className="modal-header">
-        <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-        <h4 className="modal-title" id="myModalLabel">Edit Scrapbook Item</h4>
-      </div>
-      <div className="modal-body">
-        <ScrapbookFormEdit />
-      </div>
+          <div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div className="modal-dialog" role="document">
+          <div className="modal-content">
+          <div className="modal-header">
+          <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 className="modal-title" id="myModalLabel">Edit Scrapbook Item</h4>
+          </div>
+              <div className="modal-body">
+              <ScrapbookFormEdit />
+              </div>
+          </div>
+          </div>
+          </div>
 
-    </div>
-  </div>
-</div>
           </div>
       )
   }

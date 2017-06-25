@@ -55,7 +55,7 @@ class Login extends Component {
 
 
    <div className="caption">
-     <div><button className="button-logo">Login with Email</button>
+     <div><button className="button-logo" data-toggle="modal" data-target="#myModal">Login with Email</button>
           <button className="button-logo">Create an Account</button>
           <a href="#about" className="button-logo" onClick={this.animate}>About this Site</a>
     </div>
@@ -63,13 +63,13 @@ class Login extends Component {
    </div>
 
 <div className="login">
-  <h3 className="login-h3" id="about">About</h3>
+  <h3 className="login-h3">About</h3>
 
 </div>
 
 <div className="bgimg-2">
   <div className="caption">
-    <span className="border span1">ABOUT</span>
+    <span className="border span1" id="about">ABOUT</span>
   </div>
 </div>
 
@@ -95,8 +95,38 @@ class Login extends Component {
   <div className="caption">
     <span className="border">CONNECTIONS</span>
   </div>
-  <LoginForm />
+
 </div>
+
+
+
+
+<div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div className="modal-dialog" role="document">
+<div className="modal-content">
+<div className="modal-header">
+<button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 className="modal-title" id="myModalLabel">Login</h4>
+</div>
+    <div className="modal-body">
+    <LoginForm />
+    </div>
+</div>
+</div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+
 </div>
       )
   }
