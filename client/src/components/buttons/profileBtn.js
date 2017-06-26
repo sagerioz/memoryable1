@@ -15,7 +15,7 @@ class Profile extends Component{
   render() {
     return (
       <Nav>
-        <NavItem onClick={this.handleClick} className="sideFont"><span>Hello,Loreley!</span>
+        <NavItem onClick={this.handleClick} className="side-font"><span>Hello,Loreley!</span>
         <img src="ol_lady.jpg" className="sm-profile"/>
         </NavItem>
       </Nav>

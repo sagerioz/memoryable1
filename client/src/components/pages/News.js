@@ -53,7 +53,9 @@ class News extends Component {
 
           <Navbar />
           <MyDate />
-          <h1>News Articles</h1>
+          <div className="splash">
+          <h1 className="splash">News Articles</h1>
+          </div>
 <div className="flex-container">
 {this.renderArticles()}
 </div>

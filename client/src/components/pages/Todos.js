@@ -43,7 +43,11 @@ class Todos extends Component {
       return (
           <div>
           <Navbar />
-          <h1>Your todos</h1><MyDate/ >
+          <MyDate/ >
+          <div className="splash">
+          <h1 className="splash">Your todo list</h1>
+          </div>
+
           {this.renderTodos()}
 
 <Modal />
