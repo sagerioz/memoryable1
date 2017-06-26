@@ -21,7 +21,6 @@ class Navbar extends Component {
     <li><Link to="/scrapbook">Scrapbook</Link></li>
     <li><Link to="/news">News</Link></li>
     <li><Link to="/todos">Todos</Link></li>
-    <li className="nav-align"><Logout/></li>
     <li className="nav-align-profile"><Profile/></li>
 
   </ul>

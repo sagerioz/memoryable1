@@ -92,7 +92,7 @@ class Home extends Component {
             <MyDate />
               <div>
               <div className="splash">
-              <h1 className="splash"> welcome, Loreley!</h1>
+              <h1 className="splash"> Welcome, Loreley!</h1>
               <div className="outline">
 
 
@@ -100,7 +100,7 @@ class Home extends Component {
               </div>
               </div>
 
-<div><button type="button" className="btn btn-default btn-circle btn-lg" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>  Add photo</button>
+<div><button type="button" className="btn btn-default btn-circle btn-lg" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>  </button>Add Photo
 </div>
 
 
