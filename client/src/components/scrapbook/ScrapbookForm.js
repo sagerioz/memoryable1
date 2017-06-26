@@ -44,7 +44,7 @@ class ScrapbookForm extends React.Component {
 
     return (
       <form onSubmit={this.onSubmit}>
-        <h1>Create New Scrapbook Item</h1>
+        <h2>Create New Scrapbook Item</h2>
 
         <TextFieldGroup
           field="title"
@@ -72,7 +72,7 @@ class ScrapbookForm extends React.Component {
           onChange={this.onChange}
           error={errors.title}
         />
-        <button type="submit" className="btn btn-primary">Create</button>
+        <button type="submit" className="button-logo-2">Create</button>
       </form>
     );
   }
