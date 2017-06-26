@@ -50,13 +50,13 @@ class Login extends Component {
       // )
 
       return (
-<div>
+<div className="row">
    <div className="parallax"><h1 className="logo">Memoryable</h1>
 
 
    <div className="caption">
-     <div><button className="button-logo" data-toggle="modal" data-target="#myModal">Login with Email</button>
-          <button className="button-logo">Create an Account</button>
+     <div><button className="button-logo" data-toggle="modal" data-target="#modal-login">Login with Email</button>
+          <button className="button-logo" data-toggle="modal" data-target="#modal-signup">Create an Account</button>
           <a href="#about" className="button-logo" onClick={this.animate}>About this Site</a>
     </div>
    </div>
@@ -101,7 +101,7 @@ class Login extends Component {
 
 
 
-<div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div className="modal fade" id="modal-login" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
 <div className="modal-dialog" role="document">
 <div className="modal-content">
 <div className="modal-header">
@@ -115,7 +115,19 @@ class Login extends Component {
 </div>
 </div>
 
-
+<div className="modal fade" id="modal-signup" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+<div className="modal-dialog" role="document">
+<div className="modal-content">
+<div className="modal-header">
+<button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+<h4 className="modal-title" id="myModalLabel">Signup</h4>
+</div>
+    <div className="modal-body">
+    <SignupForm />
+    </div>
+</div>
+</div>
+</div>
 
 
 

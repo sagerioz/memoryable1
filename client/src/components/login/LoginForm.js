@@ -69,7 +69,7 @@ class LoginForm extends React.Component {
           type="password"
         />
 
-        <div className="form-group"><button className="btn btn-primary btn-lg" disabled={isLoading}>Login</button></div>
+        <div className="form-group"><button className="button-logo-2" disabled={isLoading}>Login</button></div>
       </form>
     );
   }

@@ -18,7 +18,7 @@ export class MyDate extends React.Component {
 
          let month = monthNames[today.getMonth()]
 
-         let dateNow = 'Today is ' + day + ', ' + month + ' ' + date + ', ' + today.getFullYear()
+         let dateNow = day + ', ' + month + ' ' + date + ', ' + today.getFullYear()
 
 
  console.log("DATE", today);

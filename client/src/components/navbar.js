@@ -21,8 +21,8 @@ class Navbar extends Component {
     <li><Link to="/scrapbook">Scrapbook</Link></li>
     <li><Link to="/news">News</Link></li>
     <li><Link to="/todos">Todos</Link></li>
-    <li><Logout/></li>
-    <li><Profile/></li>
+    <li className="nav-align"><Logout/></li>
+    <li className="nav-align-profile"><Profile/></li>
 
   </ul>
   </div>
@@ -56,7 +56,7 @@ class Navbar extends Component {
                           <span className="icon-bar"></span>
                           <span className="icon-bar"></span>
                       </button>
-                      <a href="/" clasNames="navbar-brand">Memoryable</a>
+                      <a href="/" className="navbar-brand">Memoryable</a>
                   </div>
 
                   <div id="navbarCollapse" className="collapse navbar-collapse">

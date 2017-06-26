@@ -136,7 +136,7 @@ console.log("LOCAL STORAGE   ......", localStorage);
           />
 
           <div className="form-group">
-            <button className="btn btn-primary btn-lg">
+            <button className="button-logo-2">
               Sign up
             </button>
           </div>
