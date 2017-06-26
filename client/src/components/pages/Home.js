@@ -20,9 +20,9 @@ class Home extends Component {
       weather: '',
       temp: 0
     }
-    if (localStorage.profile) {
-      window.location.href = '/'
-    }
+    // if (localStorage.profile) {
+    //   window.location.href = '/'
+    // }
   }
 
   componentDidMount(){

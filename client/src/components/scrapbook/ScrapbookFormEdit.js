@@ -75,7 +75,7 @@ componentDidMount() {
       <img src={this.state.item_image} />
 
       <form onSubmit={this.onSubmit}>
-        
+
 
         <TextFieldGroup
           field="title"
@@ -104,7 +104,7 @@ componentDidMount() {
           error={errors.title}
         />
         <div className="modal-footer">
-        <button type="submit" className="btn btn-primary">Save Changes!</button>
+        <button type="submit" className="button-logo-2">Save Changes!</button>
   <button type="button" className="btn btn-default" data-dismiss="modal">Cancel</button>
           <TrashScrapbookItem id={this.state.pic_id}/>
 

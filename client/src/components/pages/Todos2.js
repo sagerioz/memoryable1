@@ -3,63 +3,50 @@ import Navbar from './../navbar'
 import $ from 'jquery'
 import MyDate from '../date'
 
-class Todo extends Component {
-  state = {
-    todos: [],
-  };
-
-
-var TodoItem = React.createClass({
-  done: function() {
-    this.props.done(this.props.todo);
-  },
-
-  render: function() {
-    return <li onClick={this.done}>{this.props.todo}</li>
+class TodoApp extends React.Component{
+  constructor(props){
+    // Pass props to parent class
+    super(props);
+    // Set initial state
+    this.state = {
+      todos: []
+    }
+  //  this.apiUrl = 'https://57b1924b46b57d1100a3c3f8.mockapi.io/api/todos'
   }
-});
-
-var TodoList = React.createClass({
-  getInitialState: function() {
-    return {
-      todos: this.props.todos
-    };
-  },
-
-  add: function() {
-    var todos = this.props.todos;
-    todos.push(React.findDOMNode(this.refs.myInput).value);
-    React.findDOMNode(this.refs.myInput).value = "";
-    localStorage.setItem('todos', JSON.stringify(todos));
-    this.setState({ todos: todos });
-  },
-
-  done: function(todo) {
-    var todos = this.props.todos;
-    todos.splice(todos.indexOf(todo), 1);
-    localStorage.setItem('todos', JSON.stringify(todos));
-    this.setState({ todos: todos });
-  },
-
-  render: function() {
-    return (
-      <div>
-        <h1>Todos: {this.props.todos.length}</h1>
-        <ul>
-        {
-          this.state.todos.map(function(todo) {
-            return <TodoItem todo={todo} done={this.done} />
-          }.bind(this))
-        }
-        </ul>
-        <input type="text" ref="myInput" />
-        <button onClick={this.add}>Add</button>
-      </div>
-    );
+  // Lifecycle method
+  componentDidMount(){
+    // Make HTTP 
+    let userData = ''
+    fetch('/api/todos', {
+           method: 'GET'
+         }).then(res => {
+         return res.text().then(todos => {
+           todos = JSON.parse(todos)
+           this.setState({
+             //id: pics,
+             todos: todos
+            // title: pics,
+            // description: pics
+           })
+            console.log("TODOS", todos);
+          })
+     })
   }
-});
 
-var todos = JSON.parse(localStorage.getItem('todos')) || [];
+  render() {
+      return (
+          <div>
+          <div className="splash">
+          <h1 className="splash">Your OTHER todo list</h1>
+          </div>
 
 
-export default Todo
+
+
+          </div>
+      )
+  }
+}
+
+
+export default TodoApp

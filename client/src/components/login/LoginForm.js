@@ -2,8 +2,9 @@ import React, { Component } from 'react'
 import TextFieldGroup from '../common/TextFieldGroup';
 import axios from 'axios';
 import validateInput from '../../shared/validations/login';
+import setAuthorizationToken from '../../utils/setAuthorizationToken';
 import { connect } from 'react-redux';
-//import { login } from '../../actions/authActions';
+
 
 class LoginForm extends React.Component {
   constructor(props) {
@@ -23,27 +24,82 @@ class LoginForm extends React.Component {
     this.setState({ [e.target.name]: e.target.value });
   }
 
+  isValid() {
+    const { errors, isValid } = validateInput(this.state);
+    if (!isValid) {
+      this.setState({ errors });
+    }
+
+    return isValid;
+  }
+
   // login(data) {
-  //   return dispatch => {
+  //
   //     return axios.post('/api/auth', data).then(res => {
   //       console.log("login route worked!!");
   //       const token = res.data.token;
   //       localStorage.setItem('jwtToken', token);
   //       setAuthorizationToken(token);
-  //       dispatch(setCurrentUser(jwtDecode(token)));
+  //       //dispatch(setCurrentUser(jwtDecode(token)));
   //     });
-  //   }
+  //
   // }
 
 
   onSubmit(e) {
-    e.preventDefault();
-    let userData = this.state
-    console.log("USERDATA in CLIENT onSubmit for LOGIN", userData);
-    console.log("state", this.state);
+    // e.preventDefault();
+    let data = this.state
+    console.log("USERDATA in CLIENT onSubmit for LOGIN", data);
+    // console.log("state", this.state);
+    //
+    //  window.location.href = '/scrapbook'
 
-     window.location.href = '/scrapbook'
-  }
+    e.preventDefault();
+        //  if (this.isValid()) {
+        //      this.setState({ errors: {}, isLoading: true });
+        // return dispatch => {
+
+
+
+
+          return axios.post('/api/auth', data).then(res => {
+            console.log("login route worked!!");
+            const token = res.data.token;
+            console.log("TOKEN", token);
+            localStorage.setItem('jwtToken', token);
+            setAuthorizationToken(token);
+
+          }).then(
+            //(res) => this.context.router.push('/'),
+            // (res) => window.location.href = '/',
+            (res) => console.log("RES!!!!", res),
+            (err) => console.log("SOMETHING F'D UP")
+            // this.setState({ errors: err.response.data.errors, isLoading: false })
+          );
+        }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
   render() {
     const { errors, identifier, password, isLoading } = this.state;

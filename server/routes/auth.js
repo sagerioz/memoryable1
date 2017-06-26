@@ -1,24 +1,28 @@
-import express from 'express';
-import User from '../models/user';
-import bcrypt from 'bcrypt';
-import jwt from 'jsonwebtoken';
-import config from '../config';
+const express = require('express')
+const bcrypt = 'bcrypt';
+const jwt = 'jsonwebtoken';
+const config = '../config';
+const knex = require('../knex')
 
-let router = express.Router();
+const router = express.Router();
+
 
 router.post('/', (req, res) => {
+  console.log("IM IN THE AUTH POST ROUTE");
   const { identifier, password } = req.body;
+console.log("REQ BODY SERVER", req.body);
 
-  User.query({
-    where: { username: identifier },
-    orWhere: { email: identifier }
-  }).fetch().then(user => {
+knex('users')
+  .where('email', identifier)
+  .then(user => {
+    console.log("USER HERE?", user[0]);
     if (user) {
-      if (bcrypt.compareSync(password, user.get('password_digest'))) {
+      if (bcrypt.compareSync(password, user[0].password_digest)) {
         const token = jwt.sign({
-          id: user.get('id'),
-          username: user.get('username')
+          id: user[0].id,
+          username: user[0].userName
         }, config.jwtSecret);
+        console.log("TOKEN", token);
         res.json({ token });
       } else {
         res.status(401).json({ errors: { form: 'Invalid Credentials' } });
@@ -29,4 +33,5 @@ router.post('/', (req, res) => {
   });
 });
 
-export default router;
+
+module.exports = router

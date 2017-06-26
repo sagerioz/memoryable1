@@ -3,7 +3,7 @@ import Navbar from './../navbar'
 //import { Link } from 'react-router-dom'
 import $ from 'jquery'
 import MyDate from '../date'
-import Modal from '../modal'
+import TodoApp from './Todos2'
 
 class Todos extends Component {
   state = {
@@ -50,7 +50,7 @@ class Todos extends Component {
 
           {this.renderTodos()}
 
-<Modal />
+          <TodoApp />
           </div>
       )
   }

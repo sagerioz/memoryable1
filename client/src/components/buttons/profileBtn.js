@@ -32,7 +32,7 @@ class Profile extends Component{
           <span className="caret"></span></button>
           <ul className="dropdown-menu">
             <li><a href="#"><Logout/></a></li>
-            <li><a href="/profile">Profile</a></li>
+            <li className="nudge"><a href="/profile">Profile</a></li>
           </ul>
         </div>
 

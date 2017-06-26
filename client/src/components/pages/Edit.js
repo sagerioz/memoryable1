@@ -15,9 +15,9 @@ class Edit extends Component {
       title: '',
       description: ''
     }
-    if (localStorage.jwtToken) {
-      window.location.href = '/'
-    }
+    // if (localStorage.jwtToken) {
+    //   window.location.href = '/'
+    // }
   }
 
   componentDidMount() {
@@ -58,11 +58,11 @@ class Edit extends Component {
 
 
 
-          <button type="button" className="btn btn-primary btn-lg" data-toggle="modal" data-target="#myModal">
+          <button type="button" className="button-logo-3" data-toggle="modal" data-target="#myModal">
           edit
           </button>
 
-          <a href="/scrapbook" className="link_button">Scrapbook </a>
+          <a href="/scrapbook" className="link_button">Back to photos </a>
 
 
           <div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

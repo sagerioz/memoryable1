@@ -10,6 +10,7 @@
   },
   "dependencies": {
     "body-parser": "~1.16.0",
+    "bookshelf": "^0.10.0",
     "cookie-parser": "~1.4.3",
     "classnames": "^2.2.5",
     "debug": "~2.6.0",
