@@ -2,6 +2,7 @@ import React, { Component } from 'react'
 import Navbar from './../navbar'
 //import { Link } from 'react-router-dom'
 import Modal from '../modal'
+import MyDate from '../date'
 
 class Profile extends Component {
   state = {
@@ -34,7 +35,7 @@ class Profile extends Component {
       return (
           <div>
           <Navbar />
-
+          <MyDate />
           <div className="splash">
           <h1 className="splash">Your profile</h1>
           </div>

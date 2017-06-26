@@ -100,7 +100,8 @@ class Home extends Component {
               </div>
               </div>
 
-
+<div><button type="button" className="btn btn-default btn-circle btn-lg" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>  Add photo</button>
+</div>
 
 
 
@@ -115,8 +116,28 @@ class Home extends Component {
               {picsList}
           </ul>
           </div></div>
-          <section className="clear-both" /><br/>
-          <ScrapbookForm />
+          <section className="clear-both" />
+
+
+
+          <div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+          <div className="modal-dialog" role="document">
+          <div className="modal-content">
+          <div className="modal-header">
+          <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+          <h4 className="modal-title" id="myModalLabel">Edit Scrapbook Item</h4>
+          </div>
+              <div className="modal-body">
+              <ScrapbookForm />
+              </div>
+          </div>
+          </div>
+          </div>
+
+
+
+
+
           </div>
 
       )
