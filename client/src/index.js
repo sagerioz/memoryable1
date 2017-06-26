@@ -14,6 +14,8 @@ import News from './components/pages/News'
 import Todos from './components/pages/Todos'
 import Login from './components/pages/Login'
 import Edit from './components/pages/Edit'
+import Profile from './components/pages/Profile'
+
 
 
 //import Journal from './components/pages/Journal'
@@ -31,6 +33,8 @@ ReactDOM.render(
       <Route exact path="/todos" component={Todos}></Route>
       <Route exact path="/" component={Login}></Route>
         <Route exact path="/scrapbook/edit/:id" component={Edit}></Route>
+        <Route exact path="/profile" component={Profile}></Route>
+
 
 
 

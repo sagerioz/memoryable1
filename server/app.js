@@ -10,6 +10,7 @@ var users = require('./routes/users');
 var scrapbook = require('./routes/scrapbook');
 var news = require('./routes/news');
 var todos = require('./routes/todos');
+var profile = require('./routes/profile');
 
 
 
@@ -35,6 +36,7 @@ app.use('/api/users', users);
 app.use('/api/scrapbook', scrapbook);
 app.use('/api/news', news);
 app.use('/api/todos', todos);
+app.use('/api/profile', profile);
 
 
 
