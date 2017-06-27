@@ -1,3 +1,1 @@
-export default {
-  jwtSecret: 'somesecretkeyforjsonwebtoken'
-}
+module.exports.jwtSecret= 'somesecretkeyforjsonwebtoken';

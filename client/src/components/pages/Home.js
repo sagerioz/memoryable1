@@ -18,9 +18,10 @@ class Home extends Component {
       description: '',
       town: '',
       weather: '',
+      firstname: '',
       temp: 0
     }
-    // if (localStorage.profile) {
+    // if (!localStorage.profile || !localStorage.jwtToken ) {
     //   window.location.href = '/'
     // }
   }
@@ -30,7 +31,9 @@ class Home extends Component {
     const api = '58443d73bb4adf5b12a65dda8efd13fb'
     const rio = '2fb0ef496cacff708e1da0ad370562d6'
     let auth = localStorage.profile
+    let token = localStorage.jwtToken
     let userData = ''
+    console.log("NAME", localStorage.firstname);
     $.ajax({
       method: 'get',
       url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${api}`,
@@ -64,7 +67,8 @@ class Home extends Component {
             console.log("PICS", pics);
           })
      })
-   })
+   }).then(() => this.setState({firstname: localStorage.firstname})
+)
    }
 
 
@@ -92,7 +96,7 @@ class Home extends Component {
             <MyDate />
               <div>
               <div className="splash">
-              <h1 className="splash"> Welcome, Loreley!</h1>
+              <h1 className="splash"> Welcome, { this.state.firstname }!</h1>
               <div className="outline">
 
 

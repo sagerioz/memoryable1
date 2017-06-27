@@ -15,9 +15,9 @@ class Edit extends Component {
       title: '',
       description: ''
     }
-    // if (localStorage.jwtToken) {
-    //   window.location.href = '/'
-    // }
+    if (!localStorage.jwtToken) {
+      window.location.href = '/'
+    }
   }
 
   componentDidMount() {

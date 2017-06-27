@@ -63,16 +63,22 @@ class LoginForm extends React.Component {
 
 
           return axios.post('/api/auth', data).then(res => {
-            console.log("login route worked!!");
+            console.log("login route worked!!", res);
             const token = res.data.token;
-            console.log("TOKEN", token);
-            localStorage.setItem('jwtToken', token);
+            const firstname = res.data.firstname;
+            const profilePicture = res.data.profilePicture;
+
+            console.log("TOKEN in Client side after hitting server", token);
+            localStorage.setItem('jwtToken', token)
+            localStorage.setItem('firstname', firstname);
+            localStorage.setItem('profilePicture', profilePicture);
+
             setAuthorizationToken(token);
 
           }).then(
             //(res) => this.context.router.push('/'),
-            // (res) => window.location.href = '/',
-            (res) => console.log("RES!!!!", res),
+            // (res) => ,
+            (res) => window.location.href = '/scrapbook',
             (err) => console.log("SOMETHING F'D UP")
             // this.setState({ errors: err.response.data.errors, isLoading: false })
           );
