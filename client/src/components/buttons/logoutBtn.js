@@ -9,7 +9,8 @@ class Logout extends Component{
   }
 
   handleClick = () => {
-    localStorage.removeItem('profile')
+    //localStorage.removeItem('profile')
+    window.localStorage.clear();
     window.location.replace('/')
   }
 

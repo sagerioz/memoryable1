@@ -67,11 +67,14 @@ class LoginForm extends React.Component {
             const token = res.data.token;
             const firstname = res.data.firstname;
             const profilePicture = res.data.profilePicture;
+            const id = res.data.id;
 
             console.log("TOKEN in Client side after hitting server", token);
             localStorage.setItem('jwtToken', token)
             localStorage.setItem('firstname', firstname);
             localStorage.setItem('profilePicture', profilePicture);
+            localStorage.setItem('id', id);
+
 
             setAuthorizationToken(token);
 
@@ -116,7 +119,7 @@ class LoginForm extends React.Component {
 
         <TextFieldGroup
           field="identifier"
-          label="Username / Email"
+          label="Email"
           value={identifier}
           error={errors.identifier}
           onChange={this.onChange}

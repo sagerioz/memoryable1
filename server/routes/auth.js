@@ -20,6 +20,8 @@ knex('users')
       const hash = user[0].password_digest
       const firstname = user[0].firstName
       const profilePicture = user[0].profilePicture
+      const id = user[0].id
+
 
       if (bcrypt.compareSync(password, hash)) {
         const token = jwt.sign({
@@ -27,7 +29,7 @@ knex('users')
           username: user[0].userName
         }, jwtSecret);
         console.log("TOKEN=================", token , firstname);
-        res.json({ token: token , firstname: firstname, profilePicture: profilePicture });
+        res.json({ token: token , firstname: firstname, profilePicture: profilePicture, id:id });
       } else {
         res.status(401).json({ errors: { form: 'Invalid Credentials' } });
       }
