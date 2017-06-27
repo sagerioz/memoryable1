@@ -3,7 +3,7 @@ import Navbar from './../navbar'
 //import { Link } from 'react-router-dom'
 import $ from 'jquery'
 import MyDate from '../date'
-import TodoApp from './Todos2'
+import TodoApp from '../todoList'
 
 class Todos extends Component {
   state = {
@@ -12,21 +12,21 @@ class Todos extends Component {
 
 
   componentDidMount() {
-    let userData = ''
-    fetch('/api/todos', {
-           method: 'GET'
-         }).then(res => {
-         return res.text().then(todos => {
-           todos = JSON.parse(todos)
-           this.setState({
-             //id: pics,
-             todos: todos
-            // title: pics,
-            // description: pics
-           })
-            console.log("TODOS", todos);
-          })
-     })
+    // let userData = ''
+    // fetch('/api/todos', {
+    //        method: 'GET'
+    //      }).then(res => {
+    //      return res.text().then(todos => {
+    //        todos = JSON.parse(todos)
+    //        this.setState({
+    //          //id: pics,
+    //          todos: todos
+    //         // title: pics,
+    //         // description: pics
+    //        })
+    //         console.log("TODOS", todos);
+    //       })
+    //  })
    }
 
    renderTodos = () => {
