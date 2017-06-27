@@ -63,12 +63,10 @@ componentDidMount() {
             console.log("PIC", result);
           })
      })
-    console.log("HEY GRL", this.state);
   }
 
   render() {
       const { title, user_id, description, item_image, errors, isLoading } = this.state;
-      console.log("HORSE??", this.state);
 
     return (
       <div>

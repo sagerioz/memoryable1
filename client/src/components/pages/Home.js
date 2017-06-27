@@ -3,10 +3,10 @@ import Navbar from './../navbar'
 import { Link } from 'react-router-dom'
 import $ from 'jquery'
 import ScrapbookForm from '../scrapbook/ScrapbookForm'
-import SignupForm from '../signup/SignupForm'
-import TrashScrapbookItem from '../buttons/deleteBtn.js'
+//import SignupForm from '../signup/SignupForm'
+//import TrashScrapbookItem from '../buttons/deleteBtn.js'
 import MyDate from '../date'
-import Modal from '../modal'
+//import Modal from '../modal'
 
 class Home extends Component {
   constructor(props) {
@@ -90,7 +90,7 @@ class Home extends Component {
       let id = picsDisplay.id
       return (
       <li>
-        <a href={"/scrapbook/edit/" + id} title={picsDisplay.title} id={picsDisplay.id}><img src={picsDisplay.item_image} alt={picsDisplay.title}/></a>
+        <Link to={"/scrapbook/edit/" + id} title={picsDisplay.title} id={picsDisplay.id}><img src={picsDisplay.item_image} alt={picsDisplay.title}/></Link>
         </li>
 
 
@@ -153,5 +153,7 @@ class Home extends Component {
       )
   }
 }
-
+Home.propTypes = {
+  //userSignupRequest: React.PropTypes.func.isRequired,
+}
 export default Home

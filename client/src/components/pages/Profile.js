@@ -2,13 +2,34 @@ import React, { Component } from 'react'
 import Navbar from './../navbar'
 //import { Link } from 'react-router-dom'
 import Modal from '../modal'
+import TextFieldGroup from '../common/TextFieldGroup'
 import MyDate from '../date'
+import validateInput from '../../shared/validations/signup';
+import ProfileUpdateForm from '../profile/ProfileForm'
 
 class Profile extends Component {
-  state = {
+  constructor(props) {
+    super(props);
+    this.state = {
     todos: [],
-  };
+    errors: {},
+    err: null
+   }
+   }
 
+  // onChange(e) {
+  //   this.setState({ [e.target.name]: e.target.value });
+  // }
+  //
+  // isValid() {
+  //   const { errors, isValid } = validateInput(this.state);
+  //
+  //   if (!isValid) {
+  //     this.setState({ errors });
+  //   }
+  //
+  //   return isValid;
+  // }
 
   componentDidMount() {
     // let userData = ''
@@ -28,9 +49,7 @@ class Profile extends Component {
     // })
    }
 
-   renderTodos = () => {
 
-  };
   render() {
       return (
           <div>
@@ -38,49 +57,56 @@ class Profile extends Component {
 
           <div className="container profileEdit">
     <div className="row">
-        <div className="col-lg-12 col-md-12 col-sm-12">
 
-            <h1 className="text-center">Edit Profile</h1>
-
-            <div className="text-center">
-                <img src="" alt="user image" className="menuPhoto text-center"/>
-            </div>
-
-            <form>
-                <div>
-                    <label className="forms" for="photo">Photo URL</label>
-                    <input ng-model="$ctrl.user.photo" id="photo" clasNamesName="form-control col-xl-6 offset-xl-3"/>
-                </div>
-
-                <div>
-                    <label className="forms" for="username">Username</label>
-                    <input ng-model="$ctrl.user.username" id="username" className="form-control"/>
-                </div>
-
-                <div>
-                    <label className="forms" for="email">Email</label>
-                    <input ng-model="$ctrl.user.email" id="email" className="form-control"/>
-                </div>
-
-                <div>
-                    <label className="forms" for="bio">Bio</label>
-                    <textarea ng-model="$ctrl.user.bio" class="form-control"></textarea>
-                </div>
-
-                <div>
-                    <label for="password">Password</label>
-                    <input type="password" ng-model="$ctrl.newPassword.email" id="password" placeholder="New Password" className="form-control"/>
-                </div> 
-                <div className="profileEditButtons">
-                  <span className="form-group ">
-                    <button type="submit" className="btn btn-primary cancelBtn">Update</button>
-                  </span>
-                  <span className="form-group">  <a ui-sref="sources" className="btn btn-primary cancelBtn pull-right" data-toggle="tooltip" title="cancel">X</a></span>
-                </div>
+    <div><button type="button" className="btn btn-default btn-circle btn-lg" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>  </button>Update Profile
+    </div>
 
 
-            </form>
+
+
+
+    <div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+    <div className="modal-dialog" role="document">
+    <div className="modal-content">
+    <div className="modal-header">
+    <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
+    <h4 className="modal-title" id="myModalLabel">Update Records</h4>
+    </div>
+        <div className="modal-body">
+        <ProfileUpdateForm />
         </div>
+    </div>
+    </div>
+    </div>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
     </div>

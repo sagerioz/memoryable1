@@ -15,13 +15,14 @@ class LoginForm extends React.Component {
       errors: {},
       isLoading: false
     };
-
+    
+    window.localStorage.clear();
     this.onSubmit = this.onSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
   }
 
   componentDidMount(){
-    
+
   }
 
   onChange(e) {

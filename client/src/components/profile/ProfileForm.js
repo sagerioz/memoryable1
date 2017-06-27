@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import TextFieldGroup from '../common/TextFieldGroup';
 import validateInput from '../../shared/validations/signup';
 
-class SignupForm extends React.Component {
+class ProfileUpdateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -78,7 +78,7 @@ console.log("LOCAL STORAGE   ......", localStorage);
       return (
 
         <form onSubmit={this.onSubmit}>
-          <h2>Join our community!</h2>
+          <h2>Update Profile</h2>
           {this.state.err ? <p>{this.state.err}</p> : null}
 
           <TextFieldGroup
@@ -136,7 +136,7 @@ console.log("LOCAL STORAGE   ......", localStorage);
 
           <div className="form-group">
             <button className="button-logo-2">
-              Sign up
+              Update
             </button>
           </div>
 
@@ -145,10 +145,10 @@ console.log("LOCAL STORAGE   ......", localStorage);
   }
 }
 
-SignupForm.propTypes = {
+ProfileUpdateForm.propTypes = {
   userSignupRequest: React.PropTypes.func.isRequired,
   addFlashMessage: React.PropTypes.func.isRequired,
   isUserExists: React.PropTypes.func.isRequired
 }
 
-export default SignupForm
+export default ProfileUpdateForm

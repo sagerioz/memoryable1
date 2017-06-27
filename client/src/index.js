@@ -33,7 +33,7 @@ ReactDOM.render(
       <Route exact path="/todos" component={Todos}></Route>
       <Route exact path="/" component={Login}></Route>
       <Route exact path="/scrapbook/edit/:id" component={Edit}></Route>
-      <Route exact path="/profile" component={Profile}></Route>
+      <Route exact path="/profile/edit/:id" component={Profile}></Route>
 
     </div>
   </BrowserRouter>,

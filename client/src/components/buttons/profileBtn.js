@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import { Nav, NavItem } from 'react-bootstrap'
 import Logout from './logoutBtn.js'
+import { Link } from 'react-router-dom';
 
 
 class Profile extends Component{
@@ -9,20 +10,21 @@ class Profile extends Component{
 
     this.state = {
       name: '',
-      pic: ''
+      pic: '',
+      id: ''
     }
 
-    this.handleClick = this.handleClick.bind(this)
   }
 
   componentDidMount(){
   console.log("LOCAL STORAGE from NAVBAR >>>>>>", localStorage);
-  this.setState({ name: localStorage.firstname, pic: localStorage.profilePicture })
+  this.setState({ name: localStorage.firstname, pic: localStorage.profilePicture, id: localStorage.id })
   }
 
-  handleClick = () => {
-    window.location.replace('/profile')
-  }
+  //handleClick = () => {
+    // <Link to="/scrapbook">Scrapbook</Link>
+    // window.location.replace('/profile' + this.state.id)
+//  }
 
   render() {
     return (
@@ -32,7 +34,9 @@ class Profile extends Component{
       <div className="dropdown">
           <button className="button-logo-3 dropdown-toggle" type="button" data-toggle="dropdown">
 
-          <NavItem onClick={this.handleClick} className="side-font"><span>{ this.state.name }</span>
+          <NavItem className="side-font">
+          <Link to={"/profile/edit/" + this.state.id}>
+          <span>{ this.state.name }</span></Link>
           <img src={ this.state.pic } className="sm-profile thumb"/>
           </NavItem>
 
@@ -42,7 +46,7 @@ class Profile extends Component{
           <span className="caret"></span></button>
           <ul className="dropdown-menu">
             <li><a href="#"><Logout/></a></li>
-            <li className="nudge"><a href="/profile">Profile</a></li>
+            <li className="nudge"><Link to={"/profile/edit/" + this.state.id}>Profile</Link></li>
           </ul>
         </div>
 
