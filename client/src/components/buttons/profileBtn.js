@@ -33,7 +33,7 @@ class Profile extends Component{
           <button className="button-logo-3 dropdown-toggle" type="button" data-toggle="dropdown">
 
           <NavItem onClick={this.handleClick} className="side-font"><span>{ this.state.name }</span>
-          <img src={ this.state.pic } className="sm-profile"/>
+          <img src={ this.state.pic } className="sm-profile thumb"/>
           </NavItem>
 
 

@@ -20,6 +20,10 @@ class LoginForm extends React.Component {
     this.onChange = this.onChange.bind(this);
   }
 
+  componentDidMount(){
+    
+  }
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }

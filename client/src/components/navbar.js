@@ -7,9 +7,9 @@ class Navbar extends Component {
   constructor(props) {
     super(props)
 
-    if (!localStorage.jwtToken || !localStorage.profile ) {
-      window.location.href = '/'
-    }
+    // if (!localStorage.jwtToken || !localStorage.profile ) {
+    //   window.location.href = '/'
+    // }
 
     this.state = {
       name: '',
