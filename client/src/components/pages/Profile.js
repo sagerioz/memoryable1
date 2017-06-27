@@ -4,7 +4,7 @@ import Navbar from './../navbar'
 import Modal from '../modal'
 import TextFieldGroup from '../common/TextFieldGroup'
 import MyDate from '../date'
-import validateInput from '../../shared/validations/signup';
+import validateInput from '../../shared/validations/signup'
 import ProfileUpdateForm from '../profile/ProfileForm'
 
 class Profile extends Component {
