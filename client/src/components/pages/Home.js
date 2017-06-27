@@ -32,10 +32,10 @@ class Home extends Component {
     const rio = '2fb0ef496cacff708e1da0ad370562d6'
     let auth = localStorage.profile
     let token = localStorage.jwtToken
-    let id = localStorage.id
+    let userid = localStorage.id
     let userData = ''
     console.log("NAME", localStorage.firstname);
-    console.log("ID", id);
+    console.log("ID", userid);
 
     $.ajax({
       method: 'get',
@@ -61,9 +61,12 @@ class Home extends Component {
          }).then(res => {
          return res.text().then(pics => {
            pics = JSON.parse(pics)
+           let picItems = pics.filter(entry => {
+             return entry.user_id == userid
+           })
            this.setState({
              //id: pics,
-             photos: pics
+             photos: picItems
             // title: pics,
             // description: pics
            })

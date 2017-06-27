@@ -10,7 +10,8 @@ class ScrapbookForm extends React.Component {
     this.state = {
       title: '',
       errors: {},
-      isLoading: false
+      isLoading: false,
+      id: localStorage.id
     };
 
     this.onChange = this.onChange.bind(this);
@@ -25,6 +26,7 @@ class ScrapbookForm extends React.Component {
     let userData = this.state
     console.log("USERDATA in CLIENT onSubmit", userData);
     console.log("state", this.state);
+    console.log("LOOK FOR USER ID HERE", this.state);
 
     e.preventDefault();
     fetch('/api/scrapbook', {

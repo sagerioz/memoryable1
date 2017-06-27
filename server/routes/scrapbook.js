@@ -41,10 +41,10 @@ router.patch('/:id', function(req, res, next) {
 
 /* POST a scrapbook item */
 router.post('/', function(req, res, next) {
-  console.log("MADE IT TO POST ROUTE");
+  console.log("MADE IT TO POST ROUTE req body", req.body);
   let title = req.body.title
   console.log("TITLE", title);
-  let user_id = 1
+  let user_id = req.body.id
   let description = req.body.description
   let item_image = req.body.item_image
   if(title.length>0){
