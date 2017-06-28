@@ -11,7 +11,7 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    todos: [],
+    data: {},
     errors: {},
     err: null
    }
@@ -32,21 +32,22 @@ class Profile extends Component {
   // }
 
   componentDidMount() {
-    // let userData = ''
-    // fetch('/api/todos', {
-    //        method: 'GET'
-    //      }).then(res => {
-    //      return res.text().then(todos => {
-    //        todos = JSON.parse(todos)
-    //        this.setState({
-    //          //id: pics,
-    //          todos: todos
-    //         // title: pics,
-    //         // description: pics
-    //        })
-    //         console.log("TODOS", todos);
-    //       })
-    // })
+    let userData = ''
+    fetch('/api/profile', {
+           method: 'GET'
+         }).then(res => {
+         return res.text().then(user => {
+           user = JSON.parse(user)
+
+           this.setState({
+             //id: pics,
+             data: user
+            // title: pics,
+            // description: pics
+           })
+            console.log("USERS", this.state.data);
+          })
+     })
    }
 
 

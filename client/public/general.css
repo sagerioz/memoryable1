@@ -702,3 +702,8 @@ and (max-device-width : 1024px)  {
   padding: 0;
   box-sizing: border-box;
 }
+
+.tighten {
+  max-width: 200px;
+  align-self: center;
+}

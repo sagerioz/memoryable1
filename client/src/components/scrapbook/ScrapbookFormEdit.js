@@ -70,7 +70,9 @@ componentDidMount() {
 
     return (
       <div>
+
       <img src={this.state.item_image} />
+
 
       <form onSubmit={this.onSubmit}>
 

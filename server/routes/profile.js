@@ -4,10 +4,20 @@ const knex = require('../knex')
 
 /* GET profile info  */
 router.get('/', function(req, res, next) {
-  knex('todos')
+  knex('users')
     .orderBy('created_at', 'asc')
     .then((todos) => {
       res.send(todos)
+    })
+})
+
+router.get('/edit/:id', function(req, res, next) {
+  let id = req.params.id
+  console.log("ID", id);
+  knex('users')
+  .where('id', id)
+    .then((user) => {
+      res.send(user)
     })
 })
 

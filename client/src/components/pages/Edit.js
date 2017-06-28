@@ -50,7 +50,7 @@ class Edit extends Component {
           <Navbar />
 
           <h1>Your Photo</h1>
-          <div className="edit-image"><img src={this.state.item_image}/>
+          <div className="edit-image"><img className="tighten" src={this.state.item_image}/>
           <h3>{this.state.title}</h3>
           <p>{this.state.description}</p>
           </div>
