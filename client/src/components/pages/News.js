@@ -13,10 +13,11 @@ class News extends Component {
 
   componentDidMount() {
     const apiKey = '1e113c3733bb4dd69cccb5156d4d4081'
+    const apiSource = 'cnn'
     let userData = ''
     $.ajax({
       method:'get',
-      url: `https://newsapi.org/v1/articles?source=entertainment-weekly&sortBy=top&apiKey=${apiKey}`,
+      url: `https://newsapi.org/v1/articles?source=${apiSource}&sortBy=top&apiKey=${apiKey}`,
       dataType: 'json',
       success: (result) => {
         this.setState({ articles: result.articles });

@@ -15,9 +15,9 @@ class Edit extends Component {
       title: '',
       description: ''
     }
-    if (!localStorage.jwtToken) {
-      window.location.href = '/'
-    }
+    // if (!localStorage.jwtToken) {
+    //   window.location.href = '/'
+    // }
   }
 
   componentDidMount() {
@@ -49,20 +49,31 @@ class Edit extends Component {
           <div>
           <Navbar />
 
-          <h1>Your Photo</h1>
-          <div className="edit-image"><img className="tighten" src={this.state.item_image}/>
           <h3>{this.state.title}</h3>
-          <p>{this.state.description}</p>
-          </div>
+
+          <div>
+  <img src={this.state.item_image} className="card" alt="Card image cap"/>
+  <div className="card-block">
+
+    <p className="card-text">{this.state.description}</p>
+  </div>
+</div>
 
 
 
 
-          <button type="button" className="button-logo-3" data-toggle="modal" data-target="#myModal">
+
+
+
+
+
+
+
+          <button type="button" className="button-logo-2" data-toggle="modal" data-target="#myModal">
           edit
           </button>
 
-          <a href="/scrapbook" className="link_button">Back to photos </a>
+          <a href="/scrapbook" className="button-logo-2">Back to photos </a>
 
 
           <div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

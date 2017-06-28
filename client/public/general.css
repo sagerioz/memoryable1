@@ -105,6 +105,14 @@ a:active {
     background-size: cover;
 }
 
+.card {
+  width: 450px;
+}
+
+.card-text {
+  margin-top: 10px;
+}
+
 .logo {
   font-family: 'Pacifico', cursive;
   color: #fff;
