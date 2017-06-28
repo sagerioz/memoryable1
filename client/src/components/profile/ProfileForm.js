@@ -22,6 +22,34 @@ class ProfileUpdateForm extends React.Component {
     //this.checkUserExists = this.checkUserExists.bind(this);
   }
 
+  componentDidMount() {
+    let id = localStorage.id
+    let userData = ''
+    fetch('/api/profile', {
+           method: 'GET'
+         }).then(res => {
+         return res.text().then(user => {
+           user = JSON.parse(user)
+           let uniqueUser = user.filter(entry => {
+             return entry.id == id
+           })
+           this.setState({
+             id: uniqueUser[0].id,
+             userName: uniqueUser[0].userName,
+             firstName: uniqueUser[0].firstName,
+             profilePicture: uniqueUser[0].profilePicture,
+             email: uniqueUser[0].email
+           })
+            console.log("USER", this.state);
+          })
+     })
+   }
+
+
+
+
+
+
   onChange(e) {
     this.setState({ [e.target.name]: e.target.value });
   }

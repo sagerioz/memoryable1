@@ -11,7 +11,11 @@ class Profile extends Component {
   constructor(props) {
     super(props);
     this.state = {
-    data: {},
+    id: '',
+    userName: '',
+    email: '',
+    firstName: '',
+    profilePicture: '',
     errors: {},
     err: null
    }
@@ -32,20 +36,24 @@ class Profile extends Component {
   // }
 
   componentDidMount() {
+    let id = localStorage.id
     let userData = ''
     fetch('/api/profile', {
            method: 'GET'
          }).then(res => {
          return res.text().then(user => {
            user = JSON.parse(user)
-
-           this.setState({
-             //id: pics,
-             data: user
-            // title: pics,
-            // description: pics
+           let uniqueUser = user.filter(entry => {
+             return entry.id == id
            })
-            console.log("USERS", this.state.data);
+           this.setState({
+             id: uniqueUser[0].id,
+             userName: uniqueUser[0].userName,
+             firstName: uniqueUser[0].firstName,
+             profilePicture: uniqueUser[0].profilePicture,
+             email: uniqueUser[0].email
+           })
+            console.log("USER", this.state);
           })
      })
    }
@@ -62,7 +70,10 @@ class Profile extends Component {
     <div><button type="button" className="btn btn-default btn-circle btn-lg" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>  </button>Update Profile
     </div>
 
-
+    <div><img src={ this.state.profilePicture} /></div>
+    <div>{ this.state.firstName }</div>
+    <div>{ this.state.userName }</div>
+    <div>{ this.state.email }</div>
 
 
 

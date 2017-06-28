@@ -17,6 +17,7 @@ router.get('/edit/:id', function(req, res, next) {
   knex('users')
   .where('id', id)
     .then((user) => {
+      console.log("USER?", user);
       res.send(user)
     })
 })
