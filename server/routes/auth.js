@@ -18,7 +18,7 @@ knex('users')
     console.log("USER HERE?", user[0]);
     if (user) {
       const hash = user[0].password_digest
-      const firstname = user[0].firstName
+      const name = user[0].firstName
       const profilePicture = user[0].profilePicture
       const id = user[0].id
 
@@ -28,8 +28,8 @@ knex('users')
           id: user[0].id,
           username: user[0].userName
         }, jwtSecret);
-        console.log("TOKEN=================", token , firstname);
-        res.json({ token: token , firstname: firstname, profilePicture: profilePicture, id:id });
+        console.log("TOKEN=================", token , name);
+        res.json({ token: token , name: name, profilePicture: profilePicture, id:id });
       } else {
         res.status(401).json({ errors: { form: 'Invalid Credentials' } });
       }

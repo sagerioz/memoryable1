@@ -18,7 +18,8 @@ class Home extends Component {
       description: '',
       town: '',
       weather: '',
-      firstname: '',
+      name: '',
+      pic: '',
       temp: 0
     }
     // if (!localStorage.profile || !localStorage.jwtToken ) {
@@ -31,15 +32,16 @@ class Home extends Component {
     const api = '58443d73bb4adf5b12a65dda8efd13fb'
     const rio = '2fb0ef496cacff708e1da0ad370562d6'
     let auth = localStorage.profile
+    let name = localStorage.name
     let token = localStorage.jwtToken
     let userid = localStorage.id
     let userData = ''
-    console.log("NAME", localStorage.firstname);
+    console.log("NAME", name);
     console.log("ID", userid);
 
     $.ajax({
       method: 'get',
-      url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${api}`,
+      url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${rio}`,
       dataType: 'jsonp',
       success: function(result) {
         console.log(result);
@@ -73,7 +75,7 @@ class Home extends Component {
             console.log("PICS", pics);
           })
      })
-   }).then(() => this.setState({firstname: localStorage.firstname})
+   }).then(() => this.setState({name: localStorage.name})
 )
    }
 
@@ -102,7 +104,7 @@ class Home extends Component {
             <MyDate />
               <div>
               <div className="splash">
-              <h1 className="splash"> Welcome, { this.state.firstname }!</h1>
+              <h1 className="splash"> Welcome, { this.state.name }!</h1>
               <div className="outline">
 
 

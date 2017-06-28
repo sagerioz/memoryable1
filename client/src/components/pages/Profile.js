@@ -14,7 +14,7 @@ class Profile extends Component {
     id: '',
     userName: '',
     email: '',
-    firstName: '',
+    firstname: '',
     profilePicture: '',
     errors: {},
     err: null
@@ -49,7 +49,7 @@ class Profile extends Component {
            this.setState({
              id: uniqueUser[0].id,
              userName: uniqueUser[0].userName,
-             firstName: uniqueUser[0].firstName,
+             firstname: uniqueUser[0].firstName,
              profilePicture: uniqueUser[0].profilePicture,
              email: uniqueUser[0].email
            })
@@ -71,7 +71,7 @@ class Profile extends Component {
     </div>
 
     <div><img src={ this.state.profilePicture} /></div>
-    <div>{ this.state.firstName }</div>
+    <div>{ this.state.firstname }</div>
     <div>{ this.state.userName }</div>
     <div>{ this.state.email }</div>
 

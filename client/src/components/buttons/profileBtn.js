@@ -18,7 +18,7 @@ class Profile extends Component{
 
   componentDidMount(){
   console.log("LOCAL STORAGE from NAVBAR >>>>>>", localStorage);
-  this.setState({ name: localStorage.firstname, pic: localStorage.profilePicture, id: localStorage.id })
+  this.setState({ name: localStorage.name, pic: localStorage.pic, id: localStorage.id })
   }
 
   //handleClick = () => {
@@ -35,7 +35,7 @@ class Profile extends Component{
           <button className="button-logo-3 dropdown-toggle" type="button" data-toggle="dropdown">
 
           <NavItem className="side-font">
-          <Link to={"/profile/edit/" + this.state.id}>
+          <Link to={"/profile/" + this.state.id}>
           <span>{ this.state.name }</span></Link>
           <img src={ this.state.pic } className="sm-profile thumb"/>
           </NavItem>
@@ -46,7 +46,7 @@ class Profile extends Component{
           <span className="caret"></span></button>
           <ul className="dropdown-menu">
             <li><a href="#"><Logout/></a></li>
-            <li className="nudge"><Link to={"/profile/edit/" + this.state.id}>Profile</Link></li>
+            <li className="nudge"><Link to={"/profile/" + this.state.id}>Profile</Link></li>
           </ul>
         </div>
 

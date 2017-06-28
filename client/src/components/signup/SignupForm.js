@@ -6,6 +6,7 @@ class SignupForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: '',
       firstName: '',
       userName: '',
       email: '',
@@ -59,6 +60,11 @@ class SignupForm extends React.Component {
     if (data.success) {
 
     localStorage.setItem('profile', data.success);
+    localStorage.setItem('name', data.name);
+    localStorage.setItem('id', data.id);
+    localStorage.setItem('pic', data.pic);
+
+
   //  localStorage.profile = data.success;
 console.log("LOCAL STORAGE   ......", localStorage);
      window.location.href = '/scrapbook';

@@ -15,7 +15,7 @@ class LoginForm extends React.Component {
       errors: {},
       isLoading: false
     };
-    
+
     window.localStorage.clear();
     this.onSubmit = this.onSubmit.bind(this);
     this.onChange = this.onChange.bind(this);
@@ -70,14 +70,14 @@ class LoginForm extends React.Component {
           return axios.post('/api/auth', data).then(res => {
             console.log("login route worked!!", res);
             const token = res.data.token;
-            const firstname = res.data.firstname;
-            const profilePicture = res.data.profilePicture;
+            const name = res.data.name;
+            const pic = res.data.profilePicture;
             const id = res.data.id;
 
             console.log("TOKEN in Client side after hitting server", token);
             localStorage.setItem('jwtToken', token)
-            localStorage.setItem('firstname', firstname);
-            localStorage.setItem('profilePicture', profilePicture);
+            localStorage.setItem('name', name);
+            localStorage.setItem('pic', pic);
             localStorage.setItem('id', id);
 
 
@@ -90,6 +90,7 @@ class LoginForm extends React.Component {
             (err) => console.log("SOMETHING F'D UP")
             // this.setState({ errors: err.response.data.errors, isLoading: false })
           );
+
         }
 
 

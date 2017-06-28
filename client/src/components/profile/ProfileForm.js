@@ -6,6 +6,7 @@ class ProfileUpdateForm extends React.Component {
   constructor(props) {
     super(props);
     this.state = {
+      id: '',
       firstName: '',
       userName: '',
       email: '',
@@ -66,12 +67,12 @@ class ProfileUpdateForm extends React.Component {
 
   onSubmit(e) {
     let userData = this.state
-    console.log("USERDATA in CLIENT onSubmit", userData);
+    console.log("USERDATA in CLIENT onSubmit for profile PATCH", userData);
     console.log("state", this.state);
 
     e.preventDefault();
-    fetch('/api/users', {
-      method: 'POST',
+    fetch('/api/users/' + this.state.id, {
+      method: 'PATCH',
       body: JSON.stringify(userData),
       credentials: 'same-origin',
       headers: {
@@ -85,11 +86,16 @@ class ProfileUpdateForm extends React.Component {
     console.log("DATA", data);
 
     if (data.success) {
-
-    localStorage.setItem('profile', data.success);
+      window.localStorage.clear();
+      window.location.replace('/')
+    //localStorage.setItem('profile', data.success);
   //  localStorage.profile = data.success;
-console.log("LOCAL STORAGE   ......", localStorage);
-     window.location.href = '/scrapbook';
+   console.log("LOCAL STORAGE   ......", localStorage);
+ // const path = `/profile/${this.state.id}`
+ // this.context.router.push(path);
+
+   //browserHistory.push(path)
+   console.log("SUCCESS IN EDIT PROFILE");
     }
 
     if (data.err) {
@@ -137,24 +143,6 @@ console.log("LOCAL STORAGE   ......", localStorage);
           />
 
           <TextFieldGroup
-            error={errors.password}
-            label="Password"
-            onChange={this.onChange}
-            value={this.state.password}
-            field="password"
-            type="password"
-          />
-
-          <TextFieldGroup
-            error={errors.passwordConfirmation}
-            label="Password Confirmation"
-            onChange={this.onChange}
-            value={this.state.passwordConfirmation}
-            field="passwordConfirmation"
-            type="password"
-          />
-
-          <TextFieldGroup
             //error={errors.password}
             label="Profile photo"
             onChange={this.onChange}
@@ -176,7 +164,10 @@ console.log("LOCAL STORAGE   ......", localStorage);
 ProfileUpdateForm.propTypes = {
   userSignupRequest: React.PropTypes.func.isRequired,
   addFlashMessage: React.PropTypes.func.isRequired,
-  isUserExists: React.PropTypes.func.isRequired
+  isUserExists: React.PropTypes.func.isRequired,
 }
+// ProfileUpdateForm.contextTypes = {
+//   router: React.PropTypes.object.isRequired
+// }
 
 export default ProfileUpdateForm
