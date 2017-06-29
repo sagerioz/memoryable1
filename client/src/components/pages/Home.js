@@ -3,10 +3,7 @@ import Navbar from './../navbar'
 import { Link } from 'react-router-dom'
 import $ from 'jquery'
 import ScrapbookForm from '../scrapbook/ScrapbookForm'
-//import SignupForm from '../signup/SignupForm'
-//import TrashScrapbookItem from '../buttons/deleteBtn.js'
 import MyDate from '../date'
-//import Modal from '../modal'
 
 class Home extends Component {
   constructor(props) {
@@ -40,10 +37,7 @@ class Home extends Component {
            });
 
            this.setState({
-             //id: pics,
              photos: picItems
-            // title: pics,
-            // description: pics
           });
             console.log("PICS", pics);
           })
@@ -58,23 +52,15 @@ class Home extends Component {
     let name = localStorage.name
     let token = localStorage.jwtToken
     this.setState({ name })
-    // let userid = localStorage.id
-    //let userData = '';
 
     console.log("NAME", name);
-    //console.log("ID", userid);
+
     $.ajax({
       method: 'get',
-      url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${rio}`,
+      url: `https://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${rio}`,
       dataType: 'jsonp',
       success: (result) => {
         console.log('WEATHER RESULT: ', result);
-
-        // userData = {
-        //   cityName: result.name,
-        //   weatherDesc: result.weather[0].description,
-        //   temp: result.main.temp
-        // }
 
         this.setState({town: result.cityName, weather: result.weatherDesc, temp: Math.ceil(result.temp)})
 
@@ -84,68 +70,6 @@ class Home extends Component {
         console.log('WEATHER ERR: ', err);
       }
     })
-  // .then(() => this.setState({name: localStorage.name}))
-
-// componentDidMount() {
-//   console.log("LOCAL STORAGE >>>>>>", localStorage);
-//   const api = '58443d73bb4adf5b12a65dda8efd13fb'
-//   const rio = '2fb0ef496cacff708e1da0ad370562d6'
-//   let auth = localStorage.profile
-//   let name = localStorage.name
-//   let token = localStorage.jwtToken
-//   let userid = localStorage.id
-//   let userData = ''
-//   console.log("NAME", name);
-//   console.log("ID", userid);
-//   this.setState({ name });
-//
-//   $.ajax({
-//     method: 'get',
-//     url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${api}`,
-//     dataType: 'jsonp',
-//     success: function(result) {
-//       console.log(result);
-//       userData = {
-//         cityName: result.name,
-//         weather: result.weather[0].description,
-//         temp: result.main.temp
-//
-//       }
-//       localStorage.setItem('cityName', userData.cityName)
-//       localStorage.setItem('weather', userData.weather)
-//       localStorage.setItem('temp', userData.temp)
-//
-//     },
-//     error: function(err) {
-//       console.log(err);
-//     }
-//   })
-//
-//     this.setState({
-//       town: localStorage.cityName,
-//       weather: localStorage.weather,
-//       temp: Math.ceil(parseInt(localStorage.temp)),
-//     });
-//
-//   fetch('/api/scrapbook', {
-//          method: 'GET'
-//        })
-//        .then((res) => {
-//        return res.text().then(pics => {
-//          pics = JSON.parse(pics)
-//          let picItems = pics.filter(entry => {
-//            return entry.user_id == userid
-//          })
-//          this.setState({
-//            //id: pics,
-//            photos: picItems
-//           // title: pics,
-//           // description: pics
-//          })
-//           console.log("PICS", pics);
-//         })
-//
-//       })
 }
 
   render() {
@@ -161,7 +85,6 @@ class Home extends Component {
       <li>
         <Link to={"/scrapbook/edit/" + id} title={picsDisplay.title} id={picsDisplay.id}><img src={picsDisplay.item_image} alt={picsDisplay.title}/></Link>
         </li>
-
       )
     })
       return (
@@ -212,16 +135,10 @@ class Home extends Component {
           </div>
           </div>
 
-
-
-
-
-          </div>
+      </div>
 
       )
   }
 }
-Home.propTypes = {
-  //userSignupRequest: React.PropTypes.func.isRequired,
-}
+
 export default Home
