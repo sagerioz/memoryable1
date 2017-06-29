@@ -8,7 +8,7 @@ const Title = ({todoCount}) => {
   return (
     <div>
        <div>
-          <h3><MyDate /></h3>
+          <h4>Type a task here and press enter</h4>
        </div>
     </div>
   );
