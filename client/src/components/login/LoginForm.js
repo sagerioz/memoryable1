@@ -3,7 +3,7 @@ import TextFieldGroup from '../common/TextFieldGroup';
 import axios from 'axios';
 import validateInput from '../../shared/validations/login';
 import setAuthorizationToken from '../../utils/setAuthorizationToken';
-import { connect } from 'react-redux';
+//import { connect } from 'react-redux';
 
 
 class LoginForm extends React.Component {
