@@ -20,7 +20,7 @@ class Home extends Component {
       weather: '',
       name: '',
       pic: '',
-      temp: 0
+      temp: 0,
     }
     // if (!localStorage.profile || !localStorage.jwtToken ) {
     //   window.location.href = '/'
@@ -98,17 +98,22 @@ componentDidMount(){
       console.log(result);
       userData = {
         cityName: result.name,
-        weatherDesc: result.weather[0].description,
+        weather: result.weather[0].description,
         temp: result.main.temp
 
       }
+      localStorage.setItem('cityName', userData.cityName)
+      localStorage.setItem('weather', userData.weather)
+      localStorage.setItem('temp', userData.temp)
+
     },
     error: function(err) {
       console.log(err);
     }
-  }).then(() => {
-    this.setState({town: userData.cityName, weather: userData.weatherDesc, temp: Math.ceil(userData.temp)})
-  }).then(() => {
+  })
+
+    this.setState({town: localStorage.cityName, weather: localStorage.weather, temp: Math.ceil(parseInt(localStorage.temp))})
+
   fetch('/api/scrapbook', {
          method: 'GET'
        }).then(res => {
@@ -125,7 +130,7 @@ componentDidMount(){
          })
           console.log("PICS", pics);
         })
-   })
+
  })
  }
 
@@ -156,7 +161,7 @@ componentDidMount(){
               <div className="outline">
 
 
-              <h3> We have { weather } in { town }, Colorado today. </h3><h3>The temperature is { temp }&#176; C </h3></div>
+              <h3> We have { this.state.weather } in { this.state.town }, Colorado today. </h3><h3>The temperature is { this.state.temp }&#176; C </h3></div>
               </div>
               </div>
 
