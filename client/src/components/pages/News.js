@@ -8,6 +8,7 @@ import $ from 'jquery'
 class News extends Component {
   state = {
     articles: [],
+    api: ''
   };
 
 
@@ -57,6 +58,15 @@ class News extends Component {
           <div className="splash">
           <h1 className="splash">News Articles</h1>
           </div>
+          <button className="btn btn-default">Sports</button>
+          <button className="btn btn-default">CNN</button>
+
+          <select value={this.state.api}>
+            <option value="A">Sports</option>
+            <option value="cnn">CNN</option>
+            <option value="C">Entertainment</option>
+          </select>
+
 <div className="flex-container">
 {this.renderArticles()}
 </div>

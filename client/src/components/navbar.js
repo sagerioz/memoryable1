@@ -33,7 +33,7 @@ class Navbar extends Component {
       <li><Link to="/scrapbook">Scrapbook</Link></li>
       <li><Link to="/news">News</Link></li>
       <li><Link to="/todos">Todos</Link></li>
-      <li><Profile/></li>
+      <li className="nudge"><Profile/></li>
       </ul>
       </div>
       )
