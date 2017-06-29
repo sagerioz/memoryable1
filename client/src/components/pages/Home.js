@@ -137,7 +137,7 @@ componentDidMount(){
   render() {
 
     let recent = this.state.photos
-    let town = localStorage.cityName
+    let town = localStorage.getItem("cityName")
     let weather = localStorage.weather
     let temp = parseInt(localStorage.temp)
     let picsList = recent.map(function(picsDisplay) {
@@ -161,7 +161,7 @@ componentDidMount(){
               <div className="outline">
 
 
-              <h3> We have { weather } in { town }, Colorado today. </h3><h3>The temperature is { temp }&#176; C </h3></div>
+              <h3> We have { weather } in your town of { town }, Colorado today. </h3><h3>The temperature is { temp }&#176; C </h3></div>
               </div>
               </div>
 
