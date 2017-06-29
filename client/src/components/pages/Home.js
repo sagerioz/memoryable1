@@ -57,6 +57,7 @@ class Home extends Component {
     let auth = localStorage.profile
     let name = localStorage.name
     let token = localStorage.jwtToken
+    this.setState({ name })
     // let userid = localStorage.id
     //let userData = '';
 
@@ -83,7 +84,7 @@ class Home extends Component {
         console.log('WEATHER ERR: ', err);
       }
     })
-   .then(() => this.setState({name: localStorage.name}))
+  // .then(() => this.setState({name: localStorage.name}))
 
 // componentDidMount() {
 //   console.log("LOCAL STORAGE >>>>>>", localStorage);
