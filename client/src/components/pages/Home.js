@@ -58,7 +58,7 @@ class Home extends Component {
 
     $.ajax({
       method: 'get',
-      url: `https://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${api}`,
+      url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${api}`,
       dataType: 'jsonp',
       success: (result) => {
         console.log('WEATHER RESULT: ', result);
