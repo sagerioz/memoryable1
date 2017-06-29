@@ -139,7 +139,7 @@ componentDidMount(){
     let recent = this.state.photos
     let town = localStorage.cityName
     let weather = localStorage.weather
-    let temp = localStorage.temp
+    let temp = parseInt(localStorage.temp)
     let picsList = recent.map(function(picsDisplay) {
       console.log("ID", picsDisplay.id);
       let id = picsDisplay.id
