@@ -52,19 +52,20 @@ class Home extends Component {
     let name = localStorage.name
     let token = localStorage.jwtToken
     this.setState({ name })
+    return this.getScrapbook(localStorage.id);
 
     console.log("NAME", name);
 
     $.ajax({
       method: 'get',
-      url: `https://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${rio}`,
+      url: `https://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${api}`,
       dataType: 'jsonp',
       success: (result) => {
         console.log('WEATHER RESULT: ', result);
 
         this.setState({town: result.cityName, weather: result.weatherDesc, temp: Math.ceil(result.temp)})
 
-        return this.getScrapbook(localStorage.id);
+        // return this.getScrapbook(localStorage.id);
       },
       error: function(err) {
         console.log('WEATHER ERR: ', err);
