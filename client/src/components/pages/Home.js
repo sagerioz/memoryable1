@@ -137,9 +137,9 @@ componentDidMount(){
   render() {
 
     let recent = this.state.photos
-    let town = this.state.town
-    let weather = this.state.weather
-    let temp = this.state.temp
+    let town = localStorage.cityName
+    let weather = localStorage.weather
+    let temp = localStorage.temp
     let picsList = recent.map(function(picsDisplay) {
       console.log("ID", picsDisplay.id);
       let id = picsDisplay.id
@@ -161,7 +161,7 @@ componentDidMount(){
               <div className="outline">
 
 
-              <h3> We have { this.state.weather } in { this.state.town }, Colorado today. </h3><h3>The temperature is { this.state.temp }&#176; C </h3></div>
+              <h3> We have { weather } in { town }, Colorado today. </h3><h3>The temperature is { temp }&#176; C </h3></div>
               </div>
               </div>
 
