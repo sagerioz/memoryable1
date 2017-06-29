@@ -27,59 +27,107 @@ class Home extends Component {
     // }
   }
 
-  componentDidMount(){
-    console.log("LOCAL STORAGE >>>>>>", localStorage);
-    const api = '58443d73bb4adf5b12a65dda8efd13fb'
-    const rio = '2fb0ef496cacff708e1da0ad370562d6'
-    let auth = localStorage.profile
-    let name = localStorage.name
-    let token = localStorage.jwtToken
-    let userid = localStorage.id
-    let userData = ''
-    console.log("NAME", name);
-    console.log("ID", userid);
+//   componentDidMount(){
+//     console.log("LOCAL STORAGE >>>>>>", localStorage);
+//     const api = '58443d73bb4adf5b12a65dda8efd13fb'
+//     const rio = '2fb0ef496cacff708e1da0ad370562d6'
+//     let auth = localStorage.profile
+//     let name = localStorage.name
+//     let token = localStorage.jwtToken
+//     let userid = localStorage.id
+//     let userData = ''
+//     console.log("NAME", name);
+//     console.log("ID", userid);
+//     $.ajax({
+//       method: 'get',
+//       url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${rio}`,
+//       dataType: 'jsonp',
+//       success: function(result) {
+//         console.log(result);
+//         userData = {
+//           cityName: result.name,
+//           weatherDesc: result.weather[0].description,
+//           temp: result.main.temp
+//
+//         }
+//       },
+//       error: function(err) {
+//         console.log(err);
+//       }
+//     }).then(() => {
+//       this.setState({town: userData.cityName, weather: userData.weatherDesc, temp: Math.ceil(userData.temp)})
+//     }).then(() => {
+//     fetch('/api/scrapbook', {
+//            method: 'GET'
+//          }).then(res => {
+//          return res.text().then(pics => {
+//            pics = JSON.parse(pics)
+//            let picItems = pics.filter(entry => {
+//              return entry.user_id == userid
+//            })
+//            this.setState({
+//              //id: pics,
+//              photos: picItems
+//             // title: pics,
+//             // description: pics
+//            })
+//             console.log("PICS", pics);
+//           })
+//      })
+//    }).then(() => this.setState({name: localStorage.name})
+// )
+//    }
 
-    $.ajax({
-      method: 'get',
-      url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${rio}`,
-      dataType: 'jsonp',
-      success: function(result) {
-        console.log(result);
-        userData = {
-          cityName: result.name,
-          weatherDesc: result.weather[0].description,
-          temp: result.main.temp
+componentDidMount(){
+  console.log("LOCAL STORAGE >>>>>>", localStorage);
+  const api = '58443d73bb4adf5b12a65dda8efd13fb'
+  const rio = '2fb0ef496cacff708e1da0ad370562d6'
+  let auth = localStorage.profile
+  let name = localStorage.name
+  let token = localStorage.jwtToken
+  let userid = localStorage.id
+  let userData = ''
+  console.log("NAME", name);
+  console.log("ID", userid);
+  this.setState({ name: name })
+  $.ajax({
+    method: 'get',
+    url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${rio}`,
+    dataType: 'jsonp',
+    success: function(result) {
+      console.log(result);
+      userData = {
+        cityName: result.name,
+        weatherDesc: result.weather[0].description,
+        temp: result.main.temp
 
-        }
-      },
-      error: function(err) {
-        console.log(err);
       }
-    }).then(() => {
-      this.setState({town: userData.cityName, weather: userData.weatherDesc, temp: Math.ceil(userData.temp)})
-    }).then(() => {
-    fetch('/api/scrapbook', {
-           method: 'GET'
-         }).then(res => {
-         return res.text().then(pics => {
-           pics = JSON.parse(pics)
-           let picItems = pics.filter(entry => {
-             return entry.user_id == userid
-           })
-           this.setState({
-             //id: pics,
-             photos: picItems
-            // title: pics,
-            // description: pics
-           })
-            console.log("PICS", pics);
-          })
-     })
-   }).then(() => this.setState({name: localStorage.name})
-)
-   }
-
-
+    },
+    error: function(err) {
+      console.log(err);
+    }
+  }).then(() => {
+    this.setState({town: userData.cityName, weather: userData.weatherDesc, temp: Math.ceil(userData.temp)})
+  }).then(() => {
+  fetch('/api/scrapbook', {
+         method: 'GET'
+       }).then(res => {
+       return res.text().then(pics => {
+         pics = JSON.parse(pics)
+         let picItems = pics.filter(entry => {
+           return entry.user_id == userid
+         })
+         this.setState({
+           //id: pics,
+           photos: picItems
+          // title: pics,
+          // description: pics
+         })
+          console.log("PICS", pics);
+        })
+   })
+ })
+ }
 
   render() {
 
