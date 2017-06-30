@@ -5,31 +5,48 @@ const knex = require('../knex')
 /* GET all todo items */
 router.get('/', function(req, res, next) {
   knex('todos')
-  .where('user_id', userId)
-    .orderBy('created_at', 'asc')
+  // .where('user_id', userId)
+  //   .orderBy('created_at', 'asc')
     .then((todos) => {
       res.send(todos)
     })
 })
 
+router.post('/:id', function(req, res, next) {
+  let userId = req.params.id
+  let todo = req.body.todo
+  //let id = req.body.id
+  knex('todos')
+  // .where('user_id', userId)
+  .returning('*')
+    .insert({
+      list_item: todo,
+      user_id: userId
+    })
+  .then((todo) => {
+    console.log(todo);
+    //let list = todo.data.todo[0].list_item
+    let id = todo.id
+    console.log("MADE IT id *****", id);
+      res.json({ todo });
+  })
+})
+
+
+
+
+
+
 /* DELETE a todo item */
 router.delete('/:id', function(req, res, next) {
-  console.log("MADE IT TO POST ROUTE");
-  let title = req.body.title
-  console.log("TITLE", title);
-  let user_id = 1
-  let description = req.body.description
-  let item_image = req.body.item_image
-  if(title.length>0){
+  console.log("MADE IT TO delete ROUTE");
+  let id = req.params.id
+  if(id>0){
   knex('todos')
-    .insert({
-      title: title,
-      user_id: user_id,
-      item_image: item_image,
-      description: description
-    })
+    .where('id', id)
+    .del()
     .then((item) => {
-      console.log("made it");
+      console.log("deleted it", item);
       //res.redirect('/scrapbook')
     })
   }else{

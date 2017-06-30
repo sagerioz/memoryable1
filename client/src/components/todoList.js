@@ -34,7 +34,7 @@ const TodoForm = ({addTodo}) => {
 
 const Todo = ({todo, remove}) => {
   // Each Todo
-  return (<a href="#" className="list-group-item" onClick={() => {remove(todo.id)}}>{todo.text}</a>);
+  return (<a href="#" className="list-group-item" onClick={() => {remove(todo.id)}}>{todo.list_item}</a>);
 }
 
 const TodoList = ({todos, remove}) => {
@@ -54,58 +54,71 @@ class TodoApp extends React.Component{
     super(props);
     // Set initial state
     this.state = {
-      data: []
+      data: [],
+      id:''
     }
-   this.apiUrl = '//57b1924b46b57d1100a3c3f8.mockapi.io/api/todos'
   }
 
   // Lifecycle method
   componentDidMount(){
+    this.setState({ id: localStorage.id })
+    fetch('/api/todos', {
+           method: 'GET'
+         }).then(res => {
+     return res.text().then((doItems) => {
+       doItems = JSON.parse(doItems)
+    //console.log("TODOS", doItems);
+       let listItems = doItems.filter(entry => {
+         return entry.user_id == this.state.id
+       });
 
-    // let userData = ''
-    // fetch('/api/todos', {
-    //        method: 'GET'
-    //      }).then(res => {
-    //      return res.text().then(todos => {
-    //        todos = JSON.parse(todos)
-    //        this.setState({
-    //          data: todos
-    //        })
-    //         console.log("TODOS", todos);
-    //       })
-    //  })
-
-
-
-    // Make HTTP reques with Axios
-    axios.get(this.apiUrl)
-      .then((res) => {
-        // Set state with result
-        this.setState({data:res.data});
+       this.setState({
+         data: listItems
       });
-  }
+        //console.log("TODO LIST ARRAY", this.state.data);
+      })
+ })
+}
+
   // Add todo handler
   addTodo(val){
     // Assemble data
-    const todo = {text: val}
+    const todo = {todo: val}
     // Update data
-    axios.post(this.apiUrl, todo)
+    axios.post(`/api/todos/` + this.state.id, todo)
        .then((res) => {
-          this.state.data.push(res.data);
-          this.setState({data: this.state.data});
+        // console.log("ARE U HERE?", res);
+         let listItem = res.data.todo[0]
+         //console.log("YOU NEED THIS ONE: ", listItem);
+          this.state.data.push(listItem);
+          //this.setState({data: this.state.data});
+          //console.log(this.state);
        });
   }
   // Handle remove
   handleRemove(id){
+
     // Filter all todos except the one to be removed
     const remainder = this.state.data.filter((todo) => {
       if(todo.id !== id) return todo;
     });
     // Update state with filter
-    axios.delete('todos'+'/'+id)
-      .then((res) => {
-        this.setState({data: remainder});
-      })
+
+    fetch('api/todos'+'/'+id, {
+      method: 'DELETE'
+    }).then((res) => {
+      console.log("CHECK IT", res);
+    })
+
+
+
+
+    // axios.delete('api/todos'+'/'+id)
+    //   .then((res) => {
+    //     console.log("CHECK IT", res);
+    //     this.setState({data: remainder});
+    //     console.log("THE FINAL STATE",this.state);
+    //   })
   }
 
   render(){
