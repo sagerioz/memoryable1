@@ -65,11 +65,6 @@ class News extends Component {
           <button className="btn btn-default">Sports</button>
           <button className="btn btn-default">CNN</button>
 
-          <select value={this.state.api}>
-            <option value="A">Sports</option>
-            <option value="cnn">CNN</option>
-            <option value="C">Entertainment</option>
-          </select>
 
 <div className="flex-container">
 {this.renderArticles()}

@@ -26,11 +26,11 @@ export class Weather extends React.Component {
         success: (result) => {
           console.log('WEATHER RESULT: ', result);
           console.log('&', result.weather[0].temp);
-        //   this.setState({town: result.name, weather: result.weather[0].description, temp: Math.ceil(result.main.temp)})
+         this.setState({town: result.name, weather: result.weather[0].description, temp: Math.ceil(result.main.temp)})
         //  console.log("STATE",this.state);
-        localStorage.setItem("town", result.name)
-        localStorage.setItem("weather", result.weather[0].description)
-        localStorage.setItem("temp", Math.ceil(result.main.temp))
+        // localStorage.setItem("town", result.name)
+        // localStorage.setItem("weather", result.weather[0].description)
+        // localStorage.setItem("temp", Math.ceil(result.main.temp))
 
         },
         error: function(err) {
@@ -42,10 +42,10 @@ export class Weather extends React.Component {
     render() {
         return (
           <div className="outline">
-          <h3> We have {localStorage.weather} in { localStorage.town }, Colorado today. </h3><h3>The temperature is { localStorage.temp }&#176; C </h3>
+          <h3> We have { this.state.weather } in { this.state.town }, Colorado today. </h3><h3>The temperature is { this.state.temp }&#176; C </h3>
           </div>
         );
     }
   }
-  
+
   export default Weather
