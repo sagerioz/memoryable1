@@ -65,12 +65,7 @@ class Profile extends Component {
           <Navbar />
 
           <div className="container profileEdit">
-    <div className="row">
-
-    <div><button type="button" className="btn btn-default btn-circle btn-lg" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>  </button>Update Profile
-    </div>
-
-
+    <div className="splash2">
 
 
     <div className="profile-container">
@@ -82,12 +77,8 @@ class Profile extends Component {
         </div>
     </div>
 
-
-
-
-
-
-
+    <div><button type="button" className="btn btn-default btn-circle btn-lg" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>  </button>Update Profile
+    </div>
 
 
     <div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

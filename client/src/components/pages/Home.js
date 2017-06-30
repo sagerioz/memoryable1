@@ -78,14 +78,14 @@ class Home extends Component {
               <div className="splash">
               <h1 className="splash"> Welcome, { this.state.name }!</h1>
 
-              </div>
+              </div></div><div>
                    <div>
                    <button type="button" className="btn btn-default btn-circle btn-lg" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>
                    </button>Add Photo
                    </div>
 
 
-                   <div className="row">
+                   <div className="splash">
                    <div className="container-nav">
                    <ul className="polaroids">
                       {picsList}
