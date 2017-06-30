@@ -21,7 +21,7 @@ export class Weather extends React.Component {
 
       $.ajax({
         method: 'get',
-        url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${api}`,
+        url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${rio}`,
         dataType: 'jsonp',
         success: (result) => {
           console.log('WEATHER RESULT: ', result);
@@ -47,4 +47,5 @@ export class Weather extends React.Component {
         );
     }
   }
+  
   export default Weather
