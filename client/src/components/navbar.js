@@ -40,7 +40,7 @@ class Navbar extends Component {
 
         return (
           <nav className="navbar navbar-default navbar-static-top">
-              <div className="container">
+
 
                   <div className="navbar-header">
                       <button type="button" data-target="#navbarCollapse" data-toggle="collapse" className="navbar-toggle">
@@ -55,7 +55,7 @@ class Navbar extends Component {
                   <div id="navbarCollapse" className="collapse navbar-collapse">
                     { guestLinks }
                   </div>
-              </div>
+
           </nav>
         );
       }

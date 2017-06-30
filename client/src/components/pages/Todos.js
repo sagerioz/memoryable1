@@ -43,6 +43,7 @@ class Todos extends Component {
       return (
           <div>
           <Navbar />
+          <div className="container">
           <MyDate/ >
           <div className="splash">
           <h1 className="splash">Your todo list</h1>
@@ -51,6 +52,7 @@ class Todos extends Component {
           {this.renderTodos()}
 
           <TodoApp />
+          </div>
           </div>
       )
   }

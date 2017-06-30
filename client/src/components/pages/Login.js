@@ -51,6 +51,7 @@ class Login extends Component {
 
       return (
 <div className="row">
+<div className="container">
    <div className="parallax"><h1 className="logo">Memoryable</h1>
 
 
@@ -137,7 +138,7 @@ class Login extends Component {
 
 
 
-
+</div>
 
 </div>
       )

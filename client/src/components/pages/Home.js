@@ -74,6 +74,7 @@ class Home extends Component {
           <div>
 
             <Navbar />
+            <div className="container">
             <MyDate />
 
               <div className="splash">
@@ -115,7 +116,7 @@ class Home extends Component {
               </div>
             </div>
           </div>
-
+</div>
       </div>
 
       )

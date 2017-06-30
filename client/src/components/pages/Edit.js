@@ -48,7 +48,7 @@ class Edit extends Component {
       return (
           <div>
           <Navbar />
-
+          <div className="container">
           <h3>{this.state.title}</h3>
 
           <div>
@@ -89,7 +89,7 @@ class Edit extends Component {
           </div>
           </div>
           </div>
-
+          </div>
           </div>
       )
   }

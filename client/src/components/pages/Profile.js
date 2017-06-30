@@ -70,10 +70,23 @@ class Profile extends Component {
     <div><button type="button" className="btn btn-default btn-circle btn-lg" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>  </button>Update Profile
     </div>
 
-    <div><img src={ this.state.profilePicture} /></div>
-    <div>{ this.state.firstname }</div>
-    <div>{ this.state.userName }</div>
-    <div>{ this.state.email }</div>
+
+
+
+    <div className="profile-container">
+        <div className="profile-thumb"><img src={ this.state.profilePicture} /></div>
+        <div className="profile-content">
+            <h3 className="profile-title">Name { this.state.firstname }</h3>
+            <p>Email { this.state.email }</p>
+            <p>User Name{ this.state.userName }</p>
+        </div>
+    </div>
+
+
+
+
+
+
 
 
 
