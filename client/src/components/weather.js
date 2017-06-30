@@ -41,9 +41,9 @@ export class Weather extends React.Component {
 
     render() {
         return (
-          <div className="outline">
-          <h3> We have { this.state.weather } in { this.state.town }, Colorado today. </h3><h3>The temperature is { this.state.temp }&#176; C </h3>
-          </div>
+          // <div className="outline">
+          // <h3> We have { this.state.weather } in { this.state.town }, Colorado today. </h3><h3>The temperature is { this.state.temp }&#176; C </h3>
+          // </div>
         );
     }
   }

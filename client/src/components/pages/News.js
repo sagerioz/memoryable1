@@ -2,7 +2,7 @@ import React, { Component } from 'react'
 import Navbar from './../navbar'
 import MyDate from '../date'
 import $ from 'jquery'
-import Weather from '../weather'
+//import Weather from '../weather'
 
 
 
@@ -10,7 +10,10 @@ import Weather from '../weather'
 class News extends Component {
   state = {
     articles: [],
-    api: ''
+    api: '',
+    weather: '',
+    town: '',
+    temp: ''
   };
 
 
@@ -39,7 +42,29 @@ class News extends Component {
       }
     }).then(() => {
 
-      
+      console.log("LOCAL STORAGE from HOME >>>>>>", localStorage);
+      const api = '58443d73bb4adf5b12a65dda8efd13fb'
+      const rio = '2fb0ef496cacff708e1da0ad370562d6'
+
+
+      $.ajax({
+        method: 'get',
+        url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${api}`,
+        dataType: 'jsonp',
+        success: (result) => {
+          console.log('WEATHER RESULT: ', result);
+          console.log('&', result.weather[0].temp);
+         this.setState({town: result.name, weather: result.weather[0].description, temp: Math.ceil(result.main.temp)})
+        //  console.log("STATE",this.state);
+        // localStorage.setItem("town", result.name)
+        // localStorage.setItem("weather", result.weather[0].description)
+        // localStorage.setItem("temp", Math.ceil(result.main.temp))
+
+        },
+        error: function(err) {
+          console.log('WEATHER ERR: ', err);
+        }
+      })
 
 
 
@@ -82,7 +107,12 @@ class News extends Component {
           <MyDate />
           <div className="splash">
           <h1 className="splash">News Articles</h1>
-          <Weather />
+
+          <div className="outline">
+          <h3> We have { this.state.weather } in { this.state.town }, Colorado today. </h3><h3>The temperature is { this.state.temp }&#176; C </h3>
+          </div>
+
+          
           </div>
           <button className="btn btn-default">Sports</button>
           <button className="btn btn-default">CNN</button>
