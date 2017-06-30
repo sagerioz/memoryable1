@@ -15,6 +15,15 @@ class News extends Component {
 
 
   componentDidMount() {
+
+
+
+
+
+
+
+
+
     const apiKey = '1e113c3733bb4dd69cccb5156d4d4081'
     const apiSource = 'cnn'
     let userData = ''
@@ -28,6 +37,19 @@ class News extends Component {
       error: function(err) {
         console.log(err);
       }
+    }).then(() => {
+
+      
+
+
+
+
+
+
+
+
+
+
     })
    }
 
