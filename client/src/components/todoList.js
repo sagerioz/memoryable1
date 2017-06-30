@@ -8,7 +8,7 @@ const Title = ({todoCount}) => {
   return (
     <div>
        <div>
-          <h4>Type a task here and press enter</h4>
+          <h4>Type here and press enter</h4>
        </div>
     </div>
   );
@@ -55,7 +55,7 @@ class TodoApp extends React.Component{
     // Set initial state
     this.state = {
       data: [],
-      id:''
+      id: ''
     }
   }
 
@@ -91,6 +91,7 @@ class TodoApp extends React.Component{
          let listItem = res.data.todo[0]
          //console.log("YOU NEED THIS ONE: ", listItem);
           this.state.data.push(listItem);
+          this.componentDidMount()
           //this.setState({data: this.state.data});
           //console.log(this.state);
        });
@@ -108,8 +109,9 @@ class TodoApp extends React.Component{
       method: 'DELETE'
     }).then((res) => {
       console.log("CHECK IT", res);
+      this.setState({data: remainder});
     })
-
+    this.componentDidMount()
 
 
 
