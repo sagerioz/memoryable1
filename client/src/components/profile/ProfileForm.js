@@ -86,8 +86,9 @@ class ProfileUpdateForm extends React.Component {
     console.log("DATA", data);
 
     if (data.success) {
-      window.localStorage.clear();
-      window.location.replace('/')
+      this.componentDidMount();
+      //window.localStorage.clear();
+      //window.location.replace('/')
     //localStorage.setItem('profile', data.success);
   //  localStorage.profile = data.success;
    console.log("LOCAL STORAGE   ......", localStorage);
