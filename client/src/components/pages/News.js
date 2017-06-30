@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import Navbar from './../navbar'
 import MyDate from '../date'
 import $ from 'jquery'
+import Weather from '../weather'
+
 
 
 
@@ -58,6 +60,7 @@ class News extends Component {
           <MyDate />
           <div className="splash">
           <h1 className="splash">News Articles</h1>
+          <Weather />
           </div>
           <button className="btn btn-default">Sports</button>
           <button className="btn btn-default">CNN</button>
