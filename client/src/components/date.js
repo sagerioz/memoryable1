@@ -16,10 +16,10 @@ export class MyDate extends React.Component {
 
          var date = today.getUTCDate();
 
-         let month = monthNames[today.getMonth() + 1]
+         let month = monthNames[today.getMonth()]
 
          let dateNow = day + ', ' + month + ' ' + date + ', ' + today.getFullYear()
-
+         let monthNum = today.getMonth()
 
  console.log("DATE", today);
 

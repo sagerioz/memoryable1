@@ -1,13 +1,9 @@
 import React, { Component } from 'react'
-import { Link } from 'react-router-dom';
 
 class About extends Component {
   constructor(props) {
     super(props)
 
-    // if (!localStorage.token) {
-    //   window.location.href = '/'
-    // }
   }
 
   render() {

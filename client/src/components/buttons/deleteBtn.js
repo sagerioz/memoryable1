@@ -21,7 +21,7 @@ class TrashScrapbookItem extends Component {
   render() {
     return (
       <Nav>
-        <NavItem onClick={this.handleClick} className="sideFont"><span className="glyphicon glyphicon-trash" aria-hidden="true"></span></NavItem>
+        <NavItem onClick={this.handleClick} className="sideFont"><span className="glyphicon glyphicon-trash" aria-hidden="false"></span></NavItem>
       </Nav>
     )
   }

@@ -155,7 +155,14 @@ class ProfileUpdateForm extends React.Component {
             <button className="button-logo-2">
               Update
             </button>
+
+            <button type="button" className="button-logo-2" data-dismiss="modal">
+              Cancel
+            </button>
+
           </div>
+
+
 
         </form>
       );

@@ -105,7 +105,7 @@ componentDidMount() {
         />
         <div className="modal-footer">
         <button type="submit" className="button-logo-2">Save Changes!</button>
-  <button type="button" className="btn btn-default" data-dismiss="modal">Cancel</button>
+  <button type="button" className="button-logo-2" data-dismiss="modal">Cancel</button>
           <TrashScrapbookItem id={this.state.pic_id}/>
 
         </div>

@@ -2,6 +2,7 @@
    v2.0 | 20110126
    License: none (public domain)
 */
+/*(970) 355-3421*/
 
 /*html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -65,8 +66,6 @@ ol, ul {
 }
 
 h1 {
-  /*font-family: 'Capriola', sans-serif;
-  font-size: 80px;*/
   font-family: 'KlinicSlabMedium', 'Georgia', 'Times', serif
   font-size: 60px;
 }
@@ -76,6 +75,7 @@ body, html {
 }
 a:link {
     text-decoration: none;
+    color: #fff;
 }
 
 .caption a:visited {
@@ -84,7 +84,7 @@ a:link {
 }
 a:visited {
     text-decoration: none;
-    color: #a58a39;
+    color: #594813;
 }
 
 a:hover {
@@ -131,9 +131,35 @@ a:active {
   line-height: 2;
   font-size: 1.25em;
   padding: 50px, 50px;
+  margin-bottom: 30px;
+  margin-top: 30px;
+}
+.intro-li {
+  background-color: #dcdadd;
+  background-repeat:no-repeat;
+  color: #fff;
+  border: 1px solid #fff;
+  overflow: hidden;
+  outline:none;
+  margin: 20px 20px 20px 20px;
+  padding: 20px;
+  display: inline-block;
+  width: 300px;
+  height: 75px;
+  text-align: center;
+  vertical-align: middle;
 }
 .side-font {
-  color: #fff;
+  color: #594813;
+}
+.side-font a:visited {
+  color: #594813;
+}
+.side-font a:link {
+  color: #594813;
+}
+.nav li a {
+  color: #594813;
 }
 .button-logo {
     background-color: Transparent;
@@ -235,28 +261,6 @@ a:active {
         display:block;
         }
 
-/*.abtn {
-  display: inline-block;
-    padding: 6px;
-    margin-bottom: 6px;
-    font-size: 14px;
-    font-weight: 400;
-    line-height: 1.42857143;
-    text-align: justify;
-    white-space: nowrap;
-    vertical-align: top;
-    -ms-touch-action: manipulation;
-    touch-action: manipulation;
-    cursor: pointer;
-    -webkit-user-select: none;
-    -moz-user-select: none;
-    -ms-user-select: none;
-    user-select: none;
-    background-image: none;
-    border: 1px solid transparent;
-    border-radius: 0px;
-}*/
-
 .container-nav {
   align-content: center;
   padding-right: 35px;
@@ -286,6 +290,11 @@ a:active {
   margin: 20px auto;
   font-weight: normal;
   font-family: 'Cantarell', sans-serif;
+}
+
+.glyphicon-trash {
+  margin-top: 10px;
+  color: black;
 }
 
 .splash {
@@ -584,25 +593,7 @@ header {background: black;color:white;}
     background-repeat: no-repeat;
     background-size: cover;
 }
-/*.bg-img1 {
-  background-image: url("images/logo1.jpg");
-  min-height: 100%;
-}
-.bg-img2 {
-  background-image: url("images/logo2.jpg");
-  min-height: 800px;
 
-}
-.bg-img3 {
-  background-image: url("images/logo3.jpg");
-  min-height: 800px;
-
-}
-.bg-img5 {
-  background-image: url("images/logo5.jpg");
-  min-height: 600px;
-
-}*/
 /*login home page*/
 .login {
   color: #777;
@@ -740,6 +731,7 @@ and (max-device-width : 1024px)  {
   max-width: 200px;
   align-self: center;
 }
+
 .profile-container {
     margin: 20px 20px 20px 20px;
     border: 5px solid black;

@@ -1,14 +1,5 @@
-// import React from 'react';
-// import ReactDOM from 'react-dom';
-// import App from './App';
-// import registerServiceWorker from './registerServiceWorker';
-// import './index.css';
-//
-// ReactDOM.render(<App />, document.getElementById('root'));
-// registerServiceWorker();
 import React from 'react'
 import ReactDOM from 'react-dom'
-//import Login from './components/pages/Login'
 import Home from './components/pages/Home'
 import News from './components/pages/News'
 import Todos from './components/pages/Todos'
@@ -16,12 +7,8 @@ import Login from './components/pages/Login'
 import Edit from './components/pages/Edit'
 import Profile from './components/pages/Profile'
 
-
-
-//import Journal from './components/pages/Journal'
 import registerServiceWorker from './registerServiceWorker'
-//import './general.css'
-//import './modules.css'
+
 import { BrowserRouter, Route } from 'react-router-dom'
 
 ReactDOM.render(
@@ -34,6 +21,7 @@ ReactDOM.render(
       <Route exact path="/" component={Login}></Route>
       <Route exact path="/scrapbook/edit/:id" component={Edit}></Route>
       <Route exact path="/profile/:id" component={Profile}></Route>
+
 
     </div>
   </BrowserRouter>,
