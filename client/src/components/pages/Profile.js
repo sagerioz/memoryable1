@@ -21,19 +21,6 @@ class Profile extends Component {
    }
    }
 
-  // onChange(e) {
-  //   this.setState({ [e.target.name]: e.target.value });
-  // }
-  //
-  // isValid() {
-  //   const { errors, isValid } = validateInput(this.state);
-  //
-  //   if (!isValid) {
-  //     this.setState({ errors });
-  //   }
-  //
-  //   return isValid;
-  // }
 
   componentDidMount() {
     let id = localStorage.id
@@ -63,11 +50,8 @@ class Profile extends Component {
       return (
           <div>
           <Navbar />
-
-          <div className="container profileEdit">
+          <div className="container">
     <div className="splash2">
-
-
     <div className="profile-container">
         <div className="profile-thumb"><img src={ this.state.profilePicture} /></div>
         <div className="profile-content">
@@ -95,46 +79,9 @@ class Profile extends Component {
     </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
     </div>
-
-
-
-</div>
-
-
-
-
-          </div>
+    </div>
+    </div>
       )
   }
 }

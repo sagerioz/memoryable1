@@ -285,6 +285,7 @@ a:active {
 
 .navbar-default .navbar-brand {
     color: #a58a39;
+    height: 70px;
 }
 .title {
   margin: 20px auto;
@@ -307,7 +308,7 @@ a:active {
   padding: 0px 10px;
   font-size: 2.5em;
   margin-bottom: 29px;
-  margin-top: 0px;
+  margin-top: 10px;
 }
 
 .splash2 {
@@ -320,6 +321,10 @@ a:active {
   font-size: 1.5em;
   margin-bottom: 9px;
   margin-top: 20px;
+}
+
+.news-article {
+  color: #594813;
 }
 
 .navFont {
@@ -542,6 +547,9 @@ ul.polaroids a {
     flex: 1 100%;
 }
 
+.container {
+  margin-top: 100px;
+}
 .article {
     text-align: left;
 }

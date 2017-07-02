@@ -39,7 +39,7 @@ class Navbar extends Component {
       )
 
         return (
-          <nav className="navbar navbar-default navbar-static-top">
+          <nav className="navbar navbar-default navbar-fixed-top">
 
 
                   <div className="navbar-header">

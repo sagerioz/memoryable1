@@ -19,14 +19,6 @@ class News extends Component {
 
   componentDidMount() {
 
-
-
-
-
-
-
-
-
     const apiKey = '1e113c3733bb4dd69cccb5156d4d4081'
     const apiSource = 'cnn'
     let userData = ''
@@ -66,15 +58,6 @@ class News extends Component {
         }
       })
 
-
-
-
-
-
-
-
-
-
     })
    }
 
@@ -84,14 +67,16 @@ class News extends Component {
      return this.state.articles.map(function(article) {
        if(article.urlToImage){
        return (
-         <div className="list-group-item">
+         <div className="list-group-item news-article">
+         <a href={article.url}>
            <img src={article.urlToImage} width="50%" id="news"/>
          <article className="article">
-           <h3><a href={article.url}>{article.title}</a></h3>
-           <h4>POSTED ON {article.publishedAt}</h4>
-           <p>{article.description}</p>
-           <a href={article.url}>MORE...</a>
+           <h3>{article.title}</h3>
+           <h4 className="news-article">POSTED ON {article.publishedAt}</h4>
+           <p className="news-article">{article.description}</p>
+           <a href={article.url} className="news-article">MORE...</a>
          </article>
+         </a>
          </div>
        );
      }
@@ -112,7 +97,7 @@ class News extends Component {
           <h3> We have { this.state.weather } in { this.state.town }, Colorado today. </h3><h3>The temperature is { this.state.temp }&#176; C </h3>
           </div>
 
-          
+
           </div>
           <button className="btn btn-default">Sports</button>
           <button className="btn btn-default">CNN</button>
