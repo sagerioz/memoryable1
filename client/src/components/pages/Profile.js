@@ -63,7 +63,7 @@ class Profile extends Component {
     <br/>
     <button type="button" className="button-logo-2" data-toggle="modal" data-target="#myModal">
     Edit
-    </button>
+    </button><a href="/scrapbook" className="button-logo-2">Back to photos </a>
 
 
     <div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">

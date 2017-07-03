@@ -102,7 +102,7 @@ componentDidMount() {
           onChange={this.onChange}
           error={errors.title}
         />
-        <div className="modal-footer">
+        <div>
         <button type="submit" className="button-logo-2">Save Changes!</button>
   <button type="button" className="button-logo-2" data-dismiss="modal">Cancel</button>
           <TrashScrapbookItem id={this.state.pic_id}/>
