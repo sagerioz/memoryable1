@@ -41,7 +41,7 @@ class News extends Component {
 
       $.ajax({
         method: 'get',
-        url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${api}`,
+        url: `http://api.openweathermap.org/data/2.5/weather?zip=80301,us&units=metric&appid=${process.env.APPID}`,
         dataType: 'jsonp',
         success: (result) => {
           console.log('WEATHER RESULT: ', result);
