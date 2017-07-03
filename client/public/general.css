@@ -110,6 +110,9 @@ a:active {
 .card {
   width: 450px;
 }
+.container fix {
+  margin-top: 100px;
+}
 
 .card-text {
   margin-top: 10px;
@@ -145,7 +148,6 @@ a:active {
   padding: 20px;
   display: inline-block;
   width: 300px;
-  height: 75px;
   text-align: center;
   vertical-align: middle;
 }
@@ -308,7 +310,7 @@ a:active {
   padding: 0px 10px;
   font-size: 2.5em;
   margin-bottom: 29px;
-  margin-top: 10px;
+  margin-top: 80px;
 }
 
 .splash2 {
@@ -547,9 +549,9 @@ ul.polaroids a {
     flex: 1 100%;
 }
 
-.container {
+/*.container {
   margin-top: 100px;
-}
+}*/
 .article {
     text-align: left;
 }

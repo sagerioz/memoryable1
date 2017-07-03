@@ -72,7 +72,7 @@ class Home extends Component {
           <div>
 
             <Navbar />
-            <div className="container">
+            <div className="container fix">
             <MyDate />
 
               <div className="splash">
