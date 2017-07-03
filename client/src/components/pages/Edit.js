@@ -49,15 +49,26 @@ class Edit extends Component {
           <div>
           <Navbar />
           <div className="container">
-          <h3>{this.state.title}</h3>
 
-          <div>
-  <img src={this.state.item_image} className="card" alt="Card image cap"/>
-  <div className="card-block">
 
-    <p className="card-text">{this.state.description}</p>
-  </div>
-</div>
+
+
+
+          <div className="splash2 outline-card">
+          <div className="profile-container">
+              <h3>{this.state.title}</h3>
+              <div className="profile-content">
+                    <img src={this.state.item_image} />
+                    <p className="card-text">{this.state.description}</p>
+              </div>
+
+
+
+
+
+
+
+
 
 
 
@@ -70,18 +81,19 @@ class Edit extends Component {
 
 
           <button type="button" className="button-logo-2" data-toggle="modal" data-target="#myModal">
-          edit
+          Edit
           </button>
 
           <a href="/scrapbook" className="button-logo-2">Back to photos </a>
-
+          </div>
+  </div>
 
           <div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
           <div className="modal-dialog" role="document">
           <div className="modal-content">
           <div className="modal-header">
           <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-          <h4 className="modal-title" id="myModalLabel">Edit Scrapbook Item</h4>
+          <h3 className="modal-title" id="myModalLabel">Edit Scrapbook Item</h3>
           </div>
               <div className="modal-body">
               <ScrapbookFormEdit />

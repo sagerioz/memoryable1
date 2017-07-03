@@ -46,7 +46,7 @@ class Profile extends Component{
           <span className="caret"></span></button>
           <ul className="dropdown-menu">
             <li><a href="#"><Logout/></a></li>
-            <li className="nudge"><Link to={"/profile/" + this.state.id}>Profile</Link></li>
+            <li className="nudge-profile"><Link to={"/profile/" + this.state.id}>Profile</Link></li>
           </ul>
         </div>
 

@@ -70,8 +70,7 @@ componentDidMount() {
 
     return (
       <div>
-
-      <img className="modal-pic" src={this.state.item_image} />
+      <img className="image-fit" src={this.state.item_image} />
 
 
       <form onSubmit={this.onSubmit}>

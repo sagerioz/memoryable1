@@ -80,7 +80,7 @@ class Home extends Component {
 
               </div></div><div>
                    <div>
-                   <button type="button" className="btn btn-default btn-circle btn-lg" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>
+                   <button type="button" className="btn btn-default btn-circle btn-lg nudge" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>
                    </button>Add Photo
                    </div>
 

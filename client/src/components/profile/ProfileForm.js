@@ -113,12 +113,11 @@ class ProfileUpdateForm extends React.Component {
       return (
 
         <form onSubmit={this.onSubmit}>
-          <h2>Update Profile</h2>
           {this.state.err ? <p>{this.state.err}</p> : null}
 
           <TextFieldGroup
             error={errors.firstName}
-            label="Name to be used for your patient"
+            label="Name"
             onChange={this.onChange}
           //  checkUserExists={this.checkUserExists}
             value={this.state.firstName}

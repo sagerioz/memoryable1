@@ -51,18 +51,19 @@ class Profile extends Component {
           <div>
           <Navbar />
           <div className="container">
-    <div className="splash2">
+    <div className="splash2 outline-card">
     <div className="profile-container">
         <div className="profile-thumb"><img src={ this.state.profilePicture} /></div>
         <div className="profile-content">
-            <h3 className="profile-title">Name { this.state.firstname }</h3>
-            <p>Email { this.state.email }</p>
-            <p>User Name{ this.state.userName }</p>
+            <h1 className="profile-title">{ this.state.firstname }</h1>
+            <h4>Email</h4><span> { this.state.email }</span>
+            <h4>Username</h4><span> { this.state.userName }</span>
         </div>
     </div>
-
-    <div><button type="button" className="btn btn-default btn-circle btn-lg" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>  </button>Update Profile
-    </div>
+    <br/>
+    <button type="button" className="button-logo-2" data-toggle="modal" data-target="#myModal">
+    Edit
+    </button>
 
 
     <div className="modal fade" id="myModal" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
@@ -70,7 +71,7 @@ class Profile extends Component {
     <div className="modal-content">
     <div className="modal-header">
     <button type="button" className="close" data-dismiss="modal" aria-label="Close"><span aria-hidden="true">&times;</span></button>
-    <h4 className="modal-title" id="myModalLabel">Update Records</h4>
+    <h3 className="modal-title" id="myModalLabel">Update Profile</h3>
     </div>
         <div className="modal-body">
         <ProfileUpdateForm />
