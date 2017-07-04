@@ -77,10 +77,14 @@ knex('users')
   .then(insertedUser => {
     const token = jwt.sign({insertedUser}, 'config.jwtSecret');
     const profile = insertedUser[0].token = token;
-    console.log("PROFILE", profile);
+    const pic = insertedUser[0].profilePicture;
+    const id = insertedUser[0].id;
+    const firstName = insertedUser[0].userName;
+
+    //console.log("PROFILE", profile);
 
   //  res.send(insertedUser[0])
-    res.json({ success: profile });
+    res.json({ success: profile, profilePicture:pic, id:id, firstname:userName });
 
   })
 }else{
