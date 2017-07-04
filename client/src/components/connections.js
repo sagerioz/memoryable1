@@ -17,7 +17,7 @@ class Connections extends Component {
               Many online resources, such as the ones listed here, can offer support and advice for caregivers of people with cognitive impairment, dementia, Alzheimers, and other related conditions.
             </p>
           </div>
-            <div className="li-center">
+            <div className="links">
             <p className="intro-li">
               <a href="http://www.missingseniornetwork.com">Missing Senior Network</a>
             </p>

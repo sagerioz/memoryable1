@@ -100,6 +100,14 @@ a:active {
     text-decoration: none;
 }
 
+a.news:link {color:#90110b;}
+a.news:visited {color:#596871;}
+a.news:hover {color:#1a4761;}
+
+a.news-article:link {color:#90110b;}
+a.news-article:visited {color:#596871;}
+a.news-article:hover {color:#1a4761;}
+
 .edit-image img {
   float: right;
 }
@@ -353,10 +361,6 @@ a:active {
   background-color: #d5cdb7;
 }
 
-.news-article {
-  color: #594813;
-}
-
 .navFont {
   display: inline-block;
   box-sizing: border-box;
@@ -597,6 +601,8 @@ header {background: black;color:white;}
 #news {
   float:left;
   padding: 10px;
+  margin-left: 10px;
+  margin-right: 10px;
 }
 
 .link_button {
@@ -756,8 +762,11 @@ h3 {
 
 .li-center {
   margin: auto;
-    width: 50%;
+  width: 50%;
 }
+/*.links {
+  margin: auto;
+}*/
 
 @media only screen
 and (min-device-width : 768px)
@@ -800,8 +809,11 @@ and (max-device-width : 1024px)  {
     /*margin-left: 210px;*/
 }
 .profile-title {
-    font-weight: bold;
-    font-size: 2em;
+    /*font-weight: bold;*/
+    font-size: 1em;
+}
+label {
+  font-weight: 500;
 }
 .image-fit {
   background: #fff;

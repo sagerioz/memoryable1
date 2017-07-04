@@ -83,7 +83,7 @@ class Login extends Component {
 </div>
 
 <div>
-  <div className="span4 li-center">
+  <div className="span4">
    <Connections />
   </div>
 </div>

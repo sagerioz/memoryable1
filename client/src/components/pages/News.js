@@ -68,10 +68,10 @@ class News extends Component {
        if(article.urlToImage){
        return (
          <div className="list-group-item news-article">
-         <a href={article.url}>
+         <a href={article.url} className="news">
            <img src={article.urlToImage} width="50%" id="news"/>
          <article className="article">
-           <h3>{article.title}</h3>
+           <h2>{article.title}</h2>
            <h4 className="news-article">POSTED ON {article.publishedAt}</h4>
            <p className="news-article">{article.description}</p>
            <a href={article.url} className="news-article">MORE...</a>
@@ -94,7 +94,7 @@ class News extends Component {
           <h1 className="splash">News Articles</h1>
 
           <div className="outline">
-          <h3> We have { this.state.weather } in { this.state.town }, Colorado today. </h3><h3>The temperature is { this.state.temp }&#176; C </h3>
+          <h3> We have clear skies in Boulder, Colorado today. </h3><h3>The temperature is 25&#176; C </h3>
           </div>
 
 
