@@ -108,6 +108,14 @@ a.news-article:link {color:#90110b;}
 a.news-article:visited {color:#596871;}
 a.news-article:hover {color:#1a4761;}
 
+#entertainment {
+  display: block;
+}
+
+#usaToday {
+  display: block;
+}
+
 .edit-image img {
   float: right;
 }

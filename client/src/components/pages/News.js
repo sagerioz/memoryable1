@@ -2,6 +2,9 @@ import React, { Component } from 'react'
 import Navbar from './../navbar'
 import MyDate from '../date'
 import $ from 'jquery'
+import Entertainment from '../news/entertainment'
+import USAToday from '../news/usaToday'
+
 //import Weather from '../weather'
 
 
@@ -13,7 +16,9 @@ class News extends Component {
     api: '',
     weather: '',
     town: '',
-    temp: ''
+    temp: '',
+    showEnt: true,
+    showUSA: true
   };
 
 
@@ -61,6 +66,27 @@ class News extends Component {
     })
    }
 
+  //  setElements = (val) => {
+  //   console.log('fired');
+  //    if('ent'){
+  //      $('#ent').style.display = 'block';
+  //    }else if('usa'){
+  //      $('#usa').style.display = 'block';
+  //    }
+  //  }
+
+  //  getInitialState() {
+  //       return { showResults: false };
+  //   }
+
+    // onClick = (val) => {
+    //   if('ent'){
+    //     this.setState({ showEnt: true, showUSA: false });
+    //   }else if ('usa'){
+    //     this.setState({ showUSA: true, showEnt: false });
+    //   }
+    // }
+
 // ES6 will provide a lexical scope for the variable which otherwise would need this.bind
    renderArticles = () => {
      console.log("NEWS", this.state.articles);
@@ -99,15 +125,17 @@ class News extends Component {
 
 
           </div>
-          <button className="btn btn-default">Sports</button>
-          <button className="btn btn-default">CNN</button>
+
+          <div className="flex-container" id="cnn">
+          { this.state.showUSA ? <USAToday /> : null }
+          </div>
 
 
-<div className="flex-container">
-{this.renderArticles()}
-</div>
-</div>
-</div>
+          <div className="flex-container" id="usa">
+          {this.renderArticles()}
+          </div>
+          </div>
+          </div>
       )
   }
 }
