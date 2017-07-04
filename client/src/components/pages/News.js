@@ -35,8 +35,8 @@ class News extends Component {
     }).then(() => {
 
       console.log("LOCAL STORAGE from HOME >>>>>>", localStorage);
-      const api = '58443d73bb4adf5b12a65dda8efd13fb'
-      const rio = '2fb0ef496cacff708e1da0ad370562d6'
+      // const api = '58443d73bb4adf5b12a65dda8efd13fb'
+      // const rio = '2fb0ef496cacff708e1da0ad370562d6'
 
 
       $.ajax({
