@@ -85,11 +85,11 @@ class ProfileUpdateForm extends React.Component {
 
     console.log("DATA from patch to profile", data);
 
-    if (data.success) {
+    if (data) {
       this.componentDidMount();
       //window.localStorage.clear();
       //window.location.replace('/')
-      console.log();
+      console.log("YAY");
     localStorage.setItem('profilePicture', data.pic);
   //  localStorage.profile = data.success;
    console.log("LOCAL STORAGE   ......", localStorage);
@@ -98,7 +98,7 @@ class ProfileUpdateForm extends React.Component {
 
    //browserHistory.push(path)
    console.log("SUCCESS IN EDIT PROFILE");
-   window.location.replace('/scrapbook')
+   window.location.replace('/')
 
     }
 

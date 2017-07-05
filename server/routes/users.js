@@ -56,13 +56,13 @@ let id = req.params.id
 let firstName = req.body.firstName
 let userName = req.body.userName
 let email = req.body.email
-let password = req.body.password
+//let password = req.body.password
 let profilePicture = req.body.profilePicture
 
-const password_digest = bcrypt.hashSync(password, 10);
+//const password_digest = bcrypt.hashSync(password, 10);
 
 
-console.log("going into db for update:", firstName, userName, email, profilePicture, password_digest);
+console.log("going into db for update:", firstName, userName, email, profilePicture);
 if(userName.length>0){
 knex('users')
 .where('id', id)
@@ -71,12 +71,12 @@ knex('users')
     firstName: firstName,
     userName: userName,
     email: email,
-    profilePicture: profilePicture,
-    password_digest: password_digest
+    profilePicture: profilePicture
+    // password_digest: password_digest
   })
   .then(insertedUser => {
-    const token = jwt.sign({insertedUser}, 'config.jwtSecret');
-    const profile = insertedUser[0].token = token;
+  //  const token = jwt.sign({insertedUser}, 'config.jwtSecret');
+  //  const profile = insertedUser[0].token = token;
     const pic = insertedUser[0].profilePicture;
     const id = insertedUser[0].id;
     const firstName = insertedUser[0].userName;
@@ -84,7 +84,8 @@ knex('users')
     //console.log("PROFILE", profile);
 
   //  res.send(insertedUser[0])
-    res.json({ success: profile, profilePicture:pic, id:id, firstname:userName });
+  //  res.json({ success: profile, profilePicture:pic, id:id, firstname:userName });
+    res.json({ profilePicture:pic, id:id, firstname:userName });
 
   })
 }else{
