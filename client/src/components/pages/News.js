@@ -115,11 +115,10 @@ class News extends Component {
 
           <Navbar />
           <div className="container">
-          <MyDate />
           <div className="splash">
           <h1 className="splash">News Articles</h1>
-
           <div className="outline">
+            <MyDate />
           <h3> We have clear skies in Boulder, Colorado today. </h3><h3>The temperature is 25&#176; C </h3>
           </div>
 
