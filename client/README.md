@@ -1,9 +1,6 @@
 # Memoryable
-### A digital journaling platform that makes creativity and organization accessible for everyone
+### An app that provides links to reality for people with cognitive decline and memory loss.
 ##
-
-Check out a video walk through of Prickly Posts:
-[![Prickly Posts Walkthrough](client/src/img/youtube_screenshot.png)](https://www.youtube.com/watch?v=kEUcZbigSYs&t=13s)
 
 Visit the current deployed version of Memoryable: [memoryable.herokuapp.com](memoryable.herokuapp.com)
 
@@ -18,7 +15,7 @@ $ npm run server
 ###  Feature list:
 
  WELCOME TO MEMORYABLE
- * This site is designed to be a caregiver's support tool, specifically targeted for people who care for loved ones who suffer with cognitive decline. The person in this role of caregiver will signup for an account on their patient's behalf. The name entered in the signup form will be the patient's name, as the app will address the user by this name from that point forward. Users are then redirected to the Scrapbook page, where they can view all of their saved photos, with descriptions and names. This is the main purpose of the website as it provides a caregiver the opportunity to curate a collection of photographs of people, places or events that are significant to the patient and tie names and facts to these images. These visual reminders can be comforting and useful to the patient and caregiver alike.
+ * This site is designed to be a caregiver's support tool, specifically targeted for people who care for loved ones who suffer with cognitive decline. The person in the caregiver role will sign up for an account on their patient's behalf. The name entered in the signup form will be the patient's name, as the app will address the user by this name from that point forward. Users are then redirected to the Scrapbook page, where they can view all of their saved photos, with descriptions and names. This is the main purpose of the website as it provides a caregiver the opportunity to curate a collection of photographs of people, places or events that are significant to the patient and tie names and facts to these images. These visual reminders can be comforting and useful to the patient and caregiver alike.
  * The user then can choose to view other features which are designed to reorient the patient to time, place and current events, which they may need reminding of. There is a News feed, a Weather Report and a Todo list.
  * Users can also update their profile page and save changes, or edit or delete photos from the scrapbook.
 
