@@ -7,7 +7,8 @@ Visit the current deployed version of Memoryable: [https://memoryable.herokuapp.
 Check out a video demo of Memoryable:
 [![Memoryable Video Demo](public/images/screen_shot.jpg)](https://www.youtube.com/watch?v=bztE5tNxz2Y&feature=youtu.be)
 (https://www.youtube.com/watch?v=bztE5tNxz2Y&feature=youtu.be)
-Notes:
+
+### Notes:
 ```
 To run:
 $ PORT=3001 node server/bin/www
