@@ -2,10 +2,10 @@
 ### An app that provides links to reality for people with cognitive decline and memory loss.
 ##
 
-Visit the current deployed version of Memoryable: [memoryable.herokuapp.com](memoryable.herokuapp.com)
+Visit the current deployed version of Memoryable: [https://memoryable.herokuapp.com](https://memoryable.herokuapp.com)
 
 Check out a video demo of Memoryable:
-[![Memoryable Video Demo](client/public/images/screen_shot.jpg)](https://www.youtube.com/watch?v=bztE5tNxz2Y&feature=youtu.be)
+[![Memoryable Video Demo](../public/images/screen_shot.jpg)](https://www.youtube.com/watch?v=bztE5tNxz2Y&feature=youtu.be)
 
 Notes:
 ```
