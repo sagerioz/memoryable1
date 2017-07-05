@@ -5,7 +5,6 @@
 Visit the current deployed version of Memoryable: [https://memoryable.herokuapp.com](https://memoryable.herokuapp.com)
 
 Check out a video demo of Memoryable:
-[![Memoryable Video Demo](public/images/screen_shot.jpg)](https://www.youtube.com/watch?v=bztE5tNxz2Y&feature=youtu.be)
 (https://www.youtube.com/watch?v=bztE5tNxz2Y&feature=youtu.be)
 
 ### Notes:
