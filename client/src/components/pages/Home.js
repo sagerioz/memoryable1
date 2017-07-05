@@ -73,11 +73,10 @@ class Home extends Component {
 
             <Navbar />
             <div className="container fix">
-            <MyDate />
 
               <div className="splash">
               <h1 className="splash"> Welcome, { this.state.name }!</h1>
-
+              <MyDate />
               </div></div><div>
                    <div>
                    <button type="button" className="btn btn-default btn-circle btn-lg nudge" data-toggle="modal" data-target="#myModal"><i className="glyphicon glyphicon-ok"></i>

@@ -44,9 +44,9 @@ class Todos extends Component {
           <div>
           <Navbar />
           <div className="container">
-          <MyDate/ >
           <div className="splash">
           <h1 className="splash">Your todo list</h1>
+          <MyDate />
           </div>
 
           {this.renderTodos()}
