@@ -2,7 +2,6 @@
    v2.0 | 20110126
    License: none (public domain)
 */
-/*(970) 355-3421*/
 
 /*html, body, div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
@@ -71,7 +70,7 @@ ol, ul {
 }
 
 h1 {
-  font-family: 'KlinicSlabMedium', 'Georgia', 'Times', serif
+  font-family: 'KlinicSlabMedium', 'Georgia', 'Times', serif;
   font-size: 60px;
 }
 
@@ -159,7 +158,6 @@ a.news-article:hover {color:#1a4761;}
   margin-top: 30px;
 }
 .intro-li {
-  /*background-color: #dcdadd;*/
   background-color: Transparent;
   background-repeat:no-repeat;
   color: #fff;
@@ -243,10 +241,7 @@ a.news-article:hover {color:#1a4761;}
     padding: 10px;
 }
 .outline-card {
-    /*background-color: #97c8d9;*/
     background-repeat:no-repeat;
-    /*color: #97c8d9;*/
-    /*border: 1px solid #5b5954;*/
     cursor:pointer;
     overflow: hidden;
     outline:none;
@@ -272,7 +267,6 @@ a.news-article:hover {color:#1a4761;}
 
 .btn-circle.btn-lg {
   width: 50px;
-  /*margin-left: 70px;*/
   margin-right: 15px;
   height: 50px;
   padding: 5px 6px;
@@ -307,7 +301,6 @@ a.news-article:hover {color:#1a4761;}
   padding-right: 35px;
 }
 .navbar {
-  /*background-color: #dcdadd;*/
   background-color: #c1c4b5;
   padding-top: 0px;
   padding-left: 5px;
@@ -319,7 +312,6 @@ a.news-article:hover {color:#1a4761;}
 }
 .navbar-brand {
   font-family: 'Pacifico', cursive;
-  /*font-family: 'Cantarell', sans-serif;*/
   font-size: 165%;
   text-align: center;
   margin-top: 10px;
@@ -589,9 +581,6 @@ ul.polaroids a {
     flex: 1 100%;
 }
 
-/*.container {
-  margin-top: 100px;
-}*/
 .article {
     text-align: left;
 }
@@ -724,7 +713,6 @@ h3 {
         background-attachment: fixed;
         background-position: center;
         background-repeat: no-repeat;
-        /*background-size: cover;*/
     }
     .logo {
       font-family: 'Pacifico', cursive;
@@ -743,9 +731,7 @@ h3 {
   font-size:25px;
   color: #f7f7f7;
 }
-/*.relative {
-  position:relative;
-}*/
+
 .span2 {
   color:#ddd;
   background-color:#282E34;
@@ -772,9 +758,7 @@ h3 {
   margin: auto;
   width: 50%;
 }
-/*.links {
-  margin: auto;
-}*/
+
 
 @media only screen
 and (min-device-width : 768px)
@@ -814,10 +798,8 @@ and (max-device-width : 1024px)  {
 }
 .profile-content {
     margin-left: 210px;
-    /*margin-left: 210px;*/
 }
 .profile-title {
-    /*font-weight: bold;*/
     font-size: 1em;
 }
 label {
